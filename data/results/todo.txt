@@ -1,0 +1,8 @@
+normalization
+batches
+history
+geotiff
+metrics - precision, recall, perclass, confusion matrix
+network deconv
+network no pad
+augmentation

@@ -1,0 +1,3914 @@
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MAX
+batch_normalization: YES
+transpose_convolution: YES
+
+Training results:
+	Accuracy  Val_Acc     Loss Val_Loss
+Epoch  1    0.78     0.81     0.63     0.49
+Epoch  2    0.81     0.81     0.49     0.46
+Epoch  3    0.82     0.81     0.45     0.47
+Epoch  4    0.82     0.82     0.43     0.45
+Epoch  5    0.83     0.82     0.42     0.43
+Epoch  6    0.83     0.83     0.41     0.42
+Epoch  7    0.84     0.83     0.40     0.42
+Epoch  8    0.84     0.83     0.39     0.42
+Epoch  9    0.84     0.83     0.38     0.42
+Epoch 10    0.85     0.83     0.38     0.41
+Epoch 11    0.85     0.83     0.37     0.41
+Epoch 12    0.85     0.83     0.37     0.42
+Epoch 13    0.85     0.84     0.36     0.40
+Epoch 14    0.85     0.84     0.36     0.40
+Epoch 15    0.85     0.84     0.36     0.41
+Epoch 16    0.86     0.84     0.35     0.40
+Epoch 17    0.86     0.84     0.35     0.40
+Epoch 18    0.86     0.83     0.35     0.44
+Epoch 19    0.86     0.83     0.34     0.43
+Epoch 20    0.86     0.84     0.34     0.40
+Epoch 21    0.86     0.83     0.34     0.43
+Epoch 22    0.86     0.84     0.33     0.40
+Epoch 23    0.86     0.84     0.33     0.41
+Epoch 24    0.87     0.82     0.33     0.48
+Epoch 25    0.87     0.81     0.33     0.49
+Epoch 26    0.87     0.79     0.32     0.58
+Epoch 27    0.87     0.82     0.32     0.46
+Epoch 28    0.87     0.80     0.32     0.55
+Epoch 29    0.87     0.80     0.32     0.53
+Epoch 30    0.87     0.80     0.31     0.56
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2278587   890930   274220     9037    62715
+        Agricolas| 1041291 21623080  2890601    10188    36555
+         Floresta|  885066  6853761 27968805    72724    60681
+          Humidas|    3244    23834     2438    44473    65100
+             Agua|   72038    49428    14836    40998   701258
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.53      0.65      0.58   3515489
+           1       0.73      0.84      0.79  25601715
+           2       0.90      0.78      0.83  35841037
+           3       0.25      0.32      0.28    139089
+           4       0.76      0.80      0.78    878558
+
+    accuracy                           0.80  65975888
+   macro avg       0.63      0.68      0.65  65975888
+weighted avg       0.81      0.80      0.80  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MAX
+batch_normalization: YES
+transpose_convolution: NO
+
+Training results:
+	Accuracy  Val_Acc     Loss Val_Loss
+Epoch  1    0.77     0.81     0.63     0.48
+Epoch  2    0.80     0.82     0.50     0.44
+Epoch  3    0.81     0.82     0.46     0.42
+Epoch  4    0.82     0.81     0.43     0.44
+Epoch  5    0.83     0.83     0.42     0.42
+Epoch  6    0.83     0.83     0.41     0.41
+Epoch  7    0.84     0.83     0.40     0.41
+Epoch  8    0.84     0.83     0.39     0.41
+Epoch  9    0.84     0.84     0.38     0.41
+Epoch 10    0.85     0.84     0.38     0.41
+Epoch 11    0.85     0.84     0.37     0.40
+Epoch 12    0.85     0.84     0.37     0.40
+Epoch 13    0.85     0.82     0.36     0.42
+Epoch 14    0.85     0.83     0.36     0.41
+Epoch 15    0.86     0.83     0.35     0.43
+Epoch 16    0.86     0.84     0.35     0.41
+Epoch 17    0.86     0.82     0.35     0.42
+Epoch 18    0.86     0.83     0.34     0.44
+Epoch 19    0.86     0.83     0.34     0.43
+Epoch 20    0.86     0.83     0.34     0.46
+Epoch 21    0.86     0.83     0.33     0.44
+Epoch 22    0.86     0.83     0.33     0.44
+Epoch 23    0.87     0.83     0.33     0.46
+Epoch 24    0.87     0.83     0.33     0.47
+Epoch 25    0.87     0.83     0.32     0.46
+Epoch 26    0.87     0.83     0.32     0.46
+Epoch 27    0.87     0.83     0.32     0.46
+Epoch 28    0.87     0.82     0.32     0.50
+Epoch 29    0.87     0.82     0.32     0.50
+Epoch 30    0.87     0.83     0.31     0.47
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 1419519  1293965   721412     9421    71172
+        Agricolas|   55184 21380339  4151186     3713    11293
+         Floresta|   72445  4455570 31275240    14290    23492
+          Humidas|    1591    19762    19205    61535    36996
+             Agua|   13354    64078    30007    57211   713908
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.91      0.40      0.56   3515489
+           1       0.79      0.84      0.81  25601715
+           2       0.86      0.87      0.87  35841037
+           3       0.42      0.44      0.43    139089
+           4       0.83      0.81      0.82    878558
+
+    accuracy                           0.83  65975888
+   macro avg       0.76      0.67      0.70  65975888
+weighted avg       0.83      0.83      0.83  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MAX
+batch_normalization: NO
+transpose_convolution: YES
+
+Training results:
+	Accuracy  Val_Acc     Loss Val_Loss
+Epoch  1    0.73     0.77     0.63     0.54
+Epoch  2    0.80     0.75     0.49     0.57
+Epoch  3    0.81     0.76     0.47     0.56
+Epoch  4    0.81     0.78     0.45     0.52
+Epoch  5    0.82     0.81     0.44     0.46
+Epoch  6    0.82     0.82     0.43     0.43
+Epoch  7    0.83     0.82     0.42     0.43
+Epoch  8    0.83     0.82     0.41     0.42
+Epoch  9    0.83     0.83     0.40     0.40
+Epoch 10    0.83     0.83     0.40     0.40
+Epoch 11    0.84     0.83     0.39     0.40
+Epoch 12    0.84     0.83     0.39     0.39
+Epoch 13    0.84     0.83     0.38     0.39
+Epoch 14    0.84     0.84     0.38     0.39
+Epoch 15    0.84     0.84     0.37     0.39
+Epoch 16    0.85     0.84     0.37     0.38
+Epoch 17    0.85     0.84     0.37     0.37
+Epoch 18    0.85     0.84     0.37     0.38
+Epoch 19    0.85     0.85     0.36     0.37
+Epoch 20    0.85     0.85     0.36     0.37
+Epoch 21    0.85     0.85     0.36     0.37
+Epoch 22    0.85     0.85     0.35     0.36
+Epoch 23    0.85     0.85     0.35     0.37
+Epoch 24    0.85     0.85     0.35     0.36
+Epoch 25    0.86     0.85     0.35     0.36
+Epoch 26    0.86     0.85     0.34     0.36
+Epoch 27    0.86     0.85     0.34     0.36
+Epoch 28    0.86     0.85     0.34     0.36
+Epoch 29    0.86     0.85     0.34     0.36
+Epoch 30    0.86     0.85     0.34     0.36
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2667340   526459   296351     8907    16432
+        Agricolas|  572034 20819062  4197454     1332    11833
+         Floresta|  312796  3633364 31875861     5298    13718
+          Humidas|    6491    15879    20422    60559    35738
+             Agua|   64800    45979    33027    62685   672067
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.74      0.76      0.75   3515489
+           1       0.83      0.81      0.82  25601715
+           2       0.88      0.89      0.88  35841037
+           3       0.44      0.44      0.44    139089
+           4       0.90      0.76      0.83    878558
+
+    accuracy                           0.85  65975888
+   macro avg       0.76      0.73      0.74  65975888
+weighted avg       0.85      0.85      0.85  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MAX
+batch_normalization: NO
+transpose_convolution: NO
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.62     0.73     0.52     0.78
+Epoch  2    0.49     0.80     0.55     0.75
+Epoch  3    0.46     0.81     0.54     0.77
+Epoch  4    0.45     0.81     0.52     0.77
+Epoch  5    0.44     0.82     0.50     0.78
+Epoch  6    0.43     0.82     0.47     0.80
+Epoch  7    0.42     0.83     0.44     0.81
+Epoch  8    0.41     0.83     0.42     0.82
+Epoch  9    0.40     0.83     0.42     0.82
+Epoch 10    0.40     0.83     0.41     0.82
+Epoch 11    0.39     0.84     0.41     0.83
+Epoch 12    0.38     0.84     0.41     0.83
+Epoch 13    0.38     0.84     0.41     0.83
+Epoch 14    0.38     0.84     0.41     0.83
+Epoch 15    0.37     0.85     0.40     0.84
+Epoch 16    0.37     0.85     0.38     0.84
+Epoch 17    0.37     0.85     0.38     0.84
+Epoch 18    0.36     0.85     0.37     0.85
+Epoch 19    0.36     0.85     0.37     0.85
+Epoch 20    0.36     0.85     0.37     0.85
+Epoch 21    0.35     0.85     0.37     0.84
+Epoch 22    0.35     0.85     0.36     0.85
+Epoch 23    0.35     0.85     0.36     0.85
+Epoch 24    0.35     0.86     0.37     0.85
+Epoch 25    0.34     0.86     0.36     0.85
+Epoch 26    0.34     0.86     0.36     0.85
+Epoch 27    0.34     0.86     0.37     0.85
+Epoch 28    0.34     0.86     0.36     0.85
+Epoch 29    0.34     0.86     0.37     0.85
+Epoch 30    0.34     0.86     0.36     0.85
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2422080   730008   324168    10502    28731
+        Agricolas|  338228 21079995  4164721     5203    13568
+         Floresta|  209199  3691008 31917473     5568    17789
+          Humidas|    3725    13844    19541    72860    29119
+             Agua|   24705    45932    33169    59815   714937
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.81      0.69      0.74   3515489
+           1       0.82      0.82      0.82  25601715
+           2       0.88      0.89      0.88  35841037
+           3       0.47      0.52      0.50    139089
+           4       0.89      0.81      0.85    878558
+
+    accuracy                           0.85  65975888
+   macro avg       0.77      0.75      0.76  65975888
+weighted avg       0.85      0.85      0.85  65975888
+______________________________________________________________________________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.63     0.77     0.48     0.81
+Epoch  2    0.49     0.80     0.44     0.82
+Epoch  3    0.46     0.82     0.42     0.83
+Epoch  4    0.43     0.82     0.42     0.83
+Epoch  5    0.42     0.83     0.41     0.83
+Epoch  6    0.41     0.83     0.41     0.83
+Epoch  7    0.40     0.84     0.40     0.83
+Epoch  8    0.39     0.84     0.40     0.83
+Epoch  9    0.39     0.84     0.39     0.83
+Epoch 10    0.38     0.84     0.40     0.83
+Epoch 11    0.37     0.85     0.40     0.83
+Epoch 12    0.37     0.85     0.39     0.84
+Epoch 13    0.37     0.85     0.39     0.84
+Epoch 14    0.36     0.85     0.40     0.83
+Epoch 15    0.36     0.85     0.39     0.84
+Epoch 16    0.35     0.86     0.41     0.83
+Epoch 17    0.35     0.86     0.40     0.83
+Epoch 18    0.35     0.86     0.39     0.84
+Epoch 19    0.34     0.86     0.39     0.84
+Epoch 20    0.34     0.86     0.40     0.84
+Epoch 21    0.34     0.86     0.40     0.84
+Epoch 22    0.34     0.86     0.40     0.84
+Epoch 23    0.33     0.86     0.40     0.84
+Epoch 24    0.33     0.86     0.40     0.84
+Epoch 25    0.33     0.87     0.40     0.84
+Epoch 26    0.33     0.87     0.39     0.84
+Epoch 27    0.32     0.87     0.40     0.84
+Epoch 28    0.32     0.87     0.41     0.83
+Epoch 29    0.32     0.87     0.42     0.84
+Epoch 30    0.32     0.87     0.41     0.84
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2269513   730882   428767    14900    71427
+        Agricolas|  286748 19739898  5560085     3473    11511
+         Floresta|  218432  2951953 32633387     8247    29018
+          Humidas|    1303    17034    25222    65603    29927
+             Agua|    8741    61900    29523   106210   672184
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.81      0.65      0.72   3515489
+           1       0.84      0.77      0.80  25601715
+           2       0.84      0.91      0.88  35841037
+           3       0.33      0.47      0.39    139089
+           4       0.83      0.77      0.79    878558
+
+    accuracy                           0.84  65975888
+   macro avg       0.73      0.71      0.72  65975888
+weighted avg       0.84      0.84      0.84  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: NO
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.63     0.78     0.47     0.81
+Epoch  2    0.49     0.81     0.44     0.82
+Epoch  3    0.45     0.82     0.43     0.82
+Epoch  4    0.43     0.83     0.42     0.83
+Epoch  5    0.41     0.83     0.41     0.83
+Epoch  6    0.40     0.84     0.40     0.83
+Epoch  7    0.39     0.84     0.40     0.83
+Epoch  8    0.39     0.84     0.40     0.83
+Epoch  9    0.38     0.84     0.40     0.83
+Epoch 10    0.38     0.85     0.40     0.83
+Epoch 11    0.37     0.85     0.39     0.83
+Epoch 12    0.37     0.85     0.39     0.83
+Epoch 13    0.36     0.85     0.40     0.83
+Epoch 14    0.36     0.85     0.42     0.82
+Epoch 15    0.35     0.86     0.41     0.83
+Epoch 16    0.35     0.86     0.41     0.83
+Epoch 17    0.35     0.86     0.42     0.82
+Epoch 18    0.34     0.86     0.41     0.83
+Epoch 19    0.34     0.86     0.42     0.83
+Epoch 20    0.34     0.86     0.41     0.83
+Epoch 21    0.33     0.86     0.42     0.83
+Epoch 22    0.33     0.86     0.40     0.83
+Epoch 23    0.33     0.87     0.41     0.83
+Epoch 24    0.33     0.87     0.42     0.83
+Epoch 25    0.32     0.87     0.41     0.84
+Epoch 26    0.32     0.87     0.41     0.83
+Epoch 27    0.32     0.87     0.41     0.84
+Epoch 28    0.32     0.87     0.42     0.83
+Epoch 29    0.32     0.87     0.44     0.83
+Epoch 30    0.31     0.87     0.41     0.84
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2172367   877848   404096    15567    45611
+        Agricolas|  224489 20333538  5033128     2058     8502
+         Floresta|  140254  3662448 32007409     4751    26175
+          Humidas|    2906    36400    20000    62539    17244
+             Agua|   19258   103753    27700   143230   584617
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.85      0.62      0.72   3515489
+           1       0.81      0.79      0.80  25601715
+           2       0.85      0.89      0.87  35841037
+           3       0.27      0.45      0.34    139089
+           4       0.86      0.67      0.75    878558
+
+    accuracy                           0.84  65975888
+   macro avg       0.73      0.68      0.70  65975888
+weighted avg       0.84      0.84      0.83  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MEAN_STD
+batch_normalization: NO
+transpose_convolution: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.56     0.78     0.52     0.79
+Epoch  2    0.48     0.81     0.48     0.80
+Epoch  3    0.45     0.82     0.44     0.81
+Epoch  4    0.43     0.82     0.43     0.82
+Epoch  5    0.41     0.83     0.41     0.83
+Epoch  6    0.40     0.84     0.40     0.83
+Epoch  7    0.39     0.84     0.40     0.83
+Epoch  8    0.38     0.84     0.39     0.84
+Epoch  9    0.38     0.84     0.39     0.84
+Epoch 10    0.37     0.85     0.38     0.84
+Epoch 11    0.37     0.85     0.38     0.84
+Epoch 12    0.36     0.85     0.38     0.84
+Epoch 13    0.36     0.85     0.37     0.84
+Epoch 14    0.36     0.85     0.37     0.84
+Epoch 15    0.35     0.85     0.37     0.85
+Epoch 16    0.35     0.86     0.36     0.85
+Epoch 17    0.35     0.86     0.36     0.85
+Epoch 18    0.34     0.86     0.36     0.85
+Epoch 19    0.34     0.86     0.36     0.85
+Epoch 20    0.34     0.86     0.36     0.85
+Epoch 21    0.34     0.86     0.36     0.85
+Epoch 22    0.33     0.86     0.36     0.85
+Epoch 23    0.33     0.86     0.36     0.85
+Epoch 24    0.33     0.86     0.36     0.85
+Epoch 25    0.33     0.87     0.36     0.85
+Epoch 26    0.33     0.86     0.36     0.85
+Epoch 27    0.32     0.87     0.36     0.85
+Epoch 28    0.32     0.87     0.36     0.85
+Epoch 29    0.32     0.87     0.36     0.85
+Epoch 30    0.32     0.87     0.35     0.86 <------------ Best result
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2510426   690156   255472     9625    49810
+        Agricolas|  365983 21787666  3430410     1956    15700
+         Floresta|  242118  4128575 31444606     3172    22566
+          Humidas|    4363    14731    27024    63120    29851
+             Agua|   28423    45032    26809   104280   674014
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.80      0.71      0.75   3515489
+           1       0.82      0.85      0.83  25601715
+           2       0.89      0.88      0.89  35841037
+           3       0.35      0.45      0.39    139089
+           4       0.85      0.77      0.81    878558
+
+    accuracy                           0.86  65975888
+   macro avg       0.74      0.73      0.73  65975888
+weighted avg       0.86      0.86      0.86  65975888
+_______________________________________________________________
+channels: ALL
+reshape: 252->164
+batch_size: 10
+normalization: MEAN_STD
+batch_normalization: NO
+transpose_convolution: NO
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.55     0.78     0.49     0.80
+Epoch  2    0.48     0.81     0.47     0.80
+Epoch  3    0.45     0.82     0.48     0.80
+Epoch  4    0.43     0.82     0.44     0.82
+Epoch  5    0.42     0.83     0.43     0.82
+Epoch  6    0.41     0.83     0.42     0.83
+Epoch  7    0.40     0.83     0.41     0.83
+Epoch  8    0.39     0.84     0.39     0.84
+Epoch  9    0.39     0.84     0.39     0.84
+Epoch 10    0.38     0.84     0.39     0.84
+Epoch 11    0.38     0.84     0.38     0.84
+Epoch 12    0.37     0.85     0.38     0.84
+Epoch 13    0.37     0.85     0.38     0.84
+Epoch 14    0.36     0.85     0.38     0.84
+Epoch 15    0.36     0.85     0.38     0.84
+Epoch 16    0.36     0.85     0.38     0.84
+Epoch 17    0.35     0.86     0.38     0.84
+Epoch 18    0.35     0.86     0.38     0.84
+Epoch 19    0.35     0.86     0.37     0.85
+Epoch 20    0.35     0.86     0.37     0.85
+Epoch 21    0.34     0.86     0.37     0.85
+Epoch 22    0.34     0.86     0.37     0.85
+Epoch 23    0.34     0.86     0.36     0.85
+Epoch 24    0.33     0.86     0.36     0.85
+Epoch 25    0.33     0.86     0.36     0.85
+Epoch 26    0.33     0.86     0.36     0.85
+Epoch 27    0.33     0.86     0.37     0.85
+Epoch 28    0.32     0.87     0.36     0.85
+Epoch 29    0.32     0.87     0.36     0.85
+Epoch 30    0.32     0.87     0.36     0.85
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 2416883   677549   364163    12290    44604
+        Agricolas|  351144 21034232  4192522     3602    20215
+         Floresta|  186406  3519620 32101112    10659    23240
+          Humidas|    3330    17468    18379    84049    15863
+             Agua|   17811    43440    26603   171744   618960
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.81      0.69      0.74   3515489
+           1       0.83      0.82      0.83  25601715
+           2       0.87      0.90      0.89  35841037
+           3       0.30      0.60      0.40    139089
+           4       0.86      0.70      0.77    878558
+
+    accuracy                           0.85  65975888
+   macro avg       0.73      0.74      0.73  65975888
+weighted avg       0.85      0.85      0.85  65975888
+_______________________________________________________________
+channels: ALL
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.62     0.77     0.47     0.81
+Epoch  2    0.48     0.81     0.46     0.82
+Epoch  3    0.44     0.82     0.42     0.83
+Epoch  4    0.42     0.83     0.41     0.83
+Epoch  5    0.41     0.83     0.41     0.83
+Epoch  6    0.40     0.84     0.39     0.84
+Epoch  7    0.39     0.84     0.38     0.84
+Epoch  8    0.38     0.84     0.38     0.84
+Epoch  9    0.37     0.85     0.37     0.85
+Epoch 10    0.37     0.85     0.36     0.85
+Epoch 11    0.36     0.85     0.36     0.85
+Epoch 12    0.36     0.85     0.36     0.85
+Epoch 13    0.35     0.86     0.36     0.85
+Epoch 14    0.35     0.86     0.36     0.85
+Epoch 15    0.34     0.86     0.36     0.85
+Epoch 16    0.34     0.86     0.36     0.85
+Epoch 17    0.34     0.86     0.36     0.85
+Epoch 18    0.33     0.86     0.36     0.85
+Epoch 19    0.33     0.86     0.36     0.85
+Epoch 20    0.33     0.87     0.36     0.85
+Epoch 21    0.33     0.87     0.36     0.85
+Epoch 22    0.32     0.87     0.36     0.85
+Epoch 23    0.32     0.87     0.35     0.85
+Epoch 24    0.32     0.87     0.35     0.85
+Epoch 25    0.32     0.87     0.36     0.85
+Epoch 26    0.31     0.87     0.36     0.85
+Epoch 27    0.31     0.87     0.36     0.85
+Epoch 28    0.31     0.87     0.35     0.86
+Epoch 29    0.31     0.87     0.35     0.86
+Epoch 30    0.30     0.88     0.35     0.86 <---------- Best result
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5501857  2115714   861422     5236   140736
+        Agricolas|  530121 53493699  8923452     7719    46918
+         Floresta|  368310  8929861 77282265    27040    57450
+          Humidas|   13221    32352    39991   148452    99374
+             Agua|  201379   121936    58710    53797  1698796
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.83      0.64      0.72   8624965
+           1       0.83      0.85      0.84  63001909
+           2       0.89      0.89      0.89  86664926
+           3       0.61      0.45      0.52    333390
+           4       0.83      0.80      0.81   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.80      0.72      0.76 160759808
+weighted avg       0.86      0.86      0.86 160759808
+_______________________________________________________________
+channels: ALL
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: NO
+transpose_convolution: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.54     0.79     0.49     0.80
+Epoch  2    0.46     0.81     0.45     0.81
+Epoch  3    0.43     0.82     0.43     0.82
+Epoch  4    0.41     0.83     0.43     0.82
+Epoch  5    0.40     0.84     0.41     0.83
+Epoch  6    0.39     0.84     0.41     0.83
+Epoch  7    0.38     0.84     0.40     0.83
+Epoch  8    0.37     0.85     0.40     0.83
+Epoch  9    0.37     0.85     0.38     0.84
+Epoch 10    0.36     0.85     0.38     0.84
+Epoch 11    0.36     0.85     0.38     0.84
+Epoch 12    0.35     0.85     0.37     0.85
+Epoch 13    0.35     0.86     0.37     0.85
+Epoch 14    0.35     0.86     0.37     0.85
+Epoch 15    0.35     0.86     0.36     0.85
+Epoch 16    0.34     0.86     0.36     0.85
+Epoch 17    0.34     0.86     0.36     0.85
+Epoch 18    0.34     0.86     0.35     0.85
+Epoch 19    0.33     0.86     0.35     0.85
+Epoch 20    0.33     0.86     0.35     0.86
+Epoch 21    0.33     0.86     0.35     0.86
+Epoch 22    0.32     0.87     0.35     0.86
+Epoch 23    0.32     0.87     0.34     0.86
+Epoch 24    0.32     0.87     0.34     0.86
+Epoch 25    0.32     0.87     0.34     0.86
+Epoch 26    0.32     0.87     0.35     0.86
+Epoch 27    0.32     0.87     0.35     0.86
+Epoch 28    0.32     0.87     0.34     0.86
+Epoch 29    0.31     0.87     0.34     0.86
+Epoch 30    0.31     0.87     0.34     0.86
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 6152727  1513462   820289    11418   127069
+        Agricolas|  956905 52882499  9100181    11590    50734
+         Floresta|  529797  8835794 77225073    22184    52078
+          Humidas|    6340    44328    34515   166492    81715
+             Agua|   25173   105679    62255   157314  1784197
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.80      0.71      0.76   8624965
+           1       0.83      0.84      0.84  63001909
+           2       0.89      0.89      0.89  86664926
+           3       0.45      0.50      0.47    333390
+           4       0.85      0.84      0.84   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.76      0.76      0.76 160759808
+weighted avg       0.86      0.86      0.86 160759808
+q .
+_______________________________________________________________
+channels: ALL
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: NO
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1    0.58     0.78     0.48     0.81
+Epoch  2    0.48     0.81     0.45     0.81
+Epoch  3    0.44     0.82     0.44     0.81
+Epoch  4    0.42     0.83     0.42     0.83
+Epoch  5    0.41     0.83     0.40     0.83
+Epoch  6    0.40     0.84     0.41     0.83
+Epoch  7    0.39     0.84     0.39     0.84
+Epoch  8    0.38     0.84     0.38     0.84
+Epoch  9    0.38     0.85     0.39     0.84
+Epoch 10    0.37     0.85     0.38     0.85
+Epoch 11    0.37     0.85     0.38     0.84
+Epoch 12    0.36     0.85     0.38     0.84
+Epoch 13    0.36     0.85     0.37     0.85
+Epoch 14    0.35     0.85     0.37     0.85
+Epoch 15    0.35     0.86     0.37     0.85
+Epoch 16    0.35     0.86     0.36     0.85
+Epoch 17    0.34     0.86     0.36     0.85
+Epoch 18    0.34     0.86     0.36     0.85
+Epoch 19    0.34     0.86     0.36     0.85
+Epoch 20    0.33     0.86     0.37     0.85
+Epoch 21    0.33     0.86     0.38     0.84
+Epoch 22    0.33     0.87     0.37     0.85
+Epoch 23    0.33     0.87     0.37     0.85
+Epoch 24    0.32     0.87     0.38     0.84
+Epoch 25    0.32     0.87     0.36     0.85
+Epoch 26    0.32     0.87     0.36     0.85
+Epoch 27    0.32     0.87     0.36     0.85
+Epoch 28    0.31     0.87     0.36     0.85
+Epoch 29    0.31     0.87     0.36     0.85
+Epoch 30    0.31     0.87     0.35     0.86
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5697637  1969492   865452     2025    90359
+        Agricolas|  596687 52034224 10305436     9697    55865
+         Floresta|  420960  7845007 78313382    27589    57988
+          Humidas|   66750    45675    43725   110681    66559
+             Agua|  398484   150338    62611    15153  1508032
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.79      0.66      0.72   8624965
+           1       0.84      0.83      0.83  63001909
+           2       0.87      0.90      0.89  86664926
+           3       0.67      0.33      0.44    333390
+           4       0.85      0.71      0.77   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.80      0.69      0.73 160759808
+weighted avg       0.86      0.86      0.86 160759808
+_______________________________________________________________
+channels: ALL
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: NO
+keepNODATA: NO
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6378   0.7660   0.5263   0.8033
+Epoch  2  0.5315   0.7969   0.5010   0.8119
+Epoch  3  0.4973   0.8100   0.4815   0.8185
+Epoch  4  0.4754   0.8184   0.4684   0.8238
+Epoch  5  0.4611   0.8239   0.4640   0.8246
+Epoch  6  0.4498   0.8280   0.4631   0.8263
+Epoch  7  0.4406   0.8311   0.4591   0.8266
+Epoch  8  0.4322   0.8340   0.4678   0.8237
+Epoch  9  0.4254   0.8362   0.4655   0.8257
+Epoch 10  0.4188   0.8386   0.4597   0.8261
+Epoch 11  0.4125   0.8407   0.4654   0.8263
+Epoch 12  0.4075   0.8421   0.4542   0.8303
+Epoch 13  0.4024   0.8439   0.4570   0.8304
+Epoch 14  0.3979   0.8456   0.4503   0.8320
+Epoch 15  0.3930   0.8471   0.4548   0.8321
+Epoch 16  0.3891   0.8484   0.4570   0.8319
+Epoch 17  0.3843   0.8499   0.4539   0.8332
+Epoch 18  0.3805   0.8512   0.4576   0.8328
+Epoch 19  0.3770   0.8524   0.4599   0.8291
+Epoch 20  0.3727   0.8536   0.4497   0.8341
+Epoch 21  0.3686   0.8549   0.4367   0.8378
+Epoch 22  0.3675   0.8549   0.4383   0.8356
+Epoch 23  0.3623   0.8568   0.4408   0.8364
+Epoch 24  0.3573   0.8584   0.4404   0.8378
+Epoch 25  0.3538   0.8597   0.4387   0.8371
+Epoch 26  0.3510   0.8608   0.4451   0.8366
+Epoch 27  0.3473   0.8620   0.4510   0.8337
+Epoch 28  0.3420   0.8640   0.4473   0.8352
+Epoch 29  0.3422   0.8639   0.4430   0.8368
+Epoch 30  0.3372   0.8657   0.4512   0.8354
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5908844  1997679  1181642    20715   202332
+        Agricolas|  578770 50188914 12622746     7138   443880
+         Floresta|  439840  6466502 81878168    11500   805678
+          Humidas|    7125    35446    92764   202556   107828
+             Agua|  118563   749118  1831453   213771  3625268
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.84      0.63      0.72   9311212
+           1       0.84      0.79      0.81  63841448
+           2       0.84      0.91      0.87  89601688
+           3       0.44      0.45      0.45    445719
+           4       0.70      0.55      0.62   6538173
+
+    accuracy                           0.84 169738240
+   macro avg       0.73      0.67      0.70 169738240
+weighted avg       0.83      0.84      0.83 169738240
+_______________________________________________________________
+channels: ['B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6161   0.7755   0.4791   0.8087
+Epoch  2  0.4808   0.8084   0.4430   0.8181
+Epoch  3  0.4426   0.8214   0.4318   0.8209
+Epoch  4  0.4205   0.8291   0.4112   0.8291
+Epoch  5  0.4068   0.8341   0.4042   0.8319
+Epoch  6  0.3968   0.8377   0.3956   0.8352
+Epoch  7  0.3879   0.8410   0.3822   0.8414
+Epoch  8  0.3804   0.8440   0.3830   0.8412
+Epoch  9  0.3736   0.8466   0.3755   0.8440
+Epoch 10  0.3678   0.8492   0.3702   0.8475
+Epoch 11  0.3625   0.8513   0.3655   0.8493
+Epoch 12  0.3583   0.8528   0.3677   0.8478
+Epoch 13  0.3531   0.8551   0.3700   0.8464
+Epoch 14  0.3492   0.8567   0.3616   0.8509
+Epoch 15  0.3454   0.8582   0.3631   0.8493
+Epoch 16  0.3415   0.8599   0.3605   0.8511
+Epoch 17  0.3385   0.8612   0.3571   0.8529
+Epoch 18  0.3350   0.8627   0.3571   0.8533
+Epoch 19  0.3319   0.8640   0.3576   0.8525
+Epoch 20  0.3294   0.8650   0.3538   0.8545
+Epoch 21  0.3266   0.8663   0.3539   0.8543
+Epoch 22  0.3233   0.8677   0.3538   0.8545
+Epoch 23  0.3215   0.8683   0.3508   0.8554
+Epoch 24  0.3203   0.8690   0.3521   0.8556
+Epoch 25  0.3160   0.8708   0.3516   0.8542
+Epoch 26  0.3136   0.8717   0.3507   0.8560
+Epoch 27  0.3111   0.8729   0.3464   0.8588
+Epoch 28  0.3095   0.8737   0.3513   0.8562
+Epoch 29  0.3062   0.8750   0.3447   0.8589
+Epoch 30  0.3051   0.8753   0.3461   0.8591
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5893839  1791751   812816      862   125697
+        Agricolas|  720005 52795376  9421099     3098    62331
+         Floresta|  535400  8552848 77522932    10524    43222
+          Humidas|   30093    31508    67162    59729   144898
+             Agua|   98646   113060    73485    15382  1834045
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.81      0.68      0.74   8624965
+           1       0.83      0.84      0.84  63001909
+           2       0.88      0.89      0.89  86664926
+           3       0.67      0.18      0.28    333390
+           4       0.83      0.86      0.84   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.80      0.69      0.72 160759808
+weighted avg       0.86      0.86      0.86 160759808
+_______________________________________________________________
+channels: ['B01', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6163   0.7740   0.4750   0.8117
+Epoch  2  0.4867   0.8054   0.4393   0.8221
+Epoch  3  0.4491   0.8190   0.4179   0.8263
+Epoch  4  0.4264   0.8269   0.4035   0.8330
+Epoch  5  0.4112   0.8324   0.3942   0.8356
+Epoch  6  0.4002   0.8367   0.3854   0.8414
+Epoch  7  0.3916   0.8399   0.3895   0.8394
+Epoch  8  0.3842   0.8429   0.3821   0.8439
+Epoch  9  0.3769   0.8460   0.3792   0.8456
+Epoch 10  0.3714   0.8481   0.3739   0.8472
+Epoch 11  0.3656   0.8504   0.3703   0.8484
+Epoch 12  0.3613   0.8521   0.3673   0.8496
+Epoch 13  0.3572   0.8537   0.3653   0.8511
+Epoch 14  0.3530   0.8553   0.3678   0.8488
+Epoch 15  0.3490   0.8570   0.3663   0.8490
+Epoch 16  0.3454   0.8586   0.3677   0.8469
+Epoch 17  0.3426   0.8596   0.3647   0.8511
+Epoch 18  0.3393   0.8609   0.3658   0.8487
+Epoch 19  0.3368   0.8619   0.3634   0.8513
+Epoch 20  0.3333   0.8635   0.3656   0.8480
+Epoch 21  0.3299   0.8649   0.3697   0.8441
+Epoch 22  0.3282   0.8656   0.3662   0.8475
+Epoch 23  0.3265   0.8666   0.3646   0.8491
+Epoch 24  0.3225   0.8681   0.3632   0.8501
+Epoch 25  0.3211   0.8685   0.3549   0.8540
+Epoch 26  0.3178   0.8700   0.3604   0.8507
+Epoch 27  0.3161   0.8707   0.3643   0.8474
+Epoch 28  0.3140   0.8716   0.3581   0.8529
+Epoch 29  0.3122   0.8724   0.3588   0.8523
+Epoch 30  0.3090   0.8737   0.3562   0.8541
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5182339  2411456   900092     1330   129748
+        Agricolas|  423215 52786365  9735522     3039    53768
+         Floresta|  338713  8572718 77683801    13144    56550
+          Humidas|   96870    60188    49662    88544    38126
+             Agua|  366234   119397    56700    31470  1560817
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.81      0.60      0.69   8624965
+           1       0.83      0.84      0.83  63001909
+           2       0.88      0.90      0.89  86664926
+           3       0.64      0.27      0.38    333390
+           4       0.85      0.73      0.79   2134618
+
+    accuracy                           0.85 160759808
+   macro avg       0.80      0.67      0.71 160759808
+weighted avg       0.85      0.85      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5871   0.7772   0.4643   0.8136
+Epoch  2  0.4770   0.8072   0.4299   0.8258
+Epoch  3  0.4421   0.8206   0.4137   0.8304
+Epoch  4  0.4225   0.8280   0.4053   0.8321
+Epoch  5  0.4096   0.8329   0.3986   0.8332
+Epoch  6  0.3993   0.8367   0.3953   0.8336
+Epoch  7  0.3907   0.8403   0.3936   0.8344
+Epoch  8  0.3834   0.8432   0.3823   0.8397
+Epoch  9  0.3772   0.8456   0.3770   0.8425
+Epoch 10  0.3720   0.8478   0.3762   0.8429
+Epoch 11  0.3666   0.8499   0.3732   0.8442
+Epoch 12  0.3620   0.8518   0.3649   0.8483
+Epoch 13  0.3578   0.8534   0.3654   0.8483
+Epoch 14  0.3539   0.8552   0.3677   0.8473
+Epoch 15  0.3510   0.8563   0.3634   0.8491
+Epoch 16  0.3468   0.8579   0.3629   0.8482
+Epoch 17  0.3436   0.8594   0.3647   0.8480
+Epoch 18  0.3408   0.8605   0.3670   0.8452
+Epoch 19  0.3376   0.8620   0.3653   0.8455
+Epoch 20  0.3351   0.8630   0.3591   0.8493
+Epoch 21  0.3322   0.8641   0.3651   0.8469
+Epoch 22  0.3295   0.8653   0.3848   0.8402
+Epoch 23  0.3266   0.8665   0.3696   0.8439
+Epoch 24  0.3239   0.8677   0.3685   0.8449
+Epoch 25  0.3211   0.8688   0.3620   0.8491
+Epoch 26  0.3197   0.8695   0.3556   0.8529
+Epoch 27  0.3175   0.8705   0.3555   0.8523
+Epoch 28  0.3158   0.8710   0.3703   0.8446
+Epoch 29  0.3127   0.8724   0.3699   0.8432
+Epoch 30  0.3117   0.8726   0.3727   0.8413
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5853678  1648078   974253     4323   144633
+        Agricolas|  772968 46909565 15275671     6591    37114
+         Floresta|  430110  5682279 80488110    18197    46230
+          Humidas|    4605    32451    41846   139945   114543
+             Agua|   54328   119218    73415    29283  1858374
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.82      0.68      0.74   8624965
+           1       0.86      0.74      0.80  63001909
+           2       0.83      0.93      0.88  86664926
+           3       0.71      0.42      0.53    333390
+           4       0.84      0.87      0.86   2134618
+
+    accuracy                           0.84 160759808
+   macro avg       0.81      0.73      0.76 160759808
+weighted avg       0.84      0.84      0.84 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6189   0.7698   0.4763   0.8118
+Epoch  2  0.4913   0.8022   0.4483   0.8173
+Epoch  3  0.4579   0.8144   0.4262   0.8242
+Epoch  4  0.4324   0.8238   0.4132   0.8280
+Epoch  5  0.4173   0.8296   0.4103   0.8294
+Epoch  6  0.4061   0.8337   0.3987   0.8352
+Epoch  7  0.3968   0.8372   0.3929   0.8372
+Epoch  8  0.3894   0.8401   0.3925   0.8374
+Epoch  9  0.3824   0.8431   0.3861   0.8400
+Epoch 10  0.3763   0.8455   0.3800   0.8417
+Epoch 11  0.3710   0.8475   0.3718   0.8462
+Epoch 12  0.3658   0.8497   0.3742   0.8446
+Epoch 13  0.3610   0.8515   0.3625   0.8505
+Epoch 14  0.3566   0.8535   0.3685   0.8462
+Epoch 15  0.3528   0.8551   0.3611   0.8507
+Epoch 16  0.3490   0.8567   0.3590   0.8526
+Epoch 17  0.3452   0.8583   0.3561   0.8543
+Epoch 18  0.3415   0.8600   0.3551   0.8547
+Epoch 19  0.3387   0.8610   0.3544   0.8541
+Epoch 20  0.3355   0.8626   0.3554   0.8546
+Epoch 21  0.3323   0.8639   0.3514   0.8566
+Epoch 22  0.3298   0.8648   0.3547   0.8536
+Epoch 23  0.3270   0.8661   0.3563   0.8535
+Epoch 24  0.3244   0.8673   0.3536   0.8551
+Epoch 25  0.3229   0.8679   0.3563   0.8551
+Epoch 26  0.3207   0.8687   0.3511   0.8563
+Epoch 27  0.3184   0.8698   0.3569   0.8542
+Epoch 28  0.3148   0.8713   0.3480   0.8574
+Epoch 29  0.3131   0.8720   0.3523   0.8553
+Epoch 30  0.3112   0.8729   0.3502   0.8553
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5752705  1811241   914257    13675   133087
+        Agricolas|  665106 51374362 10919636     3080    39725
+         Floresta|  448086  7524696 78632842    17132    42170
+          Humidas|   22363    37691    60406   145145    67785
+             Agua|  154802   119505    76210   189802  1594299
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.82      0.67      0.73   8624965
+           1       0.84      0.82      0.83  63001909
+           2       0.87      0.91      0.89  86664926
+           3       0.39      0.44      0.41    333390
+           4       0.85      0.75      0.79   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.75      0.71      0.73 160759808
+weighted avg       0.85      0.86      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6708   0.7673   0.4863   0.8162
+Epoch  2  0.4944   0.8044   0.4436   0.8222
+Epoch  3  0.4532   0.8178   0.4177   0.8302
+Epoch  4  0.4292   0.8262   0.4190   0.8241
+Epoch  5  0.4129   0.8319   0.4084   0.8280
+Epoch  6  0.4016   0.8360   0.3991   0.8322
+Epoch  7  0.3924   0.8394   0.3955   0.8332
+Epoch  8  0.3849   0.8424   0.3982   0.8305
+Epoch  9  0.3777   0.8452   0.3919   0.8334
+Epoch 10  0.3717   0.8475   0.3757   0.8428
+Epoch 11  0.3660   0.8499   0.3720   0.8447
+Epoch 12  0.3611   0.8517   0.3688   0.8464
+Epoch 13  0.3558   0.8538   0.3587   0.8521
+Epoch 14  0.3520   0.8553   0.3617   0.8488
+Epoch 15  0.3479   0.8570   0.3594   0.8498
+Epoch 16  0.3448   0.8585   0.3567   0.8515
+Epoch 17  0.3409   0.8601   0.3528   0.8545
+Epoch 18  0.3379   0.8614   0.3540   0.8525
+Epoch 19  0.3346   0.8630   0.3549   0.8516
+Epoch 20  0.3319   0.8642   0.3556   0.8511
+Epoch 21  0.3291   0.8653   0.3562   0.8507
+Epoch 22  0.3263   0.8666   0.3489   0.8559
+Epoch 23  0.3241   0.8676   0.3514   0.8536
+Epoch 24  0.3225   0.8680   0.3534   0.8529
+Epoch 25  0.3183   0.8701   0.3510   0.8547
+Epoch 26  0.3173   0.8705   0.3517   0.8544
+Epoch 27  0.3141   0.8718   0.3544   0.8553
+Epoch 28  0.3115   0.8730   0.3486   0.8570
+Epoch 29  0.3108   0.8733   0.3527   0.8540
+Epoch 30  0.3090   0.8741   0.3530   0.8557
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5447591  2215977   841441    10451   109505
+        Agricolas|  488929 53420331  9045980    14313    32356
+         Floresta|  374857  9334561 76881641    33555    40312
+          Humidas|   13715    33513    41729   144476    99957
+             Agua|  191569   132891    61625    78761  1669772
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.84      0.63      0.72   8624965
+           1       0.82      0.85      0.83  63001909
+           2       0.88      0.89      0.89  86664926
+           3       0.51      0.43      0.47    333390
+           4       0.86      0.78      0.82   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.78      0.72      0.75 160759808
+weighted avg       0.86      0.86      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6157   0.7737   0.4868   0.8054
+Epoch  2  0.4872   0.8056   0.4571   0.8163
+Epoch  3  0.4470   0.8196   0.4326   0.8204
+Epoch  4  0.4256   0.8273   0.4134   0.8289
+Epoch  5  0.4106   0.8326   0.4035   0.8312
+Epoch  6  0.3999   0.8365   0.3995   0.8325
+Epoch  7  0.3911   0.8397   0.3933   0.8364
+Epoch  8  0.3833   0.8427   0.3888   0.8381
+Epoch  9  0.3765   0.8455   0.3817   0.8408
+Epoch 10  0.3704   0.8479   0.3808   0.8403
+Epoch 11  0.3651   0.8500   0.3717   0.8443
+Epoch 12  0.3601   0.8520   0.3745   0.8414
+Epoch 13  0.3550   0.8541   0.3700   0.8435
+Epoch 14  0.3514   0.8557   0.3710   0.8430
+Epoch 15  0.3472   0.8573   0.3693   0.8438
+Epoch 16  0.3435   0.8589   0.3639   0.8464
+Epoch 17  0.3396   0.8606   0.3546   0.8532
+Epoch 18  0.3361   0.8621   0.3649   0.8467
+Epoch 19  0.3333   0.8632   0.3550   0.8525
+Epoch 20  0.3309   0.8646   0.3606   0.8495
+Epoch 21  0.3269   0.8662   0.3570   0.8513
+Epoch 22  0.3243   0.8674   0.3609   0.8482
+Epoch 23  0.3211   0.8687   0.3658   0.8466
+Epoch 24  0.3191   0.8697   0.3641   0.8485
+Epoch 25  0.3171   0.8704   0.3665   0.8478
+Epoch 26  0.3173   0.8704   0.3622   0.8458
+Epoch 27  0.3119   0.8727   0.3835   0.8376
+Epoch 28  0.3098   0.8736   0.3662   0.8478
+Epoch 29  0.3076   0.8745   0.3586   0.8515
+Epoch 30  0.3060   0.8751   0.3774   0.8415
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5349607  2077495  1008362     6257   183244
+        Agricolas|  497276 47587307 14878945     5154    33227
+         Floresta|  366799  5632517 80599339    21952    44319
+          Humidas|   32365    51517    35678   134695    79135
+             Agua|  278382   122689    81205    41069  1611273
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.82      0.62      0.71   8624965
+           1       0.86      0.76      0.80  63001909
+           2       0.83      0.93      0.88  86664926
+           3       0.64      0.40      0.50    333390
+           4       0.83      0.75      0.79   2134618
+
+    accuracy                           0.84 160759808
+   macro avg       0.80      0.69      0.73 160759808
+weighted avg       0.84      0.84      0.84 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6887   0.7620   0.4894   0.8106
+Epoch  2  0.5039   0.8000   0.4437   0.8219
+Epoch  3  0.4608   0.8144   0.4266   0.8271
+Epoch  4  0.4369   0.8232   0.4105   0.8321
+Epoch  5  0.4200   0.8293   0.4019   0.8341
+Epoch  6  0.4076   0.8338   0.3971   0.8358
+Epoch  7  0.3979   0.8373   0.3906   0.8392
+Epoch  8  0.3902   0.8403   0.3822   0.8419
+Epoch  9  0.3830   0.8430   0.3806   0.8438
+Epoch 10  0.3770   0.8454   0.3748   0.8456
+Epoch 11  0.3717   0.8475   0.3739   0.8466
+Epoch 12  0.3669   0.8494   0.3711   0.8484
+Epoch 13  0.3617   0.8516   0.3728   0.8455
+Epoch 14  0.3572   0.8534   0.3724   0.8456
+Epoch 15  0.3534   0.8548   0.3685   0.8472
+Epoch 16  0.3499   0.8565   0.3656   0.8497
+Epoch 17  0.3510   0.8562   0.3620   0.8511
+Epoch 18  0.3431   0.8593   0.3631   0.8506
+Epoch 19  0.3402   0.8605   0.3663   0.8480
+Epoch 20  0.3378   0.8618   0.3637   0.8501
+Epoch 21  0.3351   0.8630   0.3613   0.8517
+Epoch 22  0.3319   0.8641   0.3621   0.8501
+Epoch 23  0.3304   0.8650   0.3580   0.8528
+Epoch 24  0.3260   0.8669   0.3630   0.8497
+Epoch 25  0.3241   0.8677   0.3619   0.8520
+Epoch 26  0.3209   0.8690   0.3576   0.8532
+Epoch 27  0.3193   0.8697   0.3633   0.8495
+Epoch 28  0.3179   0.8703   0.3577   0.8531
+Epoch 29  0.3138   0.8720   0.3513   0.8567
+Epoch 30  0.3145   0.8716   0.3553   0.8539
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5533341  2082881   808992    55928   143823
+        Agricolas|  572700 52271708 10099326     7580    50595
+         Floresta|  409405  8393648 77776563    25553    59757
+          Humidas|    3547    53629    20545   226880    28789
+             Agua|   39617   127866    55391   440980  1470764
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.84      0.64      0.73   8624965
+           1       0.83      0.83      0.83  63001909
+           2       0.88      0.90      0.89  86664926
+           3       0.30      0.68      0.42    333390
+           4       0.84      0.69      0.76   2134618
+
+    accuracy                           0.85 160759808
+   macro avg       0.74      0.75      0.72 160759808
+weighted avg       0.85      0.85      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6087   0.7747   0.4654   0.8164
+Epoch  2  0.4827   0.8073   0.4318   0.8269
+Epoch  3  0.4463   0.8205   0.4208   0.8275
+Epoch  4  0.4247   0.8282   0.4088   0.8310
+Epoch  5  0.4097   0.8334   0.3974   0.8368
+Epoch  6  0.4015   0.8366   0.3950   0.8383
+Epoch  7  0.3922   0.8400   0.3874   0.8409
+Epoch  8  0.3842   0.8430   0.3821   0.8426
+Epoch  9  0.3779   0.8454   0.3819   0.8427
+Epoch 10  0.3722   0.8476   0.3781   0.8455
+Epoch 11  0.3678   0.8494   0.3774   0.8463
+Epoch 12  0.3628   0.8513   0.3751   0.8477
+Epoch 13  0.3585   0.8531   0.3779   0.8460
+Epoch 14  0.3543   0.8548   0.3673   0.8504
+Epoch 15  0.3507   0.8563   0.3635   0.8527
+Epoch 16  0.3469   0.8579   0.3624   0.8521
+Epoch 17  0.3434   0.8593   0.3583   0.8537
+Epoch 18  0.3405   0.8606   0.3562   0.8543
+Epoch 19  0.3382   0.8616   0.3598   0.8521
+Epoch 20  0.3340   0.8634   0.3544   0.8548
+Epoch 21  0.3323   0.8641   0.3554   0.8533
+Epoch 22  0.3291   0.8655   0.3500   0.8558
+Epoch 23  0.3267   0.8664   0.3544   0.8535
+Epoch 24  0.3239   0.8675   0.3476   0.8582
+Epoch 25  0.3221   0.8683   0.3500   0.8556
+Epoch 26  0.3202   0.8692   0.3526   0.8548
+Epoch 27  0.3177   0.8702   0.3480   0.8575
+Epoch 28  0.3164   0.8709   0.3467   0.8586
+Epoch 29  0.3135   0.8721   0.3468   0.8572
+Epoch 30  0.3105   0.8734   0.3511   0.8551
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5613618  2033254   884204     8648    85241
+        Agricolas|  553084 51857461 10523417     7152    60795
+         Floresta|  421259  8008270 78157271    16911    61215
+          Humidas|   14883    36198    36617   180278    65414
+             Agua|  107767   103721    61461   201169  1660500
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.84      0.65      0.73   8624965
+           1       0.84      0.82      0.83  63001909
+           2       0.87      0.90      0.89  86664926
+           3       0.44      0.54      0.48    333390
+           4       0.86      0.78      0.82   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.77      0.74      0.75 160759808
+weighted avg       0.85      0.86      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6263   0.7740   0.4785   0.8112
+Epoch  2  0.4849   0.8064   0.4413   0.8228
+Epoch  3  0.4476   0.8190   0.4366   0.8262
+Epoch  4  0.4249   0.8271   0.4085   0.8300
+Epoch  5  0.4100   0.8325   0.3988   0.8348
+Epoch  6  0.3990   0.8365   0.3916   0.8371
+Epoch  7  0.3899   0.8401   0.3871   0.8385
+Epoch  8  0.3825   0.8430   0.3822   0.8413
+Epoch  9  0.3756   0.8457   0.3789   0.8414
+Epoch 10  0.3703   0.8477   0.3710   0.8458
+Epoch 11  0.3648   0.8500   0.3694   0.8469
+Epoch 12  0.3599   0.8519   0.3671   0.8476
+Epoch 13  0.3561   0.8535   0.3692   0.8456
+Epoch 14  0.3517   0.8554   0.3659   0.8480
+Epoch 15  0.3487   0.8567   0.3608   0.8499
+Epoch 16  0.3445   0.8586   0.3673   0.8466
+Epoch 17  0.3412   0.8598   0.3607   0.8498
+Epoch 18  0.3381   0.8611   0.3611   0.8501
+Epoch 19  0.3347   0.8628   0.3627   0.8486
+Epoch 20  0.3332   0.8633   0.3592   0.8509
+Epoch 21  0.3290   0.8653   0.3573   0.8516
+Epoch 22  0.3262   0.8663   0.3667   0.8463
+Epoch 23  0.3244   0.8669   0.3635   0.8471
+Epoch 24  0.3219   0.8683   0.3574   0.8499
+Epoch 25  0.3192   0.8694   0.3621   0.8476
+Epoch 26  0.3165   0.8703   0.3606   0.8486
+Epoch 27  0.3137   0.8717   0.3609   0.8492
+Epoch 28  0.3143   0.8715   0.3484   0.8565
+Epoch 29  0.3107   0.8730   0.3646   0.8483
+Epoch 30  0.3080   0.8742   0.3627   0.8488
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5334548  2235781   898105     8265   148266
+        Agricolas|  453244 50021741 12460035     9744    57145
+         Floresta|  410491  7067319 79073296    45622    68198
+          Humidas|    9590    31965    27795   147219   116821
+             Agua|   53599   106576    54870    42217  1877356
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.85      0.62      0.72   8624965
+           1       0.84      0.79      0.82  63001909
+           2       0.85      0.91      0.88  86664926
+           3       0.58      0.44      0.50    333390
+           4       0.83      0.88      0.85   2134618
+
+    accuracy                           0.85 160759808
+   macro avg       0.79      0.73      0.75 160759808
+weighted avg       0.85      0.85      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5900   0.7784   0.4813   0.8081
+Epoch  2  0.4724   0.8094   0.4419   0.8186
+Epoch  3  0.4366   0.8225   0.4257   0.8209
+Epoch  4  0.4177   0.8296   0.4262   0.8251
+Epoch  5  0.4050   0.8345   0.3997   0.8333
+Epoch  6  0.3956   0.8380   0.3909   0.8369
+Epoch  7  0.3868   0.8415   0.3859   0.8390
+Epoch  8  0.3798   0.8442   0.3799   0.8432
+Epoch  9  0.3736   0.8466   0.3760   0.8456
+Epoch 10  0.3683   0.8488   0.3716   0.8475
+Epoch 11  0.3626   0.8512   0.3705   0.8487
+Epoch 12  0.3584   0.8527   0.3662   0.8509
+Epoch 13  0.3539   0.8546   0.3648   0.8514
+Epoch 14  0.3498   0.8563   0.3652   0.8501
+Epoch 15  0.3467   0.8575   0.3693   0.8485
+Epoch 16  0.3425   0.8594   0.3660   0.8505
+Epoch 17  0.3391   0.8607   0.3657   0.8494
+Epoch 18  0.3363   0.8619   0.3694   0.8471
+Epoch 19  0.3328   0.8633   0.3615   0.8500
+Epoch 20  0.3306   0.8644   0.3658   0.8491
+Epoch 21  0.3278   0.8656   0.3593   0.8529
+Epoch 22  0.3261   0.8662   0.3600   0.8528
+Epoch 23  0.3228   0.8678   0.3568   0.8529
+Epoch 24  0.3202   0.8690   0.3590   0.8527
+Epoch 25  0.3180   0.8698   0.3527   0.8557
+Epoch 26  0.3160   0.8706   0.3679   0.8480
+Epoch 27  0.3154   0.8709   0.3548   0.8556
+Epoch 28  0.3113   0.8728   0.3562   0.8552
+Epoch 29  0.3096   0.8735   0.3522   0.8570
+Epoch 30  0.3080   0.8742   0.3565   0.8538
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5409854  2083397   967646     5488   158580
+        Agricolas|  534470 51325900 11076302     7829    57408
+         Floresta|  375728  7682365 78527669    28067    51097
+          Humidas|    7451    37762    34625   149139   104413
+             Agua|   41158   114777    67338    66430  1844915
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.85      0.63      0.72   8624965
+           1       0.84      0.81      0.83  63001909
+           2       0.87      0.91      0.89  86664926
+           3       0.58      0.45      0.51    333390
+           4       0.83      0.86      0.85   2134618
+
+    accuracy                           0.85 160759808
+   macro avg       0.79      0.73      0.76 160759808
+weighted avg       0.85      0.85      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6022   0.7784   0.4622   0.8210
+Epoch  2  0.4670   0.8132   0.4178   0.8310
+Epoch  3  0.4300   0.8262   0.4023   0.8360
+Epoch  4  0.4105   0.8330   0.3914   0.8401
+Epoch  5  0.3974   0.8377   0.3855   0.8430
+Epoch  6  0.3875   0.8412   0.3785   0.8434
+Epoch  7  0.3790   0.8445   0.3699   0.8476
+Epoch  8  0.3721   0.8472   0.3699   0.8473
+Epoch  9  0.3664   0.8496   0.3658   0.8496
+Epoch 10  0.3609   0.8519   0.3603   0.8528
+Epoch 11  0.3558   0.8541   0.3600   0.8533
+Epoch 12  0.3518   0.8556   0.3579   0.8540
+Epoch 13  0.3478   0.8573   0.3523   0.8565
+Epoch 14  0.3434   0.8593   0.3539   0.8558
+Epoch 15  0.3406   0.8603   0.3484   0.8574
+Epoch 16  0.3366   0.8622   0.3493   0.8577
+Epoch 17  0.3335   0.8633   0.3457   0.8589
+Epoch 18  0.3307   0.8644   0.3499   0.8573
+Epoch 19  0.3276   0.8659   0.3447   0.8603
+Epoch 20  0.3250   0.8669   0.3450   0.8602
+Epoch 21  0.3223   0.8681   0.3442   0.8593
+Epoch 22  0.3204   0.8689   0.3436   0.8600
+Epoch 23  0.3171   0.8703   0.3379   0.8616
+Epoch 24  0.3153   0.8711   0.3396   0.8611
+Epoch 25  0.3124   0.8723   0.3384   0.8617
+Epoch 26  0.3109   0.8729   0.3398   0.8615
+Epoch 27  0.3079   0.8741   0.3402   0.8607
+Epoch 28  0.3068   0.8748   0.3397   0.8643 <---------- Best result
+Epoch 29  0.3039   0.8757   0.3398   0.8610
+Epoch 30  0.3029   0.8762   0.3376   0.8611
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5903974  1818698   813068     9288    79937
+        Agricolas|  694149 52659690  9587112    12611    48347
+         Floresta|  458459  7981945 78110903    59299    54320
+          Humidas|   60424    24721    25236   148012    74997
+             Agua|  311631   104338    61104    46591  1610954
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.79      0.68      0.74   8624965
+           1       0.84      0.84      0.84  63001909
+           2       0.88      0.90      0.89  86664926
+           3       0.54      0.44      0.49    333390
+           4       0.86      0.75      0.80   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.78      0.72      0.75 160759808
+weighted avg       0.86      0.86      0.86 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5936   0.7742   0.4659   0.8140
+Epoch  2  0.4830   0.8049   0.4452   0.8184
+Epoch  3  0.4476   0.8186   0.4256   0.8254
+Epoch  4  0.4253   0.8268   0.4196   0.8255
+Epoch  5  0.4104   0.8325   0.4042   0.8332
+Epoch  6  0.3991   0.8367   0.4000   0.8358
+Epoch  7  0.3897   0.8403   0.3948   0.8357
+Epoch  8  0.3823   0.8433   0.3906   0.8376
+Epoch  9  0.3751   0.8462   0.3837   0.8400
+Epoch 10  0.3697   0.8482   0.3864   0.8369
+Epoch 11  0.3650   0.8502   0.3832   0.8392
+Epoch 12  0.3598   0.8522   0.3794   0.8409
+Epoch 13  0.3556   0.8539   0.3899   0.8365
+Epoch 14  0.3514   0.8559   0.3809   0.8384
+Epoch 15  0.3480   0.8573   0.3784   0.8379
+Epoch 16  0.3440   0.8590   0.3765   0.8381
+Epoch 17  0.3405   0.8604   0.3793   0.8366
+Epoch 18  0.3377   0.8616   0.3798   0.8362
+Epoch 19  0.3350   0.8628   0.3759   0.8398
+Epoch 20  0.3311   0.8644   0.3725   0.8421
+Epoch 21  0.3291   0.8655   0.3754   0.8411
+Epoch 22  0.3256   0.8668   0.3667   0.8447
+Epoch 23  0.3243   0.8673   0.3716   0.8412
+Epoch 24  0.3206   0.8690   0.3786   0.8389
+Epoch 25  0.3194   0.8692   0.3625   0.8476
+Epoch 26  0.3165   0.8705   0.3646   0.8475
+Epoch 27  0.3157   0.8710   0.3602   0.8495
+Epoch 28  0.3128   0.8722   0.3613   0.8504
+Epoch 29  0.3107   0.8730   0.3635   0.8484
+Epoch 30  0.3083   0.8741   0.3560   0.8553
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5652052  2009617   833937    10181   119178
+        Agricolas|  580309 51405012 10944395    19001    53192
+         Floresta|  482305  7478307 78581544    44446    78324
+          Humidas|   21263    30895    30685   164459    86088
+             Agua|  206990   113379    49764    62082  1702403
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.81      0.66      0.73   8624965
+           1       0.84      0.82      0.83  63001909
+           2       0.87      0.91      0.89  86664926
+           3       0.55      0.49      0.52    333390
+           4       0.83      0.80      0.82   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.78      0.73      0.76 160759808
+weighted avg       0.85      0.86      0.85 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6134   0.7755   0.5009   0.8100
+Epoch  2  0.4827   0.8064   0.4907   0.8100
+Epoch  3  0.4477   0.8188   0.4250   0.8227
+Epoch  4  0.4274   0.8263   0.4182   0.8237
+Epoch  5  0.4133   0.8315   0.4100   0.8255
+Epoch  6  0.4029   0.8352   0.4038   0.8275
+Epoch  7  0.3944   0.8385   0.4033   0.8277
+Epoch  8  0.3865   0.8417   0.4094   0.8221
+Epoch  9  0.3806   0.8440   0.3951   0.8332
+Epoch 10  0.3744   0.8465   0.3892   0.8358
+Epoch 11  0.3697   0.8484   0.3797   0.8423
+Epoch 12  0.3641   0.8507   0.3790   0.8425
+Epoch 13  0.3599   0.8525   0.3705   0.8474
+Epoch 14  0.3560   0.8541   0.3712   0.8468
+Epoch 15  0.3516   0.8560   0.3694   0.8477
+Epoch 16  0.3480   0.8576   0.3617   0.8507
+Epoch 17  0.3446   0.8589   0.3624   0.8499
+Epoch 18  0.3415   0.8602   0.3628   0.8489
+Epoch 19  0.3379   0.8616   0.3615   0.8507
+Epoch 20  0.3349   0.8629   0.3603   0.8513
+Epoch 21  0.3330   0.8637   0.3553   0.8544
+Epoch 22  0.3303   0.8650   0.3552   0.8535
+Epoch 23  0.3292   0.8651   0.3563   0.8526
+Epoch 24  0.3253   0.8670   0.3500   0.8569
+Epoch 25  0.3235   0.8676   0.3558   0.8516
+Epoch 26  0.3213   0.8685   0.3465   0.8585
+Epoch 27  0.3182   0.8699   0.3471   0.8579
+Epoch 28  0.3176   0.8705   0.3474   0.8592
+Epoch 29  0.3143   0.8715   0.3485   0.8572
+Epoch 30  0.3132   0.8719   0.3445   0.8601 <------
+
+Confusion Matrix:
+		  Artifici Agricola Floresta  Humidas     Agua
+ Artificializados| 5538397  2033371   931356     7696   114145
+        Agricolas|  561515 52688533  9702567    14012    35282
+         Floresta|  403961  8133713 78060831    22034    44387
+          Humidas|    5930    30691    48028   139356   109385
+             Agua|   56738   120706    72374    44152  1840648
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.84      0.64      0.73   8624965
+           1       0.84      0.84      0.84  63001909
+           2       0.88      0.90      0.89  86664926
+           3       0.61      0.42      0.50    333390
+           4       0.86      0.86      0.86   2134618
+
+    accuracy                           0.86 160759808
+   macro avg       0.81      0.73      0.76 160759808
+weighted avg       0.86      0.86      0.86 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: 252->164
+batch_size: 16
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  2.3894   0.3594   2.0488   0.4152
+Epoch  2  1.9409   0.4375   1.8273   0.4581
+Epoch  3  1.8092   0.4619   1.7627   0.4694
+Epoch  4  1.7294   0.4795   1.7549   0.4657
+Epoch  5  1.6740   0.4929   1.6903   0.4838
+Epoch  6  1.6278   0.5041   1.6544   0.4924
+Epoch  7  1.5899   0.5135   1.6235   0.5004
+Epoch  8  1.5588   0.5212   1.5872   0.5094
+Epoch  9  1.5319   0.5283   1.5448   0.5206
+Epoch 10  1.5092   0.5337   1.5195   0.5269
+Epoch 11  1.4874   0.5391   1.5012   0.5322
+Epoch 12  1.4694   0.5436   1.4671   0.5419
+Epoch 13  1.4512   0.5485   1.4541   0.5458
+Epoch 14  1.4351   0.5529   1.4523   0.5462
+Epoch 15  1.4195   0.5569   1.4331   0.5514
+Epoch 16  1.4059   0.5606   1.4185   0.5555
+Epoch 17  1.3934   0.5636   1.4122   0.5578
+Epoch 18  1.3803   0.5675   1.4203   0.5557
+Epoch 19  1.3675   0.5707   1.4056   0.5590
+Epoch 20  1.3582   0.5731   1.4080   0.5580
+Epoch 21  1.3460   0.5768   1.4038   0.5599
+Epoch 22  1.3353   0.5796   1.3917   0.5631
+Epoch 23  1.3247   0.5825   1.3824   0.5646
+Epoch 24  1.3157   0.5849   1.4015   0.5582
+Epoch 25  1.3054   0.5880   1.3798   0.5641
+Epoch 26  1.2965   0.5904   1.3789   0.5643
+Epoch 27  1.2883   0.5929   1.3908   0.5600
+Epoch 28  1.2781   0.5958   1.3862   0.5640
+Epoch 29  1.2708   0.5977   1.3990   0.5583
+Epoch 30  1.2617   0.6003   1.3828   0.5622
+Epoch 31  1.2525   0.6030   1.3944   0.5588
+Epoch 32  1.2436   0.6057   1.3922   0.5607
+Epoch 33  1.2363   0.6078   1.3905   0.5619
+Epoch 34  1.2293   0.6099   1.3898   0.5609
+Epoch 35  1.2218   0.6123   1.3955   0.5603
+Epoch 36  1.2139   0.6147   1.4011   0.5617
+Epoch 37  1.2062   0.6171   1.3883   0.5629
+Epoch 38  1.2003   0.6187   1.3894   0.5648
+Epoch 39  1.1915   0.6215   1.3821   0.5669
+Epoch 40  1.1842   0.6241   1.3895   0.5645
+Epoch 41  1.1777   0.6256   1.4017   0.5635
+Epoch 42  1.1706   0.6280   1.3934   0.5655
+Epoch 43  1.1642   0.6300   1.3995   0.5645
+Epoch 44  1.1591   0.6317   1.3956   0.5655
+Epoch 45  1.1521   0.6339   1.3860   0.5692 <---------------------------------
+Epoch 46  1.1453   0.6360   1.4047   0.5637
+Epoch 47  1.1372   0.6386   1.3939   0.5663
+Epoch 48  1.1338   0.6394   1.4057   0.5630
+Epoch 49  1.1271   0.6416   1.3939   0.5679
+Epoch 50  1.1201   0.6437   1.4158   0.5620
+Epoch 51  1.1151   0.6452   1.4181   0.5615
+Epoch 52  1.1099   0.6472   1.4050   0.5649
+Epoch 53  1.1035   0.6490   1.4143   0.5624
+Epoch 54  1.0974   0.6512   1.4151   0.5637
+Epoch 55  1.0932   0.6525   1.4171   0.5639
+Epoch 56  1.0884   0.6537   1.4506   0.5518
+Epoch 57  1.0848   0.6548   1.4511   0.5532
+Epoch 58  1.0790   0.6564   1.4485   0.5568
+Epoch 59  1.0749   0.6579   1.4526   0.5567
+Epoch 60  1.0709   0.6592   1.4495   0.5588
+Epoch 61  1.0650   0.6610   1.4590   0.5545
+Epoch 62  1.0591   0.6628   1.4563   0.5569
+Epoch 63  1.0524   0.6650   1.4662   0.5555
+Epoch 64  1.0468   0.6668   1.4338   0.5621
+Epoch 65  1.0432   0.6678   1.4588   0.5580
+Epoch 66  1.0372   0.6698   1.4617   0.5594
+Epoch 67  1.0303   0.6724   1.4590   0.5581
+Epoch 68  1.0264   0.6733   1.4524   0.5596
+Epoch 69  1.0225   0.6748   1.4323   0.5665
+Epoch 70  1.0183   0.6762   1.4704   0.5573
+Epoch 71  1.0130   0.6776   1.4798   0.5569
+Epoch 72  1.0085   0.6791   1.4853   0.5529
+Epoch 73  1.0033   0.6808   1.4617   0.5607
+Epoch 74  0.9986   0.6818   1.4661   0.5591
+Epoch 75  0.9938   0.6836   1.4741   0.5568
+Epoch 76  0.9899   0.6850   1.4627   0.5592
+Epoch 77  0.9870   0.6856   1.4687   0.5575
+Epoch 78  0.9833   0.6866   1.4739   0.5529
+Epoch 79  0.9801   0.6876   1.4644   0.5596
+Epoch 80  0.9759   0.6893   1.4633   0.5564
+Epoch 81  0.9738   0.6900   1.4894   0.5517
+Epoch 82  0.9718   0.6900   1.5158   0.5437
+Epoch 83  0.9669   0.6915   1.5340   0.5449
+Epoch 84  0.9617   0.6932   1.4981   0.5512
+Epoch 85  0.9588   0.6941   1.4896   0.5505
+Epoch 86  0.9548   0.6953   1.5128   0.5484
+Epoch 87  0.9545   0.6953   1.5025   0.5531
+Epoch 88  0.9497   0.6969   1.4627   0.5596
+Epoch 89  0.9432   0.6989   1.4615   0.5617
+Epoch 90  0.9396   0.7002   1.4735   0.5604
+Epoch 91  0.9349   0.7015   1.4553   0.5619
+Epoch 92  0.9296   0.7033   1.5069   0.5562
+Epoch 93  0.9260   0.7044   1.4825   0.5573
+Epoch 94  0.9221   0.7055   1.4764   0.5594
+Epoch 95  0.9194   0.7064   1.4959   0.5564
+Epoch 96  0.9154   0.7076   1.5211   0.5482
+Epoch 97  0.9110   0.7088   1.4711   0.5600
+Epoch 98  0.9074   0.7101   1.5197   0.5508
+Epoch 99  0.9040   0.7109   1.5134   0.5466
+Epoch100  0.9002   0.7121   1.5409   0.5414
+
+Confusion Matrix:
+                                 Artificializados| 2704974   133982     3874     5021     4105    60564    40956     2093   249207     2440     1826    17569        2        0        0     1554        0    16004     7670     1981     3906    25985      330    18387    78053     5081        0     2725    54955       46    72199
+    Culturas temporárias de sequeiro e de regadio|  211379  4793660   319876   104609    11604   389580   945440    17601   436138    55391    12560   158149      303       19        0    19137        0    41957     9875    40284    49766    28812      314    51837    94192     6832      322    21781   158981        0    15669
+                                         Arrozais|   24454    13643   280606        8        0      828     7488       22      215        0      664      328        0        0        0        1        0     2618        9        0        0       29        0     2198      110     1166        0       36        4        0     4119
+                                           Vinhas|   17531   129986      121   823399    40281   232896     7443     2804   107037     1820       43      203        1       41        0      283        0     5100     1140     4229     6220     7056       30     8128    36818      667     1143     5602    43613        0      533
+                                          Pomares|   19012    72270      703    52064   150968   154473     2707     3350    76546     1122      133     1405        0        0        0      201        0     7769     2225     4173    17849     7760      196    12138    16789     2972      325     2664    56347        0      197
+                                          Olivais|   46557   213398      289    85814    57750  2152929   103398     9236   158398     3294    12798    63704        0        0        0    11736        0   148244    43543     6809    10397    19269       58    16861    71261     6784      716     7953   221534        0     2719
+                            Pastagens permanentes|   20609   698429     4832     8640     6288    87781  1446335     3978    27374     3003    41629   405359      239      121        0    69345       92   105278    66849     4190      420    17284        0     7788    16779    10148        2    13449    96179        0     7081
+ Cult temp e/ou past associadas a cult permanente|   32692   150146     1207     5487     3523    98099    26557    13649   127398     6684     1013     6555        0        0        0     1341        0    13981     4700     3016     4264     3704        0     5072    29066     1452        0     2633    20826        0      204
+        Sistemas culturais e parcelares complexos|  225990   390456      829    54853    19441   211400    16060    11545   810416    21651     1795     3337        0        0        0     3208        0    18321      575    12076    29497    17869      286    28579   119392     4898        0     7169    77040        0     1293
+ Agricultura com espaços naturais e semi-naturais|   61737   191416       58     4387      595    38963     5526     2867   127368    81158     1281      426        8        0        0        4        0    18053      814    68674    22575     7782      208    39397    84695     3290        4     3232    87965        0      404
+                                  SAF de sobreiro|    5652    24868      782      651      199    18514   135665      225     6362      483   319856   123544        0        6        0   351255      941   373120     7049      170      401     4933        0     3282     3425    10439        0      180     9424        5     1224
+                                 SAF de azinheira|    4216    56752      270      280     1908    30830   209643      200      420       36    17096  2035496       22        0        0   192191        0    51796   173798      100        0    10419        0     2148      667     4448        0      277    28907        0     3682
+                          SAF de outros carvalhos|      86     6545        0       23        0     1276     6782        4     1226     1865     7707     4849      140        0        0     1367        0     4774       21     4704      262        0        0       49       95        0        0       20     2639        0        0
+                            SAF de pinheiro manso|     388      447      108       53       94      920     2172       55      218        0     1377     9416        0        5        0     2088      402     5330       81        0        0      524        0      188      254     7004        0       33      650        0       10
+                           SAF de outras espécies|     298     1020        0        0      369      277      716        0      251      125        4        0        0        0        0        0        0      971     1355       27      247        0        0       97      129       28        0        0     1575        0        0
+                    SAF de sobreiro com azinheira|     286     8944       65       78      277     6978    58515       32      952      163    45130   220493        0        9        0   185305      814    49639    13787        3        0     3869        0      440      204     1720        0      272     3663        0     1478
+                           SAF de outras misturas|     984     1741      123        0      526     3643     3658      183     1194      134    10055     7832       30        0        0     2823        0    11632     1268      347      740       15        0      289      520     3212        0        0     1393        0       38
+                            Florestas de sobreiro|   12678    47349     2157     5093    11342    92087   179796     1028    12022     1800   402890   122247        0       38        0   234232     1291  2370792   102555    11724     4243    86866       37    35080    87947    97609       39     5270   566701      885     8198
+                           Florestas de azinheira|    4618    26252        0     2731     8977    34428    71959      187     1825      544     8855   258681      584        0        0    28177        0   236762   353557     8296      491    34165        0     7315    15908    41186      143     1307   253775        0     3109
+                    Florestas de outros carvalhos|   14185    76897        1     3896      480    20832    15089      135    16635    36550    11065     3608      167        0        0     1440        0   163847     5895   430522    85120    11505     1047    84048   211848      854     3262      552   432506      876      715
+                         Florestas de castanheiro|    2411    77470        0     6240     1541    50264       14        0     8886     1108       21        0        0        0        0        0        0     9097       11    24546   264289      266        0     3603    40932       48      118        6    44357      160       88
+                           Florestas de eucalipto|   88484    67622      533     7090     2777    41232    33471       56    50273     1719     5493    31808        0        0        0     1175      260   218213    27086    10325     1072  3328911    23125    69946  2354575    22358     1453     8803   307333      139     4850
+                  Florestas de espécies invasoras|    3723     4315      180       45        0      534      132        0     2567      337      121        0        0        0        0        0        0      788        0     1986      166     3572    26178    11761    34693      329        0       84     5576        0       66
+                     Florestas de outras folhosas|   75474    79852     4986     6412    19564    65674     5253     1125    51185    21916     2512    10565       56        0        0     1640        0    86085     6502   131545    18763    38267    13948   264780   427592     6613      388     1363   260072      177     4704
+                      Florestas de pinheiro bravo|   97640   164503      465    26600     2237    73387    21224      173   107536     8604    11025     3662        0      345        0      106      293   261925     3266   100060    31919   192610    13909    97382  5343069    94109    15267     3471  1277526     1674     5320
+                      Florestas de pinheiro manso|   22130    20635      969     5478     8609    16942    20415      308     7107      337    18319    48430        0     1157        0    10885     3412   235336    41063      310       25    45860        0    13896    90177   657632        0     1266   165217        0     4340
+                    Florestas de outras resinosas|    5173     8945        0     4660       34     7614      272        0     5255      706      305      167        0        9        0       92       37     5624      200     5547     2141     3859     3476     7226   110516     7094    25857      353    69006        0      685
+                       Vegetação herbácea natural|   49156   284185     1084    17598     7253    40633    91444     1562    52646     7103     6071    13642       79        0        0     1030        0    47573    17455    11378     1959    19733       48     9630    41181     7037      487    24828   256222        2    14800
+                                            Matos|  115787   295981      597    30585    23127   160691   122525     4417    61056    16675     3483    19477      431        0        0     3213        0   255766    64421   106009    21763    78936     3322    45479   872823    36507     1114    32736  5914047    11181    11805
+       Espaços descobertos ou com pouca vegetação|    8261     2076        0       13       16     1197     2191        0       48       38      761      359        0        0        0      213        0     4867      906      916        0    10749      492      161    26179      244       13      935   258167    15101     1717
+                                             Agua|   34087    10499     5968      864      360     3918    19218        0      715        2      442     8880        0        0        0      668        0     7164     3231      127        0     3436       14     7787     2294     1211        0     1149     6169        0   899444
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.69      0.77      0.73   3515489
+           1       0.60      0.60      0.60   7996068
+           2       0.44      0.83      0.58    338546
+           3       0.65      0.55      0.60   1484168
+           4       0.39      0.23      0.29    666358
+           5       0.53      0.62      0.57   3475449
+           6       0.40      0.46      0.43   3169501
+           7       0.18      0.02      0.04    563269
+           8       0.32      0.39      0.35   2087976
+           9       0.29      0.10      0.14    852887
+          10       0.34      0.23      0.27   1402655
+          11       0.57      0.72      0.64   2825602
+          12       0.07      0.00      0.01     44434
+          13       0.00      0.00      0.00     31817
+          14       0.00      0.00      0.00      7489
+          15       0.16      0.31      0.21    603116
+          16       0.00      0.00      0.00     52380
+          17       0.50      0.53      0.51   4503996
+          18       0.37      0.25      0.30   1403832
+          19       0.43      0.26      0.33   1633577
+          20       0.46      0.49      0.47    535476
+          21       0.83      0.50      0.62   6710182
+          22       0.30      0.27      0.28     97153
+          23       0.31      0.16      0.22   1607013
+          24       0.52      0.67      0.59   7959307
+          25       0.63      0.46      0.53   1440255
+          26       0.51      0.09      0.16    274853
+          27       0.17      0.02      0.04   1025819
+          28       0.55      0.71      0.62   8313954
+          29       0.50      0.04      0.08    335620
+          30       0.84      0.88      0.86   1017647
+
+    accuracy                           0.54  65975888
+   macro avg       0.41      0.36      0.36  65975888
+weighted avg       0.54      0.54      0.53  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: 252->164
+batch_size: 16
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32 (but not ^2)
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.7088   0.7399   0.5250   0.7983
+Epoch  2  0.5243   0.7985   0.4780   0.8068
+Epoch  3  0.4810   0.8094   0.4569   0.8129
+Epoch  4  0.4573   0.8161   0.4338   0.8238
+Epoch  5  0.4419   0.8211   0.4280   0.8272
+Epoch  6  0.4292   0.8255   0.4226   0.8286
+Epoch  7  0.4200   0.8287   0.4193   0.8303
+Epoch  8  0.4128   0.8314   0.4149   0.8304
+Epoch  9  0.4061   0.8337   0.4160   0.8302
+Epoch 10  0.4005   0.8359   0.4098   0.8312
+Epoch 11  0.3959   0.8377   0.4063   0.8318
+Epoch 12  0.3918   0.8391   0.4060   0.8301
+Epoch 13  0.3881   0.8404   0.4027   0.8325
+Epoch 14  0.3846   0.8419   0.3995   0.8321
+Epoch 15  0.3814   0.8431   0.3989   0.8329
+Epoch 16  0.3783   0.8442   0.3930   0.8350
+Epoch 17  0.3753   0.8454   0.3920   0.8351
+Epoch 18  0.3728   0.8465   0.3945   0.8339
+Epoch 19  0.3710   0.8474   0.3953   0.8330
+Epoch 20  0.3680   0.8485   0.3892   0.8367
+Epoch 21  0.3663   0.8493   0.3841   0.8403
+Epoch 22  0.3645   0.8501   0.3829   0.8408
+Epoch 23  0.3622   0.8510   0.3889   0.8381
+Epoch 24  0.3600   0.8516   0.3824   0.8405
+Epoch 25  0.3582   0.8528   0.3811   0.8411
+Epoch 26  0.3565   0.8534   0.3803   0.8418
+Epoch 27  0.3548   0.8542   0.3818   0.8421
+Epoch 28  0.3529   0.8548   0.3798   0.8431
+Epoch 29  0.3513   0.8557   0.3775   0.8434
+Epoch 30  0.3501   0.8562   0.3802   0.8429
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2055962   886143   446807   126577
+        Agricolas|  229349 20615468  4713879    43019
+         Floresta|  135299  3599174 32030201    76363
+         Agua+Hum|    9160    64299    34865   909323
+
+Classification report:
+               precision    recall  f1-score   support
+           0       0.85      0.58      0.69   3515489
+           1       0.82      0.81      0.81  25601715
+           2       0.86      0.89      0.88  35841037
+           3       0.79      0.89      0.84   1017647
+
+    accuracy                           0.84  65975888
+   macro avg       0.83      0.79      0.80  65975888
+weighted avg       0.84      0.84      0.84  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: 252->164
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 128 (but not ^2)
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5674   0.7789   0.4533   0.8166
+Epoch  2  0.4664   0.8093   0.4217   0.8267
+Epoch  3  0.4328   0.8226   0.4066   0.8336
+Epoch  4  0.4138   0.8302   0.3995   0.8340
+Epoch  5  0.4006   0.8352   0.3896   0.8375
+Epoch  6  0.3905   0.8392   0.3833   0.8408
+Epoch  7  0.3819   0.8428   0.3805   0.8422
+Epoch  8  0.3749   0.8457   0.3732   0.8453
+Epoch  9  0.3682   0.8484   0.3785   0.8444
+Epoch 10  0.3626   0.8504   0.3732   0.8464
+Epoch 11  0.3571   0.8528   0.3763   0.8461
+Epoch 12  0.3519   0.8550   0.3723   0.8472
+Epoch 13  0.3473   0.8569   0.3699   0.8490
+Epoch 14  0.3432   0.8586   0.3755   0.8469
+Epoch 15  0.3385   0.8606   0.3684   0.8506
+Epoch 16  0.3344   0.8624   0.3633   0.8505
+Epoch 17  0.3313   0.8637   0.3629   0.8512
+Epoch 18  0.3272   0.8656   0.3657   0.8495
+Epoch 19  0.3246   0.8664   0.3598   0.8525
+Epoch 20  0.3205   0.8683   0.3564   0.8538
+Epoch 21  0.3180   0.8695   0.3600   0.8506
+Epoch 22  0.3149   0.8706   0.3573   0.8536
+Epoch 23  0.3127   0.8717   0.3719   0.8456
+Epoch 24  0.3093   0.8732   0.3583   0.8527
+Epoch 25  0.3061   0.8746   0.3609   0.8517
+Epoch 26  0.3048   0.8753   0.3567   0.8542
+Epoch 27  0.3014   0.8765   0.3606   0.8539
+Epoch 28  0.2990   0.8776   0.3790   0.8454
+Epoch 29  0.2968   0.8787   0.3681   0.8493
+Epoch 30  0.2966   0.8788   0.3657   0.8521
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2371786   728552   360967    54184
+        Agricolas|  284221 21355568  3933225    28701
+         Floresta|  192796  3902979 31692026    53236
+         Agua+Hum|  131094    48610    39547   798396
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.80      0.67      0.73   3515489
+           1       0.82      0.83      0.83  25601715
+           2       0.88      0.88      0.88  35841037
+           3       0.85      0.78      0.82   1017647
+
+    accuracy                           0.85  65975888
+   macro avg       0.84      0.79      0.81  65975888
+weighted avg       0.85      0.85      0.85  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11']
+reshape: 252->164
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6746   0.7577   0.5074   0.7989
+Epoch  2  0.5191   0.7949   0.4601   0.8104
+Epoch  3  0.4781   0.8079   0.4465   0.8148
+Epoch  4  0.4545   0.8160   0.4313   0.8202
+Epoch  5  0.4395   0.8213   0.4168   0.8260
+Epoch  6  0.4285   0.8252   0.4121   0.8282
+Epoch  7  0.4197   0.8285   0.4081   0.8293
+Epoch  8  0.4120   0.8313   0.4068   0.8292
+Epoch  9  0.4053   0.8340   0.3997   0.8334
+Epoch 10  0.3999   0.8358   0.3998   0.8327
+Epoch 11  0.3949   0.8377   0.3979   0.8358
+Epoch 12  0.3906   0.8398   0.3944   0.8365
+Epoch 13  0.3862   0.8412   0.3924   0.8378
+Epoch 14  0.3829   0.8425   0.3933   0.8374
+Epoch 15  0.3790   0.8441   0.3940   0.8356
+Epoch 16  0.3767   0.8449   0.3894   0.8385
+Epoch 17  0.3729   0.8465   0.3890   0.8376
+Epoch 18  0.3706   0.8472   0.3869   0.8400
+Epoch 19  0.3677   0.8484   0.3812   0.8414
+Epoch 20  0.3655   0.8494   0.3813   0.8417
+Epoch 21  0.3626   0.8505   0.3781   0.8449
+Epoch 22  0.3608   0.8511   0.3805   0.8424
+Epoch 23  0.3585   0.8523   0.3811   0.8424
+Epoch 24  0.3557   0.8532   0.3859   0.8410
+Epoch 25  0.3542   0.8538   0.3807   0.8435
+Epoch 26  0.3523   0.8548   0.3867   0.8419
+Epoch 27  0.3499   0.8556   0.3881   0.8420
+Epoch 28  0.3481   0.8562   0.3809   0.8452
+Epoch 29  0.3463   0.8569   0.3845   0.8445
+Epoch 30  0.3446   0.8579   0.3923   0.8407
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2193795   808224   423888    89582
+        Agricolas|  288574 20281917  5012675    18549
+         Floresta|  168426  3510694 32103506    58411
+         Agua+Hum|   10747    77326    45314   884260
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.82      0.62      0.71   3515489
+           1       0.82      0.79      0.81  25601715
+           2       0.85      0.90      0.87  35841037
+           3       0.84      0.87      0.85   1017647
+
+    accuracy                           0.84  65975888
+   macro avg       0.84      0.80      0.81  65975888
+weighted avg       0.84      0.84      0.84  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11']
+reshape: 252->164
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5994   0.7699   0.4754   0.8025
+Epoch  2  0.4854   0.8035   0.4379   0.8206
+Epoch  3  0.4497   0.8173   0.4229   0.8259
+Epoch  4  0.4284   0.8254   0.4109   0.8282
+Epoch  5  0.4144   0.8307   0.3991   0.8343
+Epoch  6  0.4039   0.8345   0.3967   0.8356
+Epoch  7  0.3956   0.8378   0.3910   0.8382
+Epoch  8  0.3880   0.8408   0.3925   0.8374
+Epoch  9  0.3814   0.8432   0.3866   0.8388
+Epoch 10  0.3764   0.8454   0.3873   0.8362
+Epoch 11  0.3717   0.8473   0.3813   0.8403
+Epoch 12  0.3666   0.8492   0.3909   0.8338
+Epoch 13  0.3628   0.8506   0.3850   0.8346
+Epoch 14  0.3589   0.8524   0.3854   0.8340
+Epoch 15  0.3548   0.8542   0.3980   0.8256
+Epoch 16  0.3506   0.8560   0.3927   0.8282
+Epoch 17  0.3478   0.8571   0.3983   0.8252
+Epoch 18  0.3449   0.8585   0.3951   0.8278
+Epoch 19  0.3413   0.8600   0.3993   0.8256
+Epoch 20  0.3403   0.8602   0.3899   0.8295
+Epoch 21  0.3364   0.8618   0.3871   0.8340
+Epoch 22  0.3329   0.8634   0.3851   0.8343
+Epoch 23  0.3301   0.8646   0.3853   0.8346
+Epoch 24  0.3285   0.8652   0.3935   0.8341
+Epoch 25  0.3257   0.8666   0.3840   0.8383
+Epoch 26  0.3232   0.8673   0.3761   0.8440
+Epoch 27  0.3206   0.8684   0.3809   0.8411
+Epoch 28  0.3182   0.8695   0.3733   0.8472
+Epoch 29  0.3177   0.8697   0.3929   0.8368
+Epoch 30  0.3149   0.8710   0.3949   0.8362
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2326121   624560   484955    79853
+        Agricolas|  352859 19005556  6224044    19256
+         Floresta|  188965  2613914 32948877    89281
+         Agua+Hum|   13255    68916    45702   889774
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.81      0.66      0.73   3515489
+           1       0.85      0.74      0.79  25601715
+           2       0.83      0.92      0.87  35841037
+           3       0.83      0.87      0.85   1017647
+
+    accuracy                           0.84  65975888
+   macro avg       0.83      0.80      0.81  65975888
+weighted avg       0.84      0.84      0.83  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11']
+reshape: 252->164
+batch_size: 6
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 128
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5673   0.7713   0.4901   0.8049
+Epoch  2  0.4780   0.8036   0.4299   0.8232
+Epoch  3  0.4466   0.8163   0.4112   0.8305
+Epoch  4  0.4283   0.8236   0.4113   0.8317
+Epoch  5  0.4155   0.8288   0.3979   0.8378
+Epoch  6  0.4045   0.8332   0.3889   0.8412
+Epoch  7  0.3955   0.8367   0.3903   0.8417
+Epoch  8  0.3879   0.8398   0.3855   0.8447
+Epoch  9  0.3810   0.8427   0.3899   0.8435
+Epoch 10  0.3745   0.8452   0.3790   0.8485
+Epoch 11  0.3691   0.8474   0.3887   0.8451
+Epoch 12  0.3638   0.8497   0.3814   0.8476
+Epoch 13  0.3586   0.8518   0.3783   0.8490
+Epoch 14  0.3544   0.8538   0.3886   0.8447
+Epoch 15  0.3497   0.8557   0.3856   0.8463
+Epoch 16  0.3459   0.8572   0.3805   0.8479
+Epoch 17  0.3417   0.8590   0.3761   0.8487
+Epoch 18  0.3378   0.8607   0.3751   0.8481
+Epoch 19  0.3339   0.8626   0.3705   0.8483
+Epoch 20  0.3300   0.8643   0.3740   0.8468
+Epoch 21  0.3269   0.8657   0.3658   0.8507
+Epoch 22  0.3238   0.8671   0.3732   0.8462
+Epoch 23  0.3207   0.8684   0.3624   0.8521
+Epoch 24  0.3179   0.8695   0.3638   0.8505
+Epoch 25  0.3136   0.8716   0.3673   0.8508
+Epoch 26  0.3131   0.8717   0.3661   0.8505
+Epoch 27  0.3082   0.8740   0.3717   0.8485
+Epoch 28  0.3060   0.8750   0.3647   0.8534
+Epoch 29  0.3031   0.8762   0.3655   0.8527
+Epoch 30  0.3020   0.8767   0.3738   0.8509
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2427631   727640   332853    27365
+        Agricolas|  306471 21715565  3554062    25617
+         Floresta|  198893  4031343 31558646    52155
+         Agua+Hum|  457179    90501    35096   434871
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.72      0.69      0.70   3515489
+           1       0.82      0.85      0.83  25601715
+           2       0.89      0.88      0.88  35841037
+           3       0.81      0.43      0.56   1017647
+
+    accuracy                           0.85  65975888
+   macro avg       0.81      0.71      0.74  65975888
+weighted avg       0.85      0.85      0.85  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: 252->164
+batch_size: 6
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 128
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.5447   0.7774   0.4529   0.8129
+Epoch  2  0.4636   0.8089   0.4240   0.8251
+Epoch  3  0.4348   0.8213   0.4069   0.8328
+Epoch  4  0.4173   0.8283   0.3980   0.8357
+Epoch  5  0.4040   0.8335   0.3870   0.8410
+Epoch  6  0.3939   0.8376   0.3883   0.8399
+Epoch  7  0.3851   0.8410   0.3804   0.8434
+Epoch  8  0.3772   0.8442   0.3755   0.8447
+Epoch  9  0.3699   0.8474   0.3759   0.8438
+Epoch 10  0.3636   0.8497   0.3767   0.8425
+Epoch 11  0.3578   0.8522   0.3697   0.8469
+Epoch 12  0.3529   0.8544   0.3645   0.8496
+Epoch 13  0.3475   0.8563   0.3622   0.8502
+Epoch 14  0.3437   0.8583   0.3604   0.8521
+Epoch 15  0.3386   0.8603   0.3578   0.8515
+Epoch 16  0.3347   0.8621   0.3516   0.8548
+Epoch 17  0.3308   0.8638   0.3514   0.8539
+Epoch 18  0.3268   0.8655   0.3474   0.8566
+Epoch 19  0.3236   0.8672   0.3488   0.8562
+Epoch 20  0.3202   0.8683   0.3497   0.8566
+Epoch 21  0.3172   0.8700   0.3443   0.8591
+Epoch 22  0.3140   0.8712   0.3472   0.8586
+Epoch 23  0.3107   0.8727   0.3430   0.8602
+Epoch 24  0.3077   0.8741   0.3566   0.8545
+Epoch 25  0.3045   0.8757   0.3514   0.8582
+Epoch 26  0.3024   0.8762   0.3429   0.8603
+Epoch 27  0.2991   0.8779   0.3509   0.8581
+Epoch 28  0.2978   0.8783   0.3463   0.8606
+Epoch 29  0.2980   0.8782   0.3481   0.8592
+Epoch 30  0.2923   0.8806   0.3468   0.8611
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2617800   588247   285478    23964
+        Agricolas|  406435 21479478  3694171    21631
+         Floresta|  252476  3552631 31996594    39336
+         Agua+Hum|  207363    51936    41200   717148
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.75      0.74      0.75   3515489
+           1       0.84      0.84      0.84  25601715
+           2       0.89      0.89      0.89  35841037
+           3       0.89      0.70      0.79   1017647
+
+    accuracy                           0.86  65975888
+   macro avg       0.84      0.80      0.82  65975888
+weighted avg       0.86      0.86      0.86  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: 252->164
+batch_size: 16
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6262   0.7750   0.4936   0.8042
+Epoch  2  0.4854   0.8089   0.4431   0.8196
+Epoch  3  0.4491   0.8190   0.4337   0.8212
+Epoch  4  0.4273   0.8263   0.4283   0.8215
+Epoch  5  0.4124   0.8316   0.4194   0.8253
+Epoch  6  0.4002   0.8360   0.4171   0.8252
+Epoch  7  0.3910   0.8393   0.4151   0.8267
+Epoch  8  0.3832   0.8421   0.4025   0.8315
+Epoch  9  0.3761   0.8449   0.3986   0.8326
+Epoch 10  0.3695   0.8476   0.3915   0.8363
+Epoch 11  0.3654   0.8490   0.3901   0.8359
+Epoch 12  0.3603   0.8512   0.3922   0.8357
+Epoch 13  0.3558   0.8531   0.3769   0.8428
+Epoch 14  0.3515   0.8549   0.3781   0.8427
+Epoch 15  0.3481   0.8564   0.3778   0.8443
+Epoch 16  0.3449   0.8577   0.3762   0.8458
+Epoch 17  0.3416   0.8590   0.3751   0.8461
+Epoch 18  0.3386   0.8604   0.3834   0.8417
+Epoch 19  0.3359   0.8614   0.3815   0.8461
+Epoch 20  0.3330   0.8628   0.3837   0.8453
+Epoch 21  0.3320   0.8632   0.3886   0.8428
+Epoch 22  0.3293   0.8644   0.4059   0.8411
+Epoch 23  0.3260   0.8658   0.3823   0.8469
+Epoch 24  0.3234   0.8668   0.3868   0.8469
+Epoch 25  0.3210   0.8679   0.4008   0.8446
+Epoch 26  0.3191   0.8690   0.3895   0.8467
+Epoch 27  0.3169   0.8699   0.3953   0.8449
+Epoch 28  0.3141   0.8711   0.3937   0.8450
+Epoch 29  0.3151   0.8707   0.3910   0.8501
+Epoch 30  0.3106   0.8726   0.3938   0.8482
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados| 2208469   800410   432858    73752
+        Agricolas|  238437 20561209  4789471    12598
+         Floresta|  151007  3273533 32389191    27306
+         Agua+Hum|   82213    69350    63101   802983
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.82      0.63      0.71   3515489
+           1       0.83      0.80      0.82  25601715
+           2       0.86      0.90      0.88  35841037
+           3       0.88      0.79      0.83   1017647
+
+    accuracy                           0.85  65975888
+   macro avg       0.85      0.78      0.81  65975888
+weighted avg       0.85      0.85      0.85  65975888
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.3
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.7245   0.7482   0.5629   0.7720
+Epoch  2  0.5323   0.7921   0.5827   0.7668
+Epoch  3  0.4818   0.8074   0.6058   0.7721
+Epoch  4  0.4545   0.8171   0.6290   0.7712
+Epoch  5  0.4369   0.8236   0.6465   0.7701
+Epoch  6  0.4244   0.8282   0.6509   0.7677
+Epoch  7  0.4145   0.8317   0.6704   0.7671
+Epoch  8  0.4064   0.8346   0.7026   0.7507
+Epoch  9  0.4000   0.8370   0.6990   0.7584
+Epoch 10  0.3936   0.8396   0.6987   0.7536
+Epoch 11  0.3887   0.8414   0.6981   0.7564
+Epoch 12  0.3835   0.8434   0.6779   0.7627
+Epoch 13  0.3794   0.8450   0.6797   0.7661
+Epoch 14  0.3748   0.8469   0.6574   0.7653
+Epoch 15  0.3711   0.8484   0.6710   0.7614
+Epoch 16  0.3678   0.8498   0.6209   0.7813
+Epoch 17  0.3644   0.8511   0.6426   0.7739
+Epoch 18  0.3615   0.8524   0.6342   0.7715
+Epoch 19  0.3583   0.8537   0.6247   0.7767
+Epoch 20  0.3555   0.8547   0.6439   0.7710
+Epoch 21  0.3540   0.8554   0.6509   0.7654
+Epoch 22  0.3511   0.8567   0.6298   0.7692
+Epoch 23  0.3480   0.8578   0.6658   0.7614
+Epoch 24  0.3461   0.8587   0.7158   0.7487
+Epoch 25  0.3436   0.8598   0.7267   0.7404
+Epoch 26  0.3410   0.8608   0.8086   0.7271
+Epoch 27  0.3394   0.8614   0.8210   0.7230
+Epoch 28  0.3376   0.8624   0.7476   0.7357
+Epoch 29  0.3355   0.8633   0.7727   0.7208
+Epoch 30  0.3328   0.8644   0.9654   0.7043
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados|  226454  1191674  6604221   602616
+        Agricolas|    8966 27798661 35126134    68148
+         Floresta|    4589  3415318 83085715   159304
+         Agua+Hum|      42   177044   183855  2107067
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.94      0.03      0.05   8624965
+           1       0.85      0.44      0.58  63001909
+           2       0.66      0.96      0.79  86664926
+           3       0.72      0.85      0.78   2468008
+
+    accuracy                           0.70 160759808
+   macro avg       0.79      0.57      0.55 160759808
+weighted avg       0.75      0.70      0.67 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.4
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6814   0.7540   0.5830   0.7588
+Epoch  2  0.5178   0.7957   0.6103   0.7460
+Epoch  3  0.4797   0.8074   0.6117   0.7588
+Epoch  4  0.4549   0.8168   0.6481   0.7492
+Epoch  5  0.4388   0.8231   0.6322   0.7703
+Epoch  6  0.4259   0.8277   0.6613   0.7646
+Epoch  7  0.4174   0.8308   0.6685   0.7699
+Epoch  8  0.4100   0.8335   0.6678   0.7724
+Epoch  9  0.4035   0.8359   0.6793   0.7688
+Epoch 10  0.3975   0.8381   0.6869   0.7692
+Epoch 11  0.3926   0.8400   0.6854   0.7751
+Epoch 12  0.3884   0.8415   0.7080   0.7682
+Epoch 13  0.3837   0.8433   0.7073   0.7726
+Epoch 14  0.3798   0.8447   0.7502   0.7636
+Epoch 15  0.3759   0.8461   0.7395   0.7648
+Epoch 16  0.3729   0.8474   0.7785   0.7573
+Epoch 17  0.3693   0.8488   0.8217   0.7303
+Epoch 18  0.3669   0.8498   0.7621   0.7599
+Epoch 19  0.3640   0.8508   0.7581   0.7569
+Epoch 20  0.3616   0.8520   0.7965   0.7405
+Epoch 21  0.3586   0.8531   0.7881   0.7510
+Epoch 22  0.3561   0.8543   0.7806   0.7535
+Epoch 23  0.3539   0.8552   0.7825   0.7481
+Epoch 24  0.3523   0.8559   0.7997   0.7386
+Epoch 25  0.3499   0.8569   0.7963   0.7472
+Epoch 26  0.3475   0.8579   0.8072   0.7368
+Epoch 27  0.3458   0.8586   0.8201   0.7228
+Epoch 28  0.3451   0.8590   0.8649   0.7240
+Epoch 29  0.3415   0.8606   0.8025   0.7343
+Epoch 30  0.3397   0.8615   0.8810   0.7178
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados|  116593  1133760  7084416   290196
+        Agricolas|    3701 40113959 22850144    34105
+         Floresta|    2755 13495776 73099269    67126
+         Agua+Hum|     217   246156   156819  2064816
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.95      0.01      0.03   8624965
+           1       0.73      0.64      0.68  63001909
+           2       0.71      0.84      0.77  86664926
+           3       0.84      0.84      0.84   2468008
+
+    accuracy                           0.72 160759808
+   macro avg       0.81      0.58      0.58 160759808
+weighted avg       0.73      0.72      0.70 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.5
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6517   0.7578   0.6418   0.6998
+Epoch  2  0.5122   0.7955   0.6385   0.7105
+Epoch  3  0.4767   0.8082   0.6594   0.7149
+Epoch  4  0.4543   0.8166   0.6572   0.7336
+Epoch  5  0.4396   0.8218   0.6717   0.7377
+Epoch  6  0.4282   0.8261   0.6872   0.7371
+Epoch  7  0.4196   0.8292   0.7408   0.7180
+Epoch  8  0.4126   0.8319   0.7477   0.7232
+Epoch  9  0.4066   0.8341   0.7101   0.7437
+Epoch 10  0.4016   0.8361   0.7317   0.7365
+Epoch 11  0.3964   0.8381   0.6723   0.7686
+Epoch 12  0.3917   0.8400   0.6646   0.7714
+Epoch 13  0.3881   0.8414   0.6505   0.7767
+Epoch 14  0.3841   0.8431   0.6660   0.7729
+Epoch 15  0.3807   0.8443   0.6433   0.7781
+Epoch 16  0.3773   0.8459   0.6596   0.7732
+Epoch 17  0.3744   0.8470   0.6625   0.7732
+Epoch 18  0.3718   0.8478   0.6241   0.7835
+Epoch 19  0.3690   0.8489   0.6564   0.7777
+Epoch 20  0.3664   0.8500   0.6747   0.7748
+Epoch 21  0.3638   0.8511   0.6730   0.7783
+Epoch 22  0.3616   0.8520   0.7065   0.7666
+Epoch 23  0.3591   0.8530   0.6908   0.7742
+Epoch 24  0.3568   0.8541   0.6924   0.7754
+Epoch 25  0.3546   0.8549   0.6945   0.7759
+Epoch 26  0.3528   0.8557   0.7802   0.7497
+Epoch 27  0.3503   0.8568   0.7642   0.7553
+Epoch 28  0.3485   0.8575   0.7612   0.7719
+Epoch 29  0.3463   0.8585   0.7579   0.7694
+Epoch 30  0.3445   0.8594   0.7830   0.7678
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados|  105383  1569697  6544982   404903
+        Agricolas|    3244 43255957 19675969    66739
+         Floresta|    1433  8592653 77961529   109311
+         Agua+Hum|      81   222855   140732  2104340
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.96      0.01      0.02   8624965
+           1       0.81      0.69      0.74  63001909
+           2       0.75      0.90      0.82  86664926
+           3       0.78      0.85      0.82   2468008
+
+    accuracy                           0.77 160759808
+   macro avg       0.82      0.61      0.60 160759808
+weighted avg       0.78      0.77      0.74 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.6
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6461   0.7545   0.5664   0.7508
+Epoch  2  0.5161   0.7922   0.7057   0.6927
+Epoch  3  0.4812   0.8046   0.8112   0.6781
+Epoch  4  0.4591   0.8136   0.8178   0.6856
+Epoch  5  0.4441   0.8197   0.7658   0.7146
+Epoch  6  0.4334   0.8241   0.7839   0.7106
+Epoch  7  0.4248   0.8276   0.7994   0.7159
+Epoch  8  0.4179   0.8305   0.7881   0.7221
+Epoch  9  0.4117   0.8327   0.8163   0.7160
+Epoch 10  0.4060   0.8350   0.8340   0.7129
+Epoch 11  0.4013   0.8368   0.7962   0.7251
+Epoch 12  0.3972   0.8385   0.7679   0.7370
+Epoch 13  0.3935   0.8399   0.7961   0.7271
+Epoch 14  0.3895   0.8411   0.7623   0.7362
+Epoch 15  0.3867   0.8422   0.7747   0.7332
+Epoch 16  0.3830   0.8438   0.7077   0.7588
+Epoch 17  0.3799   0.8449   0.7009   0.7567
+Epoch 18  0.3774   0.8458   0.7305   0.7449
+Epoch 19  0.3745   0.8470   0.7145   0.7527
+Epoch 20  0.3722   0.8479   0.7488   0.7371
+Epoch 21  0.3694   0.8490   0.7392   0.7404
+Epoch 22  0.3672   0.8499   0.6788   0.7717
+Epoch 23  0.3643   0.8511   0.7037   0.7550
+Epoch 24  0.3623   0.8519   0.7486   0.7412
+Epoch 25  0.3599   0.8528   0.7057   0.7575
+Epoch 26  0.3582   0.8536   0.7027   0.7634
+Epoch 27  0.3562   0.8543   0.7161   0.7497
+Epoch 28  0.3550   0.8549   0.7408   0.7425
+Epoch 29  0.3529   0.8559   0.7730   0.7355
+Epoch 30  0.3511   0.8564   0.7685   0.7359
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados|   72031  2658500  5163495   730939
+        Agricolas|    2393 34211813 28641039   146664
+         Floresta|    1196  4656667 81919957    87106
+         Agua+Hum|      90   179928   188001  2099989
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.01      0.02   8624965
+           1       0.82      0.54      0.65  63001909
+           2       0.71      0.95      0.81  86664926
+           3       0.69      0.85      0.76   2468008
+
+    accuracy                           0.74 160759808
+   macro avg       0.79      0.59      0.56 160759808
+weighted avg       0.76      0.74      0.70 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.7
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  0.6366   0.7544   0.6654   0.6780
+Epoch  2  0.5160   0.7898   0.8228   0.6079
+Epoch  3  0.4846   0.8022   0.9163   0.5820
+Epoch  4  0.4650   0.8110   0.9243   0.5863
+Epoch  5  0.4506   0.8172   0.9534   0.5820
+Epoch  6  0.4394   0.8218   0.9402   0.5928
+Epoch  7  0.4305   0.8255   0.9587   0.5923
+Epoch  8  0.4233   0.8283   0.9568   0.6016
+Epoch  9  0.4172   0.8305   0.9775   0.5994
+Epoch 10  0.4117   0.8328   0.8962   0.6275
+Epoch 11  0.4063   0.8350   0.9311   0.6179
+Epoch 12  0.4024   0.8365   0.9006   0.6373
+Epoch 13  0.3986   0.8381   0.9442   0.6361
+Epoch 14  0.3951   0.8393   0.9653   0.6210
+Epoch 15  0.3915   0.8406   1.0117   0.6136
+Epoch 16  0.3886   0.8419   1.0334   0.6026
+Epoch 17  0.3855   0.8432   1.1077   0.5920
+Epoch 18  0.3831   0.8442   1.0563   0.6082
+Epoch 19  0.3808   0.8449   1.0993   0.5954
+Epoch 20  0.3785   0.8459   1.0714   0.5997
+Epoch 21  0.3759   0.8469   1.0903   0.5938
+Epoch 22  0.3741   0.8476   1.1891   0.5758
+Epoch 23  0.3719   0.8485   1.1361   0.5901
+Epoch 24  0.3700   0.8491   1.2010   0.5759
+Epoch 25  0.3681   0.8499   1.1624   0.5881
+Epoch 26  0.3662   0.8507   1.2239   0.5777
+Epoch 27  0.3650   0.8511   1.2134   0.5723
+Epoch 28  0.3632   0.8520   1.2777   0.5675
+Epoch 29  0.3618   0.8524   1.3100   0.5592
+Epoch 30  0.3599   0.8533   1.4034   0.5519
+
+Confusion Matrix:
+		  Artifici Agricola Floresta Agua+Hum
+ Artificializados|    9337    24867  8588648     2113
+        Agricolas|     323  1991526 61009661      399
+         Floresta|     401    78911 86585136      478
+         Agua+Hum|     262    10119  2318041   139586
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.90      0.00      0.00   8624965
+           1       0.95      0.03      0.06  63001909
+           2       0.55      1.00      0.71  86664926
+           3       0.98      0.06      0.11   2468008
+    accuracy                           0.55 160759808
+   macro avg       0.84      0.27      0.22 160759808
+weighted avg       0.73      0.55      0.41 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+dropout: 0.4
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  1.3964   0.5240   1.1686   0.5852
+Epoch  2  1.1740   0.5891   1.0640   0.6216
+Epoch  3  1.0921   0.6185   1.0178   0.6338
+Epoch  4  1.0409   0.6367   0.9887   0.6443
+Epoch  5  1.0033   0.6492   0.9562   0.6569
+Epoch  6  0.9734   0.6592   0.9456   0.6596
+Epoch  7  0.9483   0.6675   0.9144   0.6715
+Epoch  8  0.9265   0.6746   0.9043   0.6745
+Epoch  9  0.9083   0.6805   0.9013   0.6758
+Epoch 10  0.8917   0.6859   0.8735   0.6878
+Epoch 11  0.8779   0.6906   0.8587   0.6929
+Epoch 12  0.8646   0.6946   0.8535   0.6961
+Epoch 13  0.8531   0.6983   0.8525   0.6956
+Epoch 14  0.8423   0.7017   0.8473   0.6984
+Epoch 15  0.8332   0.7044   0.8428   0.6989
+Epoch 16  0.8234   0.7077   0.8332   0.7029
+Epoch 17  0.8153   0.7101   0.8201   0.7091
+Epoch 18  0.8065   0.7131   0.8352   0.7027
+Epoch 19  0.7987   0.7155   0.8312   0.7040
+Epoch 20  0.7909   0.7180   0.8236   0.7077
+Epoch 21  0.7829   0.7207   0.8258   0.7061
+Epoch 22  0.7775   0.7225   0.8267   0.7064
+Epoch 23  0.7689   0.7252   0.8265   0.7072
+Epoch 24  0.7632   0.7269   0.8377   0.7033
+Epoch 25  0.7565   0.7292   0.8319   0.7038
+Epoch 26  0.7500   0.7313   0.8344   0.7037
+Epoch 27  0.7447   0.7332   0.8501   0.6997
+Epoch 28  0.7386   0.7353   0.8236   0.7071
+Epoch 29  0.7318   0.7375   0.8278   0.7066
+Epoch 30  0.7264   0.7392   0.8362   0.7038
+
+Confusion Matrix:
+					 Artifici Agricult SeFSoAze SAFazinh SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas| 5960692  1896398    54928   120145       11   136003   170297    89047    84245   113199
+        Zonas de agricultura e pastagens|  763399 41628060  1922891  2772336     6040   385607   735203   959356  1642223    35432
+                        SAF de Azinheira|    3259   497166  5347225   909026    11714     3239    13262    16032     1890     5011
+ Florestas e SAF de Sobreiro e Azinheira|   33465  1117127  1905045 14799204    41524   229506   471312   360014   184564    16167
+                  SAF de outras especies|    2839    82694    27611   162662     8085     1207    31849     2806    35217       55
+                  Florestas de Eucalipto|  102922   552705    21448   786250      157 12677847  1265125   461600   323446     5991
+     Florestas de Pinheiro Manso e Bravo|  154044  1364625    84850  1829285    19423  1884953 12984745  2602955  1968890    11737
+                                   Matos|  202279  1754233    62183  2673860       12   394910  1299965 12181858  1468043    21205
+            Florestas de outras especies|  198438  2779038    71708  1432232     8689   530990   832312  1980818  5471709    28031
+                          Agua + Humidas|  118285   147454    26617    45587        5     4168    11022     8672    18571  2087627
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.79      0.69      0.74   8624965
+           1       0.80      0.82      0.81  50850547
+           2       0.56      0.79      0.65   6807824
+           3       0.58      0.77      0.66  19157928
+           4       0.08      0.02      0.04    355025
+           5       0.78      0.78      0.78  16197491
+           6       0.73      0.57      0.64  22905507
+           7       0.65      0.61      0.63  20058548
+           8       0.49      0.41      0.45  13333965
+           9       0.90      0.85      0.87   2468008
+
+    accuracy                           0.70 160759808
+   macro avg       0.64      0.63      0.63 160759808
+weighted avg       0.71      0.70      0.70 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+dropout: 0.5
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  1.3955   0.5298   1.1443   0.6025
+Epoch  2  1.1700   0.5920   1.0436   0.6311
+Epoch  3  1.0900   0.6192   0.9805   0.6548
+Epoch  4  1.0392   0.6365   0.9577   0.6603
+Epoch  5  1.0009   0.6497   0.9286   0.6697
+Epoch  6  0.9709   0.6600   0.9077   0.6770
+Epoch  7  0.9467   0.6680   0.8890   0.6847
+Epoch  8  0.9253   0.6751   0.8688   0.6920
+Epoch  9  0.9068   0.6810   0.8551   0.6980
+Epoch 10  0.8908   0.6862   0.8514   0.6978
+Epoch 11  0.8760   0.6910   0.8462   0.7006
+Epoch 12  0.8632   0.6950   0.8350   0.7048
+Epoch 13  0.8517   0.6986   0.8301   0.7055
+Epoch 14  0.8407   0.7021   0.8247   0.7072
+Epoch 15  0.8308   0.7053   0.8283   0.7058
+Epoch 16  0.8217   0.7080   0.8274   0.7054
+Epoch 17  0.8129   0.7111   0.8234   0.7079
+Epoch 18  0.8046   0.7134   0.8236   0.7076
+Epoch 19  0.7973   0.7159   0.8263   0.7065
+Epoch 20  0.7894   0.7184   0.8250   0.7065
+Epoch 21  0.7819   0.7208   0.8263   0.7062
+Epoch 22  0.7757   0.7228   0.8282   0.7031
+Epoch 23  0.7687   0.7251   0.8206   0.7070
+Epoch 24  0.7618   0.7272   0.8213   0.7080
+Epoch 25  0.7566   0.7291   0.8161   0.7102
+Epoch 26  0.7490   0.7314   0.8074   0.7131
+Epoch 27  0.7432   0.7333   0.8080   0.7139 <-----------
+Epoch 28  0.7367   0.7356   0.8129   0.7129
+Epoch 29  0.7327   0.7369   0.8165   0.7115
+Epoch 30  0.7268   0.7390   0.8133   0.7117
+
+Confusion Matrix:
+					 Artifici Agricult SeFSoAze SAFazinh SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas| 5575699  2274950    56804    62188       32   161374   114538   116448    56052   206880
+        Zonas de agricultura e pastagens|  553895 43622478  1520274  1744455     4691   400765   562748  1326999  1065415    48827
+                        SAF de Azinheira|    3208   665776  5160356   896123     5495     4902    28087    29994     4872     9011
+ Florestas e SAF de Sobreiro e Azinheira|   36142  1536407  1676952 13389248    21080   406650   766333  1016440   277050    31626
+                  SAF de outras especies|    2153   100940    27185   120457     7627     1781    49830     6581    38258      213
+                  Florestas de Eucalipto|   83256   705362    27541   455686       40 13384682   900501   466803   162780    10840
+     Florestas de Pinheiro Manso e Bravo|  148035  1753254    44140  1034257     4161  2351233 12384138  3798834  1368269    19186
+                                   Matos|  164620  2102415    39859  1218882       38   564147   986348 14223217   729407    29615
+            Florestas de outras especies|  162718  3362511    59612   599807     8118   701993   800763  3115543  4470175    52725
+                          Agua + Humidas|   54804   143946    22262    21740        0     5456     8637     5880    11203  2194080
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.82      0.65      0.72   8624965
+           1       0.78      0.86      0.81  50850547
+           2       0.60      0.76      0.67   6807824
+           3       0.69      0.70      0.69  19157928
+           4       0.15      0.02      0.04    355025
+           5       0.74      0.83      0.78  16197491
+           6       0.75      0.54      0.63  22905507
+           7       0.59      0.71      0.64  20058548
+           8       0.55      0.34      0.42  13333965
+           9       0.84      0.89      0.87   2468008
+
+    accuracy                           0.71 160759808
+   macro avg       0.65      0.63      0.63 160759808
+weighted avg       0.71      0.71      0.70 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+dropout: 0.6
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  1.4220   0.5181   1.1434   0.6011
+Epoch  2  1.1769   0.5904   1.0398   0.6358
+Epoch  3  1.0937   0.6187   0.9814   0.6537
+Epoch  4  1.0413   0.6366   0.9558   0.6601
+Epoch  5  1.0026   0.6498   0.9177   0.6749
+Epoch  6  0.9733   0.6598   0.9050   0.6783
+Epoch  7  0.9492   0.6679   0.8821   0.6875
+Epoch  8  0.9285   0.6746   0.8669   0.6937
+Epoch  9  0.9096   0.6809   0.8603   0.6943
+Epoch 10  0.8954   0.6854   0.8489   0.6986
+Epoch 11  0.8803   0.6903   0.8451   0.6992
+Epoch 12  0.8670   0.6946   0.8378   0.7016
+Epoch 13  0.8564   0.6978   0.8379   0.7021
+Epoch 14  0.8458   0.7009   0.8304   0.7044
+Epoch 15  0.8352   0.7045   0.8306   0.7048
+Epoch 16  0.8261   0.7073   0.8273   0.7057
+Epoch 17  0.8166   0.7101   0.8308   0.7045
+Epoch 18  0.8083   0.7131   0.8263   0.7065
+Epoch 19  0.8001   0.7154   0.8261   0.7057
+Epoch 20  0.7935   0.7176   0.8478   0.6991
+Epoch 21  0.7860   0.7200   0.8311   0.7045
+Epoch 22  0.7785   0.7225   0.8365   0.7021
+Epoch 23  0.7716   0.7247   0.8328   0.7049
+Epoch 24  0.7652   0.7266   0.8360   0.7035
+Epoch 25  0.7578   0.7292   0.8264   0.7073
+Epoch 26  0.7523   0.7308   0.8291   0.7054
+Epoch 27  0.7460   0.7330   0.8117   0.7129
+Epoch 28  0.7400   0.7350   0.8192   0.7112
+Epoch 29  0.7344   0.7368   0.8145   0.7122
+Epoch 30  0.7288   0.7387   0.8196   0.7111
+
+Confusion Matrix:
+					 Artifici Agricult SeFSoAze SAFazinh SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas| 6326851  1570335    24469    70385        0   102610   150208   126967    59944   193196
+        Zonas de agricultura e pastagens| 1088128 42479981   844940  1534898     3421   426872  1025310  1768746  1616546    61705
+                        SAF de Azinheira|    4455  1076578  4436186  1143284      541    43240    41068    47635     2075    12762
+ Florestas e SAF de Sobreiro e Azinheira|   33590  1708962  1321681 13254196    11299   362253   930680  1294038   211852    29377
+                  SAF de outras especies|    3002   102228    29133   116271     8919     1530    46118    10486    37141      197
+                  Florestas de Eucalipto|  153014   568602    17384   429278        7 12718977  1527751   564408   207922    10148
+     Florestas de Pinheiro Manso e Bravo|  227013  1232481    37971   981732     8589  1788126 13606451  4062362   945585    15197
+                                   Matos|  204936  1709129    11467   933587       15   439025  1241629 14817938   677533    23289
+            Florestas de outras especies|  231523  2912834    33202   664744     6038   615368  1072834  3289332  4447198    60892
+                          Agua + Humidas|   41580   133403     9917    22117        0     6397    11240    12136    13086  2218132
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.76      0.73      0.75   8624965
+           1       0.79      0.84      0.81  50850547
+           2       0.66      0.65      0.65   6807824
+           3       0.69      0.69      0.69  19157928
+           4       0.23      0.03      0.05    355025
+           5       0.77      0.79      0.78  16197491
+           6       0.69      0.59      0.64  22905507
+           7       0.57      0.74      0.64  20058548
+           8       0.54      0.33      0.41  13333965
+           9       0.85      0.90      0.87   2468008
+
+    accuracy                           0.71 160759808
+   macro avg       0.66      0.63      0.63 160759808
+weighted avg       0.71      0.71      0.71 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B11', 'B12']
+reshape: NO
+batch_size: 8
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 64
+dropout: 0.5
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  1.4125   0.5228   1.1678   0.5879
+Epoch  2  1.1810   0.5880   1.0758   0.6144
+Epoch  3  1.1023   0.6146   1.0104   0.6417
+Epoch  4  1.0492   0.6326   0.9657   0.6567
+Epoch  5  1.0099   0.6461   0.9281   0.6692
+Epoch  6  0.9785   0.6569   0.9073   0.6759
+Epoch  7  0.9529   0.6655   0.9059   0.6766
+Epoch  8  0.9316   0.6727   0.8928   0.6813
+Epoch  9  0.9126   0.6789   0.8785   0.6856
+Epoch 10  0.8964   0.6840   0.8825   0.6849
+Epoch 11  0.8817   0.6890   0.8719   0.6892
+Epoch 12  0.8685   0.6930   0.8572   0.6941
+Epoch 13  0.8563   0.6968   0.8400   0.7000
+Epoch 14  0.8448   0.7004   0.8412   0.7004
+Epoch 15  0.8351   0.7036   0.8312   0.7034
+Epoch 16  0.8251   0.7067   0.8360   0.7023
+Epoch 17  0.8157   0.7097   0.8165   0.7087
+Epoch 18  0.8080   0.7121   0.8163   0.7090
+Epoch 19  0.7997   0.7149   0.8140   0.7100
+Epoch 20  0.7914   0.7175   0.8092   0.7118
+Epoch 21  0.7833   0.7201   0.8088   0.7123
+Epoch 22  0.7768   0.7223   0.8049   0.7138
+Epoch 23  0.7701   0.7243   0.8057   0.7139
+Epoch 24  0.7622   0.7271   0.8058   0.7147
+Epoch 25  0.7566   0.7291   0.8135   0.7115
+Epoch 26  0.7501   0.7311   0.8175   0.7109
+Epoch 27  0.7450   0.7326   0.8156   0.7117
+Epoch 28  0.7396   0.7345   0.8053   0.7159 <--------
+Epoch 29  0.7334   0.7367   0.8101   0.7144
+Epoch 30  0.7269   0.7387   0.8178   0.7121
+Epoch 31  0.7188   0.7414   0.8193   0.7116
+Epoch 32  0.7153   0.7426   0.8414   0.7056
+Epoch 33  0.7107   0.7442   0.8220   0.7111
+Epoch 34  0.7046   0.7464   0.8251   0.7119
+Epoch 35  0.7013   0.7474   0.8285   0.7114
+Epoch 36  0.6957   0.7493   0.8399   0.7074
+Epoch 37  0.6924   0.7504   0.8694   0.6982
+Epoch 38  0.6866   0.7525   0.8414   0.7056
+Epoch 39  0.6806   0.7543   0.8221   0.7135
+Epoch 40  0.6767   0.7559   0.8511   0.7049
+Epoch 41  0.6734   0.7571   0.8223   0.7135
+Epoch 42  0.6671   0.7590   0.8385   0.7107
+Epoch 43  0.6674   0.7592   0.8405   0.7099
+Epoch 44  0.6574   0.7626   0.8609   0.7054
+Epoch 45  0.6543   0.7636   0.8422   0.7086
+Epoch 46  0.6512   0.7647   0.8523   0.7068
+Epoch 47  0.6449   0.7671   0.8426   0.7110
+Epoch 48  0.6417   0.7681   0.8592   0.7071
+Epoch 49  0.6389   0.7689   0.8618   0.7034
+Epoch 50  0.6323   0.7712   0.8588   0.7078
+Epoch 51  0.6302   0.7721   0.8782   0.7002
+Epoch 52  0.6279   0.7728   0.8632   0.7045
+Epoch 53  0.6297   0.7721   0.8823   0.7010
+Epoch 54  0.6198   0.7756   0.8548   0.7076
+Epoch 55  0.6143   0.7777   0.8675   0.7054
+Epoch 56  0.6114   0.7783   0.8684   0.7051
+Epoch 57  0.6069   0.7803   0.8600   0.7064
+Epoch 58  0.6088   0.7795   0.8505   0.7087
+Epoch 59  0.6014   0.7821   0.8687   0.7063
+Epoch 60  0.5962   0.7840   0.8525   0.7102
+Epoch 61  0.5924   0.7853   0.8569   0.7087
+Epoch 62  0.5889   0.7862   0.8838   0.7080
+Epoch 63  0.5850   0.7879   0.8469   0.7142
+Epoch 64  0.5843   0.7879   0.8843   0.7011
+Epoch 65  0.5794   0.7896   0.8848   0.7033
+Epoch 66  0.5722   0.7923   0.8800   0.7049
+Epoch 67  0.5718   0.7923   0.8866   0.7069
+Epoch 68  0.5672   0.7940   0.8999   0.7023
+Epoch 69  0.5668   0.7937   0.9000   0.7041
+Epoch 70  0.5623   0.7954   0.8722   0.7060
+Epoch 71  0.5577   0.7971   0.8892   0.7080
+Epoch 72  0.5561   0.7977   0.8969   0.7004
+Epoch 73  0.5510   0.7995   0.8952   0.7039
+Epoch 74  0.5497   0.7997   0.8994   0.6995
+Epoch 75  0.5460   0.8009   0.9352   0.6914
+Epoch 76  0.5430   0.8018   0.9233   0.6942
+Epoch 77  0.5413   0.8026   0.8959   0.7028
+Epoch 78  0.5353   0.8046   0.9143   0.6951
+Epoch 79  0.5327   0.8054   0.9172   0.6951
+Epoch 80  0.5265   0.8076   0.9011   0.7042
+Epoch 81  0.5267   0.8075   0.9508   0.6912
+Epoch 82  0.5258   0.8078   0.9158   0.7003
+Epoch 83  0.5181   0.8104   0.9277   0.6951
+Epoch 84  0.5171   0.8108   0.9216   0.6992
+Epoch 85  0.5156   0.8113   0.9353   0.6940
+Epoch 86  0.5145   0.8117   0.9282   0.6957
+Epoch 87  0.5064   0.8144   0.9980   0.6779
+Epoch 88  0.5035   0.8154   0.9612   0.6925
+Epoch 89  0.5028   0.8156   0.9286   0.7040
+Epoch 90  0.4968   0.8177   0.9494   0.6962
+Epoch 91  0.4992   0.8169   0.9546   0.6892
+Epoch 92  0.4919   0.8193   0.9427   0.6934
+Epoch 93  0.4890   0.8203   0.9523   0.6947
+Epoch 94  0.4869   0.8209   0.9816   0.6817
+Epoch 95  0.4855   0.8214   0.9354   0.6959
+Epoch 96  0.4841   0.8218   0.9383   0.6958
+Epoch 97  0.4805   0.8231   0.9368   0.6991
+Epoch 98  0.4759   0.8247   0.9266   0.7008
+Epoch 99  0.4736   0.8253   0.9831   0.6843
+Epoch100  0.4725   0.8258   0.9198   0.7055
+
+Confusion Matrix:
+					 Artifici Agricult SAFazinh SeFSoAze SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas| 5851194  1809789    50229    70170      561    96751   300390    77471   212809   155601
+        Zonas de agricultura e pastagens|  674950 43107536  1342807  1236408    83221   294546  1149122   738662  2156368    66927
+                        SAF de Azinheira|    2916   736247  5486036   498532    16466     3551     9311    33199    11701     9865
+ Florestas e SAF de Sobreiro e Azinheira|   23799  1702753  2135396 13357972    56814   309782   658384   547912   340355    24761
+                  SAF de outras especies|    1132   100873    27942   114343    32647     3381    30582     3594    40416      115
+                  Florestas de Eucalipto|   96059   554247    49753   462904      738 11943074  2625415   128255   331259     5787
+     Florestas de Pinheiro Manso e Bravo|  118329  1288941    66776  1306949    52880  1368994 15990645  1161299  1541156     9538
+                                   Matos|  144214  1791657    52034  1462147     7444   522841  3876742  9367659  2817668    16142
+            Florestas de outras especies|  151859  2663270    52102   700815    46758   449121  1821361  1340388  6063548    44743
+                          Agua + Humidas|   28952   106963    18512    24667       36     6626    16628     7002    40127  2218495
+
+Classification report:
+              precision    recall  f1-score   support
+           0       0.82      0.68      0.74   8624965
+           1       0.80      0.85      0.82  50850547
+           2       0.59      0.81      0.68   6807824
+           3       0.69      0.70      0.70  19157928
+           4       0.11      0.09      0.10    355025
+           5       0.80      0.74      0.77  16197491
+           6       0.60      0.70      0.65  22905507
+           7       0.70      0.47      0.56  20058548
+           8       0.45      0.45      0.45  13333965
+           9       0.87      0.90      0.88   2468008
+
+    accuracy                           0.71 160759808
+   macro avg       0.64      0.64      0.64 160759808
+weighted avg       0.71      0.71      0.70 160759808
+_______________________________________________________________
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: NO
+batch_size: 20
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.5
+
+Training results:
+	     Loss Accuracy Val_Loss  Val_Acc
+Epoch   1  1.6979   0.4492   1.4530   0.5176
+Epoch   2  1.3409   0.5564   1.2143   0.5948
+Epoch   3  1.2212   0.5859   1.1299   0.6132
+Epoch   4  1.1577   0.6027   1.0926   0.6219
+Epoch   5  1.1158   0.6148   1.0728   0.6252
+Epoch   6  1.0849   0.6244   1.0552   0.6305
+Epoch   7  1.0600   0.6323   1.0342   0.6373
+Epoch   8  1.0391   0.6391   1.0400   0.6334
+Epoch   9  1.0215   0.6447   1.0385   0.6337
+Epoch  10  1.0066   0.6494   1.0297   0.6374
+Epoch  11  0.9934   0.6536   1.0076   0.6452
+Epoch  12  0.9810   0.6574   1.0159   0.6427
+Epoch  13  0.9708   0.6607   1.0164   0.6431
+Epoch  14  0.9609   0.6640   0.9998   0.6484
+Epoch  15  0.9515   0.6672   0.9864   0.6533
+Epoch  16  0.9433   0.6696   1.0001   0.6496
+Epoch  17  0.9357   0.6723   0.9870   0.6533
+Epoch  18  0.9281   0.6746   0.9758   0.6579
+Epoch  19  0.9217   0.6766   0.9787   0.6565
+Epoch  20  0.9150   0.6790   0.9645   0.6619
+Epoch  21  0.9090   0.6808   0.9582   0.6641
+Epoch  22  0.9032   0.6825   0.9656   0.6620
+Epoch  23  0.8974   0.6844   0.9500   0.6668
+Epoch  24  0.8929   0.6859   0.9374   0.6715
+Epoch  25  0.8876   0.6876   0.9281   0.6745
+Epoch  26  0.8833   0.6889   0.9366   0.6716
+Epoch  27  0.8783   0.6906   0.9306   0.6727
+Epoch  28  0.8741   0.6919   0.9210   0.6766
+Epoch  29  0.8698   0.6933   0.9171   0.6770
+Epoch  30  0.8652   0.6946   0.9214   0.6752
+Epoch  31  0.8616   0.6959   0.9019   0.6816
+Epoch  32  0.8575   0.6972   0.9111   0.6792
+Epoch  33  0.8539   0.6985   0.9107   0.6793
+Epoch  34  0.8501   0.6997   0.9142   0.6780
+Epoch  35  0.8463   0.7009   0.8970   0.6832
+Epoch  36  0.8433   0.7019   0.9018   0.6813
+Epoch  37  0.8396   0.7030   0.8901   0.6856
+Epoch  38  0.8366   0.7038   0.8889   0.6856
+Epoch  39  0.8335   0.7049   0.8940   0.6837
+Epoch  40  0.8304   0.7058   0.8954   0.6831
+Epoch  41  0.8275   0.7067   0.8900   0.6846
+Epoch  42  0.8251   0.7074   0.8888   0.6857
+Epoch  43  0.8224   0.7084   0.8947   0.6832
+Epoch  44  0.8190   0.7094   0.8886   0.6857
+Epoch  45  0.8167   0.7103   0.8844   0.6868
+Epoch  46  0.8140   0.7108   0.8818   0.6880
+Epoch  47  0.8112   0.7119   0.8842   0.6875
+Epoch  48  0.8087   0.7128   0.8757   0.6904
+Epoch  49  0.8065   0.7133   0.8750   0.6902
+Epoch  50  0.8032   0.7143   0.8764   0.6899
+Epoch  51  0.8013   0.7152   0.8757   0.6903
+Epoch  52  0.7991   0.7159   0.8863   0.6876
+Epoch  53  0.7964   0.7167   0.8795   0.6888
+Epoch  54  0.7945   0.7173   0.8781   0.6901
+Epoch  55  0.7927   0.7177   0.8769   0.6907
+Epoch  56  0.7902   0.7185   0.8834   0.6894
+Epoch  57  0.7878   0.7195   0.8782   0.6906
+Epoch  58  0.7861   0.7201   0.8699   0.6941
+Epoch  59  0.7835   0.7208   0.8724   0.6941
+Epoch  60  0.7822   0.7211   0.8740   0.6926
+Epoch  61  0.7796   0.7220   0.8770   0.6918
+Epoch  62  0.7780   0.7226   0.8860   0.6900
+Epoch  63  0.7757   0.7232   0.8712   0.6940
+Epoch  64  0.7741   0.7239   0.8866   0.6899
+Epoch  65  0.7724   0.7244   0.8756   0.6935
+Epoch  66  0.7704   0.7250   0.8805   0.6913
+Epoch  67  0.7687   0.7256   0.8724   0.6951
+Epoch  68  0.7668   0.7261   0.8784   0.6936
+Epoch  69  0.7654   0.7267   0.8710   0.6950
+Epoch  70  0.7633   0.7271   0.8809   0.6917
+Epoch  71  0.7620   0.7277   0.8801   0.6933
+Epoch  72  0.7597   0.7285   0.8661   0.6969
+Epoch  73  0.7582   0.7289   0.8708   0.6965
+Epoch  74  0.7564   0.7295   0.8684   0.6973
+Epoch  75  0.7547   0.7301   0.8705   0.6964
+Epoch  76  0.7535   0.7305   0.8595   0.6996
+Epoch  77  0.7516   0.7310   0.8719   0.6961
+Epoch  78  0.7502   0.7314   0.8702   0.6971
+Epoch  79  0.7488   0.7319   0.8675   0.6963
+Epoch  80  0.7479   0.7322   0.8742   0.6963
+Epoch  81  0.7455   0.7330   0.8720   0.6964
+Epoch  82  0.7448   0.7332   0.8791   0.6951
+Epoch  83  0.7424   0.7341   0.8731   0.6972
+Epoch  84  0.7406   0.7346   0.8797   0.6953
+Epoch  85  0.7396   0.7351   0.8775   0.6956
+Epoch  86  0.7379   0.7356   0.8666   0.6988
+Epoch  87  0.7369   0.7358   0.8639   0.7003
+Epoch  88  0.7353   0.7363   0.8720   0.6972
+Epoch  89  0.7337   0.7369   0.8878   0.6936
+Epoch  90  0.7328   0.7371   0.8685   0.6989
+Epoch  91  0.7311   0.7378   0.8704   0.6977
+Epoch  92  0.7302   0.7379   0.8712   0.6977
+Epoch  93  0.7286   0.7385   0.8567   0.7011
+Epoch  94  0.7270   0.7389   0.8718   0.6982
+Epoch  95  0.7257   0.7396   0.8793   0.6956
+Epoch  96  0.7239   0.7401   0.8804   0.6962
+Epoch  97  0.7233   0.7403   0.8725   0.6984
+Epoch  98  0.7215   0.7408   0.8764   0.6965
+Epoch  99  0.7205   0.7413   0.8685   0.7001
+Epoch 100  0.7200   0.7414   0.8807   0.6956
+Epoch 101  0.7186   0.7418   0.8692   0.6991
+Epoch 102  0.7173   0.7423   0.8820   0.6954
+Epoch 103  0.7160   0.7429   0.8765   0.6984
+Epoch 104  0.7154   0.7429   0.8560   0.7040
+Epoch 105  0.7134   0.7437   0.8615   0.7016
+Epoch 106  0.7121   0.7441   0.8831   0.6963
+Epoch 107  0.7115   0.7443   0.8592   0.7026
+Epoch 108  0.7099   0.7449   0.8768   0.6985
+Epoch 109  0.7095   0.7449   0.8675   0.7011
+Epoch 110  0.7084   0.7454   0.8709   0.7008
+Epoch 111  0.7075   0.7456   0.8753   0.6984
+Epoch 112  0.7069   0.7458   0.8685   0.7013
+Epoch 113  0.7054   0.7464   0.8693   0.7005
+Epoch 114  0.7036   0.7469   0.8763   0.6991
+Epoch 115  0.7025   0.7473   0.8660   0.7017
+Epoch 116  0.7017   0.7475   0.8856   0.6973
+Epoch 117  0.7008   0.7480   0.8775   0.6989
+Epoch 118  0.6999   0.7482   0.8742   0.6994
+Epoch 119  0.6988   0.7485   0.9002   0.6930
+Epoch 120  0.6982   0.7489   0.8842   0.6977
+Epoch 121  0.6969   0.7491   0.8777   0.6997
+Epoch 122  0.6962   0.7494   0.8712   0.7018
+Epoch 123  0.6949   0.7499   0.8796   0.6982
+Epoch 124  0.6941   0.7502   0.8824   0.6974
+Epoch 125  0.6934   0.7502   0.8682   0.7018
+Epoch 126  0.6923   0.7507   0.8722   0.7014
+Epoch 127  0.6916   0.7510   0.8725   0.7006
+Epoch 128  0.6904   0.7514   0.8745   0.7010
+Epoch 129  0.6893   0.7516   0.8745   0.7008
+Epoch 130  0.6887   0.7519   0.8633   0.7041
+Epoch 131  0.6887   0.7520   0.8646   0.7046
+Epoch 132  0.6872   0.7524   0.8713   0.7017
+Epoch 133  0.6862   0.7528   0.8820   0.6997
+Epoch 134  0.6852   0.7532   0.8831   0.6996
+Epoch 135  0.6845   0.7535   0.8704   0.7022
+Epoch 136  0.6842   0.7534   0.8807   0.7007
+Epoch 137  0.6827   0.7540   0.8801   0.7003
+Epoch 138  0.6824   0.7541   0.8718   0.7024
+Epoch 139  0.6817   0.7544   0.8732   0.7020
+Epoch 140  0.6800   0.7550   0.8839   0.7007
+Epoch 141  0.6809   0.7547   0.8878   0.6989
+Epoch 142  0.6803   0.7549   0.8753   0.7019
+Epoch 143  0.6807   0.7546   0.8827   0.6998
+Epoch 144  0.6790   0.7552   0.8934   0.6961
+Epoch 145  0.6788   0.7553   0.8905   0.6958
+Epoch 146  0.6772   0.7558   0.8801   0.7020
+Epoch 147  0.6766   0.7559   0.8915   0.6994
+Epoch 148  0.6767   0.7559   0.9023   0.6950
+Epoch 149  0.6755   0.7563   0.8930   0.6979
+Epoch 150  0.6752   0.7565   0.8837   0.6996
+Epoch 151  0.6739   0.7569   0.8736   0.7026
+Epoch 152  0.6737   0.7570   0.8971   0.6958
+Epoch 153  0.6735   0.7571   0.8798   0.7019
+Epoch 154  0.6740   0.7568   0.9058   0.6923
+Epoch 155  0.6755   0.7564   0.8655   0.7022
+Epoch 156  0.6729   0.7571   0.8665   0.7030
+Epoch 157  0.6708   0.7580   0.8863   0.6993
+Epoch 158  0.6696   0.7582   0.8758   0.7007
+Epoch 159  0.6713   0.7579   0.8731   0.6990
+Epoch 160  0.6701   0.7581   0.8928   0.6982
+Epoch 161  0.6679   0.7589   0.8804   0.6988
+Epoch 162  0.6669   0.7593   0.8814   0.6988
+Epoch 163  0.6662   0.7596   0.8841   0.6978
+Epoch 164  0.6657   0.7596   0.8881   0.6997
+Epoch 165  0.6647   0.7602   0.8958   0.6955
+Epoch 166  0.6634   0.7605   0.8774   0.6991
+Epoch 167  0.6627   0.7607   0.8938   0.6952
+Epoch 168  0.6619   0.7610   0.8866   0.6987
+Epoch 169  0.6609   0.7614   0.8907   0.6960
+Epoch 170  0.6609   0.7613   0.8928   0.6958
+Epoch 171  0.6608   0.7614   0.8827   0.6985
+Epoch 172  0.6592   0.7619   0.8757   0.7018
+Epoch 173  0.6586   0.7621   0.8894   0.6952
+Epoch 174  0.6581   0.7624   0.8829   0.6994
+Epoch 175  0.6579   0.7625   0.8931   0.6941
+Epoch 176  0.6567   0.7627   0.8882   0.6974
+Epoch 177  0.6565   0.7629   0.8989   0.6946
+Epoch 178  0.6563   0.7629   0.8937   0.6964
+Epoch 179  0.6555   0.7634   0.8986   0.6933
+Epoch 180  0.6549   0.7634   0.9281   0.6871
+Epoch 181  0.6526   0.7643   0.8993   0.6938
+Epoch 182  0.6518   0.7644   0.9120   0.6916
+Epoch 183  0.6525   0.7641   0.8943   0.6963
+Epoch 184  0.6518   0.7644   0.9132   0.6920
+Epoch 185  0.6513   0.7647   0.8910   0.6972
+Epoch 186  0.6513   0.7646   0.9065   0.6919
+Epoch 187  0.6526   0.7641   0.9142   0.6878
+Epoch 188  0.6506   0.7649   0.8720   0.7032
+Epoch 189  0.6496   0.7653   0.8701   0.7022
+Epoch 190  0.6485   0.7656   0.9113   0.6920
+Epoch 191  0.6474   0.7660   0.9029   0.6939
+Epoch 192  0.6473   0.7659   0.9071   0.6934
+Epoch 193  0.6462   0.7665   0.8901   0.6967
+Epoch 194  0.6455   0.7666   0.8829   0.7004
+Epoch 195  0.6454   0.7665   0.8878   0.6963
+Epoch 196  0.6452   0.7668   0.8834   0.6988
+Epoch 197  0.6441   0.7672   0.8755   0.7004
+Epoch 198  0.6441   0.7670   0.9258   0.6882
+Epoch 199  0.6429   0.7676   0.8942   0.6965
+Epoch 200  0.6419   0.7678   0.9130   0.6902
+Epoch 201  0.6423   0.7677   0.8842   0.6998
+Epoch 202  0.6414   0.7681   0.8745   0.7033
+Epoch 203  0.6399   0.7685   0.9074   0.6928
+Epoch 204  0.6402   0.7684   0.8883   0.6972
+Epoch 205  0.6399   0.7685   0.8916   0.6973
+Epoch 206  0.6388   0.7689   0.8848   0.7005
+Epoch 207  0.6385   0.7690   0.9221   0.6898
+Epoch 208  0.6375   0.7693   0.8768   0.7025
+Epoch 209  0.6365   0.7699   0.8863   0.6986
+Epoch 210  0.6354   0.7701   0.8978   0.6967
+Epoch 211  0.6363   0.7697   0.9064   0.6943
+Epoch 212  0.6350   0.7704   0.8963   0.6974
+Epoch 213  0.6353   0.7703   0.8975   0.6975
+Epoch 214  0.6342   0.7705   0.8924   0.6969
+Epoch 215  0.6343   0.7704   0.8921   0.6972
+Epoch 216  0.6353   0.7702   0.9142   0.6932
+Epoch 217  0.6328   0.7711   0.8771   0.7009
+Epoch 218  0.6321   0.7713   0.8977   0.6955
+Epoch 219  0.6312   0.7716   0.9060   0.6958
+Epoch 220  0.6308   0.7717   0.8942   0.6991
+Epoch 221  0.6313   0.7716   0.9131   0.6916
+Epoch 222  0.6296   0.7721   0.8911   0.6977
+Epoch 223  0.6286   0.7724   0.9037   0.6945
+Epoch 224  0.6286   0.7725   0.9069   0.6954
+Epoch 225  0.6281   0.7727   0.8979   0.6972
+Epoch 226  0.6272   0.7730   0.8993   0.6943
+Epoch 227  0.6267   0.7731   0.8916   0.6967
+Epoch 228  0.6262   0.7733   0.9208   0.6905
+Epoch 229  0.6268   0.7732   0.8668   0.7038
+Epoch 230  0.6254   0.7736   0.9248   0.6890
+Epoch 231  0.6253   0.7736   0.9102   0.6929
+Epoch 232  0.6248   0.7737   0.8843   0.7001
+Epoch 233  0.6245   0.7738   0.8883   0.7006
+Epoch 234  0.6239   0.7739   0.8918   0.7000
+Epoch 235  0.6237   0.7742   0.9099   0.6940
+Epoch 236  0.6224   0.7746   0.9066   0.6951
+Epoch 237  0.6218   0.7748   0.9017   0.6959
+Epoch 238  0.6211   0.7750   0.9240   0.6900
+Epoch 239  0.6209   0.7751   0.8947   0.6967
+Epoch 240  0.6208   0.7753   0.9092   0.6933
+Epoch 241  0.6195   0.7756   0.8961   0.6993
+Epoch 242  0.6189   0.7758   0.8902   0.6969
+Epoch 243  0.6195   0.7756   0.8875   0.7004
+Epoch 244  0.6178   0.7763   0.8939   0.6984
+Epoch 245  0.6182   0.7761   0.9051   0.6965
+Epoch 246  0.6177   0.7762   0.8916   0.6985
+Epoch 247  0.6177   0.7762   0.8931   0.6971
+Epoch 248  0.6159   0.7768   0.8911   0.6999
+Epoch 249  0.6165   0.7767   0.8657   0.7049
+Epoch 250  0.6155   0.7770   0.9073   0.6937
+Epoch 251  0.6155   0.7769   0.8868   0.6994
+Epoch 252  0.6144   0.7775   0.8889   0.6997
+Epoch 253  0.6144   0.7774   0.9044   0.6967
+Epoch 254  0.6133   0.7778   0.8904   0.7003
+Epoch 255  0.6137   0.7777   0.8999   0.6970
+Epoch 256  0.6131   0.7778   0.8959   0.6978
+Epoch 257  0.6128   0.7779   0.8943   0.6986
+Epoch 258  0.6121   0.7782   0.8894   0.6967
+Epoch 259  0.6124   0.7780   0.9200   0.6913
+Epoch 260  0.6108   0.7785   0.8951   0.6989
+Epoch 261  0.6114   0.7784   0.8765   0.7035
+Epoch 262  0.6111   0.7786   0.8860   0.7019
+Epoch 263  0.6091   0.7792   0.8972   0.6997
+Epoch 264  0.6093   0.7791   0.8928   0.7004
+Epoch 265  0.6095   0.7791   0.8827   0.7010
+Epoch 266  0.6084   0.7796   0.8779   0.7044
+Epoch 267  0.6090   0.7792   0.8945   0.7006
+Epoch 268  0.6062   0.7802   0.8784   0.7020
+Epoch 269  0.6074   0.7799   0.8687   0.7056
+Epoch 270  0.6071   0.7799   0.8940   0.6992
+Epoch 271  0.6081   0.7797   0.8847   0.7043
+Epoch 272  0.6082   0.7795   0.8693   0.7055
+Epoch 273  0.6064   0.7801   0.8866   0.7019
+Epoch 274  0.6051   0.7806   0.8787   0.7038
+Epoch 275  0.6047   0.7808   0.8856   0.7016
+Epoch 276  0.6039   0.7810   0.8686   0.7072
+Epoch 277  0.6040   0.7811   0.8878   0.7009
+Epoch 278  0.6045   0.7808   0.8831   0.7011
+Epoch 279  0.6036   0.7812   0.8828   0.7036
+Epoch 280  0.6033   0.7812   0.9012   0.6994
+Epoch 281  0.6030   0.7813   0.8838   0.7015
+Epoch 282  0.6015   0.7818   0.8746   0.7047
+Epoch 283  0.6011   0.7819   0.8666   0.7076
+Epoch 284  0.6014   0.7819   0.8742   0.7051
+Epoch 285  0.6010   0.7820   0.8790   0.7035
+Epoch 286  0.6005   0.7822   0.8800   0.7048
+Epoch 287  0.5997   0.7825   0.8686   0.7062
+Epoch 288  0.5995   0.7826   0.8790   0.7038
+Epoch 289  0.5992   0.7826   0.8781   0.7037
+Epoch 290  0.5991   0.7826   0.8832   0.7071
+Epoch 291  0.5986   0.7829   0.8789   0.7068
+Epoch 292  0.5985   0.7829   0.8690   0.7076
+Epoch 293  0.5977   0.7832   0.8822   0.7049
+Epoch 294  0.5974   0.7832   0.8686   0.7077
+Epoch 295  0.5967   0.7835   0.8765   0.7056
+Epoch 296  0.5969   0.7835   0.8823   0.7051
+Epoch 297  0.5961   0.7838   0.8716   0.7060
+Epoch 298  0.5963   0.7836   0.8930   0.7028
+Epoch 299  0.5963   0.7837   0.8835   0.7043
+Epoch 300  0.5956   0.7839   0.8750   0.7053
+Epoch 301  0.5958   0.7837   0.8735   0.7061
+Epoch 302  0.5951   0.7840   0.8697   0.7085
+Epoch 303  0.5957   0.7838   0.8790   0.7053
+Epoch 304  0.5942   0.7843   0.8837   0.7022
+Epoch 305  0.5938   0.7846   0.8785   0.7055
+Epoch 306  0.5941   0.7844   0.8726   0.7078
+Epoch 307  0.5942   0.7843   0.8736   0.7057
+Epoch 308  0.5936   0.7846   0.8742   0.7056
+Epoch 309  0.5919   0.7851   0.8735   0.7066
+Epoch 310  0.5923   0.7850   0.8788   0.7063
+Epoch 311  0.5923   0.7849   0.8815   0.7053
+Epoch 312  0.5914   0.7854   0.8749   0.7065
+Epoch 313  0.5905   0.7856   0.8761   0.7064
+Epoch 314  0.5911   0.7854   0.8867   0.7018
+Epoch 315  0.5914   0.7851   0.8835   0.7041
+Epoch 316  0.5898   0.7859   0.8787   0.7043
+Epoch 317  0.5906   0.7856   0.8736   0.7063
+Epoch 318  0.5887   0.7863   0.8826   0.7030
+Epoch 319  0.5896   0.7859   0.8756   0.7054
+Epoch 320  0.5891   0.7861   0.8868   0.7017
+Epoch 321  0.5891   0.7861   0.8729   0.7057
+Epoch 322  0.5893   0.7860   0.8932   0.7001
+Epoch 323  0.5885   0.7862   0.8812   0.7052
+Epoch 324  0.5881   0.7865   0.9032   0.6977
+Epoch 325  0.5869   0.7869   0.8805   0.7036
+Epoch 326  0.5875   0.7867   0.8991   0.7003
+Epoch 327  0.5865   0.7871   0.8847   0.7037
+Epoch 328  0.5870   0.7867   0.8789   0.7050
+Epoch 329  0.5867   0.7868   0.8801   0.7039
+Epoch 330  0.5853   0.7876   0.8890   0.7003
+Epoch 331  0.5859   0.7873   0.9036   0.6972
+Epoch 332  0.5860   0.7872   0.8825   0.7040
+Epoch 333  0.5842   0.7877   0.8952   0.6988
+Epoch 334  0.5842   0.7877   0.8760   0.7055
+Epoch 335  0.5846   0.7875   0.9103   0.6956
+Epoch 336  0.5844   0.7877   0.8924   0.7021
+Epoch 337  0.5838   0.7879   0.8964   0.7006
+Epoch 338  0.5832   0.7880   0.8978   0.7013
+Epoch 339  0.5830   0.7882   0.8920   0.7028
+Epoch 340  0.5824   0.7884   0.8905   0.7012
+Epoch 341  0.5826   0.7883   0.8821   0.7039
+Epoch 342  0.5819   0.7884   0.8832   0.7047
+Epoch 343  0.5817   0.7887   0.9049   0.6987
+Epoch 344  0.5815   0.7888   0.8952   0.7008
+Epoch 345  0.5811   0.7889   0.8863   0.7042
+Epoch 346  0.5817   0.7886   0.8766   0.7053
+Epoch 347  0.5806   0.7890   0.9032   0.6993
+Epoch 348  0.5798   0.7893   0.9022   0.6956
+Epoch 349  0.5800   0.7893   0.8996   0.6995
+Epoch 350  0.5798   0.7892   0.8876   0.7027
+Epoch 351  0.5791   0.7895   0.8790   0.7046
+Epoch 352  0.5788   0.7897   0.9017   0.7001
+Epoch 353  0.5784   0.7898   0.8862   0.7049
+Epoch 354  0.5798   0.7893   0.8864   0.7024
+Epoch 355  0.5797   0.7893   0.8939   0.7041
+Epoch 356  0.5790   0.7895   0.8820   0.7056
+Epoch 357  0.5780   0.7898   0.9040   0.6980
+Epoch 358  0.5777   0.7900   0.8912   0.7025
+Epoch 359  0.5777   0.7899   0.8961   0.6999
+Epoch 360  0.5769   0.7903   0.8907   0.7027
+Epoch 361  0.5784   0.7897   0.8860   0.7040
+Epoch 362  0.5759   0.7907   0.8956   0.7003
+Epoch 363  0.5766   0.7903   0.8819   0.7036
+Epoch 364  0.5756   0.7907   0.8939   0.7007
+Epoch 365  0.5759   0.7907   0.8880   0.7040
+Epoch 366  0.5753   0.7909   0.8694   0.7068
+Epoch 367  0.5745   0.7911   0.8909   0.7028
+Epoch 368  0.5749   0.7910   0.8785   0.7058
+Epoch 369  0.5747   0.7910   0.8834   0.7051
+Epoch 370  0.5742   0.7912   0.8837   0.7029
+Epoch 371  0.5751   0.7908   0.8778   0.7036
+Epoch 372  0.5747   0.7910   0.8833   0.7031
+Epoch 373  0.5743   0.7912   0.8724   0.7073
+Epoch 374  0.5739   0.7912   0.8712   0.7073
+Epoch 375  0.5735   0.7913   0.8769   0.7054
+Epoch 376  0.5728   0.7917   0.8783   0.7073
+Epoch 377  0.5723   0.7920   0.8854   0.7048
+Epoch 378  0.5721   0.7920   0.8808   0.7071
+Epoch 379  0.5724   0.7918   0.8726   0.7060
+Epoch 380  0.5727   0.7917   0.8696   0.7080
+Epoch 381  0.5717   0.7920   0.8685   0.7077
+Epoch 382  0.5716   0.7921   0.8706   0.7062
+Epoch 383  0.5711   0.7922   0.8648   0.7084
+Epoch 384  0.5707   0.7925   0.8694   0.7093
+Epoch 385  0.5710   0.7924   0.8778   0.7052
+Epoch 386  0.5706   0.7924   0.8673   0.7087
+Epoch 387  0.5690   0.7929   0.8745   0.7059
+Epoch 388  0.5701   0.7924   0.8713   0.7090
+Epoch 389  0.5695   0.7928   0.8882   0.7030
+Epoch 390  0.5690   0.7929   0.8651   0.7084
+Epoch 391  0.5683   0.7932   0.8887   0.7033
+Epoch 392  0.5686   0.7931   0.8770   0.7066
+Epoch 393  0.5694   0.7928   0.8738   0.7070
+Epoch 394  0.5683   0.7932   0.8692   0.7092
+Epoch 395  0.5678   0.7934   0.8596   0.7110
+Epoch 396  0.5674   0.7935   0.8628   0.7090
+Epoch 397  0.5675   0.7935   0.8690   0.7101
+Epoch 398  0.5669   0.7937   0.8666   0.7091
+Epoch 399  0.5685   0.7929   0.8516   0.7131
+Epoch 400  0.5671   0.7936   0.8683   0.7099
+Epoch 401  0.5663   0.7940   0.8872   0.7034
+Epoch 402  0.5668   0.7936   0.8798   0.7054
+Epoch 403  0.5660   0.7940   0.8641   0.7095
+Epoch 404  0.5660   0.7938   0.8616   0.7104
+Epoch 405  0.5661   0.7939   0.8633   0.7106
+Epoch 406  0.5655   0.7943   0.8638   0.7102
+Epoch 407  0.5647   0.7945   0.8707   0.7108
+Epoch 408  0.5643   0.7945   0.8875   0.7044
+Epoch 409  0.5647   0.7944   0.8632   0.7085
+Epoch 410  0.5648   0.7944   0.8714   0.7079
+Epoch 411  0.5651   0.7943   0.8645   0.7101
+Epoch 412  0.5641   0.7946   0.8577   0.7130
+Epoch 413  0.5640   0.7947   0.8635   0.7104
+Epoch 414  0.5637   0.7948   0.8535   0.7127
+Epoch 415  0.5635   0.7948   0.8664   0.7093
+Epoch 416  0.5631   0.7950   0.8545   0.7142
+Epoch 417  0.5625   0.7951   0.8656   0.7110
+Epoch 418  0.5626   0.7951   0.8715   0.7078
+Epoch 419  0.5627   0.7949   0.8661   0.7107
+Epoch 420  0.5623   0.7952   0.8595   0.7129
+Epoch 421  0.5622   0.7952   0.8627   0.7111
+Epoch 422  0.5626   0.7951   0.8556   0.7140
+Epoch 423  0.5625   0.7951   0.8698   0.7074
+Epoch 424  0.5619   0.7953   0.8531   0.7124
+Epoch 425  0.5610   0.7957   0.8667   0.7091
+Epoch 426  0.5608   0.7958   0.8620   0.7116
+Epoch 427  0.5611   0.7957   0.8591   0.7109
+Epoch 428  0.5607   0.7958   0.8571   0.7129
+Epoch 429  0.5602   0.7959   0.8664   0.7099
+Epoch 430  0.5600   0.7961   0.8600   0.7116
+Epoch 431  0.5596   0.7961   0.8601   0.7112
+Epoch 432  0.5596   0.7963   0.8635   0.7118
+Epoch 433  0.5604   0.7958   0.8555   0.7110
+Epoch 434  0.5593   0.7962   0.8582   0.7132
+Epoch 435  0.5581   0.7967   0.8589   0.7132
+Epoch 436  0.5582   0.7968   0.8631   0.7124
+Epoch 437  0.5586   0.7964   0.8509   0.7148
+Epoch 438  0.5582   0.7965   0.8569   0.7137
+Epoch 439  0.5576   0.7968   0.8674   0.7108
+Epoch 440  0.5576   0.7968   0.8539   0.7151
+Epoch 441  0.5578   0.7967   0.8715   0.7090
+Epoch 442  0.5575   0.7968   0.8666   0.7131
+Epoch 443  0.5577   0.7968   0.8497   0.7141
+Epoch 444  0.5566   0.7971   0.8632   0.7109
+Epoch 445  0.5571   0.7969   0.8529   0.7135
+Epoch 446  0.5569   0.7970   0.8638   0.7107
+Epoch 447  0.5569   0.7970   0.8541   0.7152
+Epoch 448  0.5552   0.7976   0.8731   0.7091
+Epoch 449  0.5565   0.7971   0.8576   0.7146
+Epoch 450  0.5549   0.7977   0.8653   0.7110
+Epoch 451  0.5559   0.7973   0.8606   0.7117
+Epoch 452  0.5556   0.7975   0.8494   0.7139
+Epoch 453  0.5554   0.7975   0.8440   0.7153
+Epoch 454  0.5555   0.7975   0.8540   0.7144
+Epoch 455  0.5553   0.7976   0.8577   0.7135
+Epoch 456  0.5543   0.7979   0.8633   0.7127
+Epoch 457  0.5550   0.7978   0.8544   0.7148
+Epoch 458  0.5553   0.7975   0.8511   0.7162
+Epoch 459  0.5542   0.7980   0.8609   0.7131
+Epoch 460  0.5531   0.7983   0.8660   0.7123
+Epoch 461  0.5536   0.7983   0.8567   0.7140
+Epoch 462  0.5533   0.7982   0.8620   0.7133
+Epoch 463  0.5540   0.7980   0.8521   0.7147
+Epoch 464  0.5529   0.7984   0.8600   0.7150
+Epoch 465  0.5530   0.7983   0.8581   0.7147
+Epoch 466  0.5528   0.7985   0.8447   0.7163
+Epoch 467  0.5532   0.7984   0.8525   0.7155
+Epoch 468  0.5518   0.7988   0.8535   0.7161
+Epoch 469  0.5523   0.7986   0.8516   0.7163
+Epoch 470  0.5526   0.7985   0.8500   0.7152
+Epoch 471  0.5517   0.7987   0.8608   0.7151
+Epoch 472  0.5517   0.7987   0.8565   0.7156
+Epoch 473  0.5524   0.7986   0.8552   0.7136
+Epoch 474  0.5518   0.7988   0.8607   0.7140
+Epoch 475  0.5508   0.7992   0.8550   0.7157
+Epoch 476  0.5520   0.7986   0.8493   0.7160
+Epoch 477  0.5513   0.7990   0.8562   0.7151
+Epoch 478  0.5501   0.7994   0.8555   0.7142
+Epoch 479  0.5503   0.7993   0.8488   0.7168
+Epoch 480  0.5501   0.7994   0.8539   0.7150
+Epoch 481  0.5502   0.7993   0.8513   0.7165
+Epoch 482  0.5496   0.7995   0.8489   0.7167
+Epoch 483  0.5500   0.7993   0.8599   0.7144
+Epoch 484  0.5499   0.7994   0.8626   0.7121
+Epoch 485  0.5484   0.8000   0.8497   0.7168
+Epoch 486  0.5490   0.7997   0.8473   0.7183
+Epoch 487  0.5494   0.7996   0.8480   0.7166
+Epoch 488  0.5485   0.8000   0.8590   0.7131
+Epoch 489  0.5498   0.7995   0.8468   0.7172
+Epoch 490  0.5492   0.7997   0.8607   0.7133
+Epoch 491  0.5486   0.7999   0.8489   0.7164
+Epoch 492  0.5491   0.7997   0.8575   0.7170
+Epoch 493  0.5474   0.8003   0.8482   0.7180
+Epoch 494  0.5485   0.7999   0.8515   0.7166
+Epoch 495  0.5471   0.8004   0.8570   0.7166
+Epoch 496  0.5469   0.8006   0.8541   0.7159
+Epoch 497  0.5479   0.8002   0.8576   0.7148
+Epoch 498  0.5476   0.8002   0.8442   0.7175
+Epoch 499  0.5466   0.8006   0.8535   0.7154
+Epoch 500  0.5468   0.8004   0.8557   0.7161
+Epoch 501  0.5466   0.8006   0.8596   0.7150
+Epoch 502  0.5461   0.8007   0.8483   0.7166
+Epoch 503  0.5467   0.8005   0.8555   0.7164
+Epoch 504  0.5456   0.8009   0.8535   0.7156
+Epoch 505  0.5459   0.8008   0.8529   0.7165
+Epoch 506  0.5461   0.8008   0.8578   0.7168
+Epoch 507  0.5458   0.8008   0.8585   0.7154
+Epoch 508  0.5452   0.8011   0.8522   0.7166
+Epoch 509  0.5449   0.8012   0.8491   0.7172
+Epoch 510  0.5454   0.8009   0.8505   0.7162
+Epoch 511  0.5446   0.8012   0.8564   0.7168
+Epoch 512  0.5449   0.8011   0.8549   0.7148
+Epoch 513  0.5451   0.8011   0.8476   0.7183
+Epoch 514  0.5447   0.8011   0.8556   0.7165
+Epoch 515  0.5445   0.8012   0.8551   0.7171
+Epoch 516  0.5446   0.8012   0.8513   0.7173
+Epoch 517  0.5442   0.8014   0.8512   0.7177
+Epoch 518  0.5436   0.8016   0.8555   0.7153
+Epoch 519  0.5442   0.8014   0.8533   0.7172
+Epoch 520  0.5435   0.8015   0.8520   0.7165
+Epoch 521  0.5437   0.8016   0.8605   0.7164
+Epoch 522  0.5436   0.8016   0.8530   0.7167
+Epoch 523  0.5433   0.8016   0.8488   0.7177
+Epoch 524  0.5435   0.8014   0.8552   0.7165
+Epoch 525  0.5431   0.8018   0.8475   0.7170
+Epoch 526  0.5427   0.8019   0.8565   0.7159
+Epoch 527  0.5430   0.8018   0.8479   0.7170
+Epoch 528  0.5415   0.8023   0.8479   0.7172
+Epoch 529  0.5419   0.8022   0.8555   0.7158
+Epoch 530  0.5425   0.8019   0.8529   0.7161
+Epoch 531  0.5431   0.8018   0.8493   0.7174
+Epoch 532  0.5421   0.8021   0.8558   0.7153
+Epoch 533  0.5415   0.8022   0.8540   0.7160
+Epoch 534  0.5417   0.8022   0.8604   0.7156
+Epoch 535  0.5424   0.8019   0.8493   0.7178
+Epoch 536  0.5420   0.8021   0.8465   0.7182
+Epoch 537  0.5409   0.8025   0.8448   0.7192
+Epoch 538  0.5404   0.8026   0.8597   0.7148
+Epoch 539  0.5416   0.8023   0.8552   0.7152
+Epoch 540  0.5407   0.8024   0.8518   0.7181
+Epoch 541  0.5408   0.8025   0.8552   0.7168
+Epoch 542  0.5415   0.8021   0.8560   0.7157
+Epoch 543  0.5402   0.8027   0.8518   0.7187
+Epoch 544  0.5393   0.8031   0.8583   0.7166
+Epoch 545  0.5399   0.8027   0.8583   0.7160
+Epoch 546  0.5399   0.8028   0.8616   0.7159
+Epoch 547  0.5396   0.8029   0.8526   0.7168
+Epoch 548  0.5391   0.8031   0.8519   0.7178
+Epoch 549  0.5394   0.8029   0.8509   0.7170
+Epoch 550  0.5395   0.8029   0.8597   0.7156
+Epoch 551  0.5395   0.8029   0.8568   0.7163
+Epoch 552  0.5395   0.8029   0.8538   0.7164
+Epoch 553  0.5399   0.8028   0.8519   0.7172
+Epoch 554  0.5393   0.8030   0.8560   0.7170
+Epoch 555  0.5391   0.8031   0.8551   0.7167
+Epoch 556  0.5383   0.8034   0.8508   0.7182
+Epoch 557  0.5381   0.8035   0.8564   0.7173
+Epoch 558  0.5378   0.8035   0.8528   0.7161
+Epoch 559  0.5384   0.8033   0.8567   0.7157
+Epoch 560  0.5378   0.8036   0.8520   0.7181
+Epoch 561  0.5386   0.8032   0.8517   0.7175
+Epoch 562  0.5377   0.8037   0.8560   0.7162
+Epoch 563  0.5372   0.8037   0.8622   0.7160
+Epoch 564  0.5376   0.8038   0.8506   0.7187
+Epoch 565  0.5381   0.8035   0.8495   0.7193
+Epoch 566  0.5372   0.8037   0.8568   0.7163
+Epoch 567  0.5371   0.8038   0.8485   0.7179
+Epoch 568  0.5372   0.8036   0.8535   0.7173
+Epoch 569  0.5366   0.8039   0.8575   0.7165
+Epoch 570  0.5373   0.8037   0.8604   0.7155
+Epoch 571  0.5364   0.8041   0.8619   0.7158
+Epoch 572  0.5360   0.8041   0.8525   0.7163
+Epoch 573  0.5368   0.8038   0.8545   0.7167
+Epoch 574  0.5370   0.8038   0.8526   0.7159
+Epoch 575  0.5367   0.8039   0.8545   0.7172
+Epoch 576  0.5357   0.8042   0.8527   0.7179
+Epoch 577  0.5366   0.8038   0.8469   0.7185
+Epoch 578  0.5351   0.8044   0.8517   0.7181
+Epoch 579  0.5352   0.8045   0.8593   0.7153
+Epoch 580  0.5350   0.8045   0.8557   0.7160
+Epoch 581  0.5358   0.8041   0.8543   0.7192 <------------------
+Epoch 582  0.5359   0.8041   0.8554   0.7172
+Epoch 583  0.5351   0.8044   0.8534   0.7181
+Epoch 584  0.5347   0.8047   0.8538   0.7181
+Epoch 585  0.5347   0.8046   0.8550   0.7160
+Epoch 586  0.5343   0.8047   0.8567   0.7157
+Epoch 587  0.5348   0.8045   0.8593   0.7159
+Epoch 588  0.5351   0.8044   0.8540   0.7161
+Epoch 589  0.5349   0.8046   0.8655   0.7148
+Epoch 590  0.5342   0.8048   0.8492   0.7177
+Epoch 591  0.5340   0.8049   0.8552   0.7176
+Epoch 592  0.5346   0.8046   0.8515   0.7171
+Epoch 593  0.5344   0.8047   0.8532   0.7176
+Epoch 594  0.5341   0.8048   0.8613   0.7183
+Epoch 595  0.5334   0.8051   0.8668   0.7136
+Epoch 596  0.5339   0.8048   0.8591   0.7142
+Epoch 597  0.5341   0.8047   0.8558   0.7166
+Epoch 598  0.5339   0.8049   0.8580   0.7163
+Epoch 599  0.5337   0.8049   0.8704   0.7121
+Epoch 600  0.5329   0.8050   0.8524   0.7187 
+Epoch 601  0.5324   0.8054   0.8630   0.7164
+Epoch 602  0.5338   0.8049   0.8503   0.7180
+Epoch 603  0.5326   0.8053   0.8569   0.7162
+Epoch 604  0.5330   0.8052   0.8645   0.7143
+Epoch 605  0.5323   0.8054   0.8688   0.7142
+Epoch 606  0.5325   0.8054   0.8620   0.7160
+Epoch 607  0.5315   0.8057   0.8656   0.7148
+Epoch 608  0.5317   0.8056   0.8537   0.7184
+Epoch 609  0.5320   0.8054   0.8705   0.7142
+Epoch 610  0.5322   0.8054   0.8713   0.7145
+Epoch 611  0.5320   0.8055   0.8543   0.7159
+Epoch 612  0.5320   0.8055   0.8615   0.7138
+Epoch 613  0.5320   0.8055   0.8482   0.7179
+Epoch 614  0.5324   0.8054   0.8573   0.7159
+Epoch 615  0.5312   0.8057   0.8543   0.7177
+Epoch 616  0.5306   0.8060   0.8557   0.7178
+Epoch 617  0.5327   0.8052   0.8559   0.7160
+Epoch 618  0.5324   0.8053   0.8582   0.7158
+Epoch 619  0.5317   0.8055   0.8616   0.7146
+Epoch 620  0.5313   0.8058   0.8654   0.7157
+Epoch 621  0.5302   0.8062   0.8499   0.7176
+Epoch 622  0.5302   0.8061   0.8544   0.7166
+Epoch 623  0.5308   0.8059   0.8580   0.7164
+Epoch 624  0.5320   0.8054   0.8601   0.7179
+Epoch 625  0.5305   0.8060   0.8592   0.7162
+Epoch 626  0.5303   0.8061   0.8601   0.7159
+Epoch 627  0.5302   0.8059   0.8648   0.7155
+Epoch 628  0.5295   0.8063   0.8614   0.7158
+Epoch 629  0.5296   0.8063   0.8628   0.7151
+Epoch 630  0.5303   0.8060   0.8567   0.7163
+Epoch 631  0.5307   0.8058   0.8633   0.7145
+Epoch 632  0.5302   0.8061   0.8615   0.7143
+Epoch 633  0.5296   0.8063   0.8671   0.7146
+Epoch 634  0.5295   0.8063   0.8539   0.7178
+Epoch 635  0.5292   0.8064   0.8589   0.7167
+Epoch 636  0.5291   0.8066   0.8572   0.7164
+Epoch 637  0.5291   0.8064   0.8614   0.7154
+Epoch 638  0.5291   0.8064   0.8528   0.7178
+Epoch 639  0.5286   0.8066   0.8536   0.7172
+Epoch 640  0.5290   0.8065   0.8664   0.7157
+Epoch 641  0.5287   0.8067   0.8632   0.7171
+Epoch 642  0.5286   0.8067   0.8540   0.7173
+Epoch 643  0.5283   0.8066   0.8676   0.7150
+Epoch 644  0.5284   0.8068   0.8563   0.7179
+Epoch 645  0.5283   0.8068   0.8559   0.7170
+Epoch 646  0.5284   0.8067   0.8661   0.7133
+Epoch 647  0.5280   0.8068   0.8611   0.7168
+Epoch 648  0.5286   0.8067   0.8577   0.7166
+Epoch 649  0.5278   0.8069   0.8575   0.7175
+Epoch 650  0.5273   0.8071   0.8679   0.7165
+Epoch 651  0.5271   0.8072   0.8530   0.7172
+Epoch 652  0.5272   0.8071   0.8556   0.7168
+Epoch 653  0.5281   0.8067   0.8557   0.7173
+Epoch 654  0.5273   0.8071   0.8567   0.7175
+Epoch 655  0.5273   0.8071   0.8571   0.7177
+Epoch 656  0.5266   0.8074   0.8577   0.7163
+Epoch 657  0.5268   0.8072   0.8721   0.7148
+Epoch 658  0.5269   0.8073   0.8670   0.7152
+Epoch 659  0.5272   0.8070   0.8595   0.7148
+Epoch 660  0.5266   0.8072   0.8531   0.7177
+Epoch 661  0.5266   0.8072   0.8636   0.7164
+Epoch 662  0.5268   0.8072   0.8573   0.7176
+Epoch 663  0.5257   0.8076   0.8696   0.7149
+Epoch 664  0.5261   0.8075   0.8597   0.7177
+Epoch 665  0.5261   0.8074   0.8610   0.7160
+Epoch 666  0.5269   0.8071   0.8639   0.7151
+Epoch 667  0.5258   0.8076   0.8581   0.7171
+Epoch 668  0.5257   0.8077   0.8642   0.7156
+Epoch 669  0.5248   0.8079   0.8743   0.7135
+Epoch 670  0.5251   0.8077   0.8630   0.7174
+Epoch 671  0.5259   0.8075   0.8711   0.7147
+Epoch 672  0.5250   0.8079   0.8567   0.7173
+Epoch 673  0.5249   0.8079   0.8661   0.7151
+Epoch 674  0.5255   0.8076   0.8849   0.7136
+Epoch 675  0.5257   0.8076   0.8651   0.7147
+Epoch 676  0.5263   0.8073   0.8709   0.7151
+Epoch 677  0.5260   0.8074   0.8577   0.7174
+Epoch 678  0.5243   0.8081   0.8719   0.7156
+Epoch 679  0.5248   0.8079   0.8661   0.7150
+Epoch 680  0.5245   0.8079   0.8621   0.7158
+Epoch 681  0.5250   0.8078   0.8580   0.7163
+Epoch 682  0.5248   0.8079   0.8723   0.7146
+Epoch 683  0.5245   0.8080   0.8693   0.7157
+Epoch 684  0.5245   0.8079   0.8580   0.7159
+Epoch 685  0.5241   0.8081   0.8776   0.7137
+Epoch 686  0.5243   0.8080   0.8614   0.7172
+Epoch 687  0.5242   0.8081   0.8697   0.7159
+Epoch 688  0.5235   0.8083   0.8666   0.7165
+Epoch 689  0.5234   0.8083   0.8634   0.7158
+Epoch 690  0.5235   0.8082   0.8725   0.7148
+Epoch 691  0.5235   0.8083   0.8673   0.7160
+Epoch 692  0.5238   0.8083   0.8703   0.7146
+Epoch 693  0.5227   0.8086   0.8691   0.7168
+Epoch 694  0.5232   0.8084   0.8663   0.7156
+Epoch 695  0.5233   0.8084   0.8612   0.7163
+Epoch 696  0.5223   0.8087   0.8650   0.7171
+Epoch 697  0.5236   0.8084   0.8602   0.7155
+Epoch 698  0.5227   0.8086   0.8728   0.7149
+Epoch 699  0.5228   0.8086   0.8679   0.7167
+Epoch 700  0.5222   0.8088   0.8667   0.7157
+Epoch 701  0.5223   0.8088   0.8695   0.7146
+Epoch 702  0.5223   0.8087   0.8666   0.7165
+Epoch 703  0.5220   0.8089   0.8641   0.7159
+Epoch 704  0.5222   0.8088   0.8711   0.7158
+Epoch 705  0.5221   0.8089   0.8629   0.7165
+Epoch 706  0.5223   0.8087   0.8638   0.7151
+Epoch 707  0.5226   0.8087   0.8603   0.7178
+Epoch 708  0.5216   0.8090   0.8736   0.7147
+Epoch 709  0.5219   0.8088   0.8684   0.7158
+Epoch 710  0.5223   0.8087   0.8606   0.7168
+Epoch 711  0.5230   0.8085   0.8651   0.7166
+Epoch 712  0.5221   0.8088   0.8652   0.7156
+Epoch 713  0.5214   0.8089   0.8630   0.7161
+Epoch 714  0.5208   0.8092   0.8726   0.7138
+Epoch 715  0.5212   0.8092   0.8725   0.7161
+Epoch 716  0.5211   0.8092   0.8726   0.7152
+Epoch 717  0.5210   0.8091   0.8686   0.7161
+Epoch 718  0.5205   0.8094   0.8632   0.7176
+Epoch 719  0.5208   0.8092   0.8651   0.7169
+Epoch 720  0.5212   0.8091   0.8712   0.7158
+Epoch 721  0.5212   0.8091   0.8638   0.7169
+Epoch 722  0.5210   0.8091   0.8659   0.7166
+Epoch 723  0.5207   0.8092   0.8728   0.7150
+Epoch 724  0.5207   0.8091   0.8660   0.7154
+Epoch 725  0.5209   0.8090   0.8638   0.7163
+Epoch 726  0.5206   0.8093   0.8807   0.7134
+Epoch 727  0.5204   0.8094   0.8756   0.7144
+Epoch 728  0.5200   0.8095   0.8764   0.7164
+Epoch 729  0.5194   0.8096   0.8793   0.7137
+Epoch 730  0.5197   0.8096   0.8726   0.7152
+Epoch 731  0.5202   0.8095   0.8734   0.7138
+Epoch 732  0.5194   0.8097   0.8754   0.7143
+Epoch 733  0.5195   0.8097   0.8642   0.7161
+Epoch 734  0.5192   0.8097   0.8835   0.7152
+Epoch 735  0.5198   0.8096   0.8672   0.7153
+Epoch 736  0.5191   0.8097   0.8685   0.7160
+Epoch 737  0.5196   0.8096   0.8672   0.7149
+Epoch 738  0.5205   0.8094   0.8684   0.7145
+Epoch 739  0.5198   0.8095   0.8761   0.7148
+Epoch 740  0.5188   0.8099   0.8725   0.7174
+Epoch 741  0.5194   0.8097   0.8799   0.7136
+Epoch 742  0.5194   0.8097   0.8734   0.7131
+Epoch 743  0.5190   0.8098   0.8782   0.7145
+Epoch 744  0.5187   0.8098   0.8698   0.7148
+Epoch 745  0.5190   0.8099   0.8695   0.7161
+Epoch 746  0.5184   0.8100   0.8683   0.7172
+Epoch 747  0.5186   0.8100   0.8756   0.7137
+Epoch 748  0.5185   0.8101   0.8668   0.7155
+Epoch 749  0.5181   0.8103   0.8776   0.7128
+Epoch 750  0.5181   0.8102   0.8624   0.7167
+Epoch 751  0.5176   0.8103   0.8729   0.7168
+Epoch 752  0.5184   0.8101   0.8658   0.7155
+Epoch 753  0.5176   0.8103   0.8668   0.7160
+Epoch 754  0.5176   0.8104   0.8694   0.7149
+Epoch 755  0.5173   0.8104   0.8686   0.7154
+Epoch 756  0.5179   0.8101   0.8670   0.7171
+Epoch 757  0.5183   0.8100   0.8829   0.7142
+Epoch 758  0.5181   0.8101   0.8671   0.7146
+Epoch 759  0.5176   0.8104   0.8767   0.7147
+Epoch 760  0.5169   0.8106   0.8723   0.7139
+Epoch 761  0.5162   0.8107   0.8690   0.7153
+Epoch 762  0.5166   0.8107   0.8646   0.7173
+Epoch 763  0.5174   0.8104   0.8687   0.7161
+Epoch 764  0.5178   0.8102   0.8683   0.7161
+Epoch 765  0.5176   0.8103   0.8755   0.7149
+Epoch 766  0.5170   0.8105   0.8741   0.7142
+Epoch 767  0.5163   0.8108   0.8667   0.7171
+Epoch 768  0.5161   0.8109   0.8746   0.7144
+Epoch 769  0.5169   0.8106   0.8878   0.7128
+Epoch 770  0.5159   0.8109   0.8773   0.7145
+Epoch 771  0.5169   0.8106   0.8689   0.7157
+Epoch 772  0.5176   0.8102   0.8734   0.7149
+Epoch 773  0.5159   0.8108   0.8702   0.7154
+Epoch 774  0.5160   0.8109   0.8631   0.7166
+Epoch 775  0.5163   0.8107   0.8744   0.7154
+Epoch 776  0.5165   0.8107   0.8704   0.7157
+Epoch 777  0.5158   0.8109   0.8654   0.7163
+Epoch 778  0.5160   0.8109   0.8744   0.7148
+Epoch 779  0.5158   0.8109   0.8768   0.7158
+Epoch 780  0.5168   0.8105   0.8786   0.7153
+Epoch 781  0.5164   0.8107   0.8779   0.7159
+Epoch 782  0.5162   0.8108   0.8712   0.7150
+Epoch 783  0.5159   0.8108   0.8734   0.7148
+Epoch 784  0.5156   0.8109   0.8711   0.7151
+Epoch 785  0.5152   0.8110   0.8683   0.7171
+Epoch 786  0.5151   0.8112   0.8813   0.7142
+Epoch 787  0.5155   0.8109   0.8706   0.7168
+Epoch 788  0.5154   0.8111   0.8661   0.7151
+Epoch 789  0.5154   0.8111   0.8769   0.7131
+Epoch 790  0.5145   0.8113   0.8756   0.7157
+Epoch 791  0.5147   0.8112   0.8721   0.7158
+Epoch 792  0.5139   0.8116   0.8740   0.7154
+Epoch 793  0.5141   0.8115   0.8842   0.7147
+Epoch 794  0.5142   0.8114   0.8712   0.7161
+Epoch 795  0.5151   0.8111   0.8724   0.7157
+Epoch 796  0.5146   0.8113   0.8668   0.7166
+Epoch 797  0.5140   0.8115   0.8755   0.7146
+Epoch 798  0.5143   0.8114   0.8732   0.7156
+Epoch 799  0.5140   0.8115   0.8687   0.7157
+Epoch 800  0.5141   0.8115   0.8698   0.7163
+Epoch 801  0.5134   0.8117   0.8731   0.7165
+Epoch 802  0.5134   0.8118   0.8809   0.7148
+Epoch 803  0.5132   0.8118   0.8793   0.7139
+Epoch 804  0.5134   0.8118   0.8745   0.7148
+Epoch 805  0.5142   0.8114   0.8733   0.7140
+Epoch 806  0.5144   0.8113   0.8686   0.7151
+Epoch 807  0.5142   0.8115   0.8691   0.7180
+Epoch 808  0.5134   0.8117   0.8794   0.7151
+Epoch 809  0.5129   0.8119   0.8690   0.7168
+Epoch 810  0.5131   0.8117   0.8670   0.7172
+Epoch 811  0.5137   0.8117   0.8876   0.7148
+Epoch 812  0.5135   0.8118   0.8752   0.7160
+Epoch 813  0.5136   0.8116   0.8743   0.7159
+Epoch 814  0.5130   0.8118   0.8725   0.7175
+Epoch 815  0.5123   0.8120   0.8742   0.7157
+Epoch 816  0.5128   0.8120   0.8695   0.7160
+Epoch 817  0.5127   0.8120   0.8771   0.7152
+Epoch 818  0.5127   0.8121   0.8693   0.7160
+Epoch 819  0.5126   0.8120   0.8724   0.7172
+Epoch 820  0.5131   0.8118   0.8710   0.7145
+Epoch 821  0.5133   0.8117   0.8752   0.7152
+Epoch 822  0.5125   0.8121   0.8746   0.7149
+Epoch 823  0.5123   0.8120   0.8776   0.7161
+Epoch 824  0.5122   0.8122   0.8746   0.7164
+Epoch 825  0.5127   0.8120   0.8754   0.7161
+Epoch 826  0.5119   0.8122   0.8808   0.7142
+Epoch 827  0.5118   0.8123   0.8758   0.7157
+Epoch 828  0.5132   0.8117   0.8856   0.7150
+Epoch 829  0.5131   0.8117   0.8697   0.7166
+Epoch 830  0.5120   0.8122   0.8758   0.7154
+Epoch 831  0.5115   0.8124   0.8741   0.7156
+Epoch 832  0.5111   0.8125   0.8688   0.7173
+Epoch 833  0.5114   0.8125   0.8709   0.7149
+Epoch 834  0.5116   0.8123   0.8717   0.7160
+Epoch 835  0.5118   0.8123   0.8749   0.7164
+Epoch 836  0.5115   0.8123   0.8734   0.7149
+Epoch 837  0.5111   0.8125   0.8716   0.7165
+Epoch 838  0.5110   0.8125   0.8833   0.7151
+Epoch 839  0.5117   0.8123   0.8745   0.7166
+Epoch 840  0.5108   0.8125   0.8858   0.7145
+Epoch 841  0.5107   0.8127   0.8736   0.7149
+Epoch 842  0.5106   0.8128   0.8805   0.7152
+Epoch 843  0.5111   0.8124   0.8742   0.7157
+Epoch 844  0.5112   0.8124   0.8728   0.7161
+Epoch 845  0.5112   0.8124   0.8735   0.7157
+Epoch 846  0.5108   0.8125   0.8830   0.7147
+Epoch 847  0.5103   0.8128   0.8758   0.7163
+Epoch 848  0.5103   0.8127   0.8709   0.7158
+Epoch 849  0.5104   0.8127   0.8716   0.7162
+Epoch 850  0.5096   0.8130   0.8706   0.7158
+Epoch 851  0.5098   0.8130   0.8758   0.7161
+Epoch 852  0.5115   0.8123   0.8760   0.7159
+Epoch 853  0.5108   0.8126   0.8809   0.7159
+Epoch 854  0.5102   0.8128   0.8744   0.7164
+Epoch 855  0.5105   0.8126   0.8742   0.7153
+Epoch 856  0.5098   0.8130   0.8755   0.7166
+Epoch 857  0.5098   0.8129   0.8868   0.7147
+Epoch 858  0.5095   0.8131   0.8794   0.7156
+Epoch 859  0.5095   0.8130   0.8709   0.7172
+Epoch 860  0.5097   0.8130   0.8810   0.7158
+Epoch 861  0.5096   0.8129   0.8728   0.7171
+Epoch 862  0.5098   0.8129   0.8803   0.7139
+Epoch 863  0.5097   0.8129   0.8857   0.7152
+Epoch 864  0.5090   0.8132   0.8758   0.7163
+Epoch 865  0.5092   0.8131   0.8669   0.7153
+Epoch 866  0.5095   0.8129   0.8822   0.7143
+Epoch 867  0.5095   0.8130   0.8778   0.7164
+Epoch 868  0.5087   0.8133   0.8706   0.7167
+Epoch 869  0.5091   0.8131   0.8755   0.7149
+Epoch 870  0.5087   0.8132   0.8786   0.7156
+Epoch 871  0.5093   0.8129   0.8687   0.7172
+Epoch 872  0.5088   0.8132   0.8708   0.7166
+Epoch 873  0.5086   0.8132   0.8771   0.7145
+Epoch 874  0.5087   0.8132   0.8793   0.7155
+Epoch 875  0.5088   0.8131   0.8814   0.7146
+Epoch 876  0.5084   0.8133   0.8771   0.7159
+Epoch 877  0.5084   0.8135   0.8752   0.7152
+Epoch 878  0.5084   0.8134   0.8778   0.7150
+Epoch 879  0.5082   0.8134   0.8814   0.7154
+Epoch 880  0.5085   0.8133   0.8880   0.7154
+Epoch 881  0.5085   0.8133   0.8751   0.7158
+Epoch 882  0.5092   0.8131   0.8731   0.7155
+Epoch 883  0.5083   0.8134   0.8749   0.7152
+Epoch 884  0.5079   0.8136   0.8701   0.7157
+Epoch 885  0.5081   0.8135   0.8789   0.7151
+Epoch 886  0.5083   0.8135   0.8726   0.7159
+Epoch 887  0.5083   0.8134   0.8814   0.7151
+Epoch 888  0.5077   0.8136   0.8818   0.7154
+Epoch 889  0.5086   0.8133   0.8695   0.7175
+Epoch 890  0.5080   0.8134   0.8797   0.7157
+Epoch 891  0.5078   0.8135   0.8814   0.7160
+Epoch 892  0.5076   0.8135   0.8837   0.7163
+Epoch 893  0.5078   0.8135   0.8759   0.7157
+Epoch 894  0.5076   0.8136   0.8829   0.7150
+Epoch 895  0.5082   0.8134   0.8763   0.7168
+Epoch 896  0.5075   0.8137   0.8839   0.7150
+Epoch 897  0.5072   0.8138   0.8732   0.7164
+Epoch 898  0.5080   0.8134   0.8815   0.7157
+Epoch 899  0.5065   0.8141   0.8807   0.7143
+Epoch 900  0.5065   0.8141   0.8814   0.7155
+Epoch 901  0.5070   0.8138   0.8761   0.7152
+Epoch 902  0.5075   0.8135   0.8745   0.7159
+Epoch 903  0.5066   0.8140   0.8785   0.7152
+Epoch 904  0.5067   0.8140   0.8817   0.7137
+Epoch 905  0.5068   0.8140   0.8781   0.7153
+Epoch 906  0.5060   0.8143   0.8760   0.7160
+Epoch 907  0.5062   0.8142   0.8732   0.7168
+Epoch 908  0.5065   0.8139   0.8748   0.7164
+Epoch 909  0.5069   0.8139   0.8816   0.7153
+Epoch 910  0.5070   0.8139   0.8825   0.7161
+Epoch 911  0.5049   0.8146   0.8791   0.7162
+Epoch 912  0.5060   0.8142   0.8751   0.7171
+Epoch 913  0.5058   0.8142   0.8838   0.7158
+Epoch 914  0.5059   0.8142   0.8712   0.7164
+Epoch 915  0.5066   0.8139   0.8876   0.7158
+Epoch 916  0.5066   0.8140   0.8744   0.7155
+Epoch 917  0.5061   0.8141   0.8884   0.7135
+Epoch 918  0.5062   0.8140   0.8839   0.7145
+Epoch 919  0.5062   0.8141   0.8802   0.7163
+Epoch 920  0.5058   0.8143   0.8710   0.7156
+Epoch 921  0.5054   0.8145   0.8829   0.7165
+Epoch 922  0.5054   0.8143   0.8809   0.7159
+Epoch 923  0.5054   0.8145   0.8813   0.7150
+Epoch 924  0.5055   0.8143   0.8800   0.7143
+Epoch 925  0.5052   0.8144   0.8773   0.7153
+Epoch 926  0.5050   0.8146   0.8897   0.7146
+Epoch 927  0.5049   0.8146   0.8758   0.7162
+Epoch 928  0.5049   0.8145   0.8786   0.7169
+Epoch 929  0.5049   0.8147   0.8852   0.7157
+Epoch 930  0.5047   0.8145   0.8732   0.7150
+Epoch 931  0.5046   0.8146   0.8782   0.7161
+Epoch 932  0.5044   0.8148   0.8783   0.7147
+Epoch 933  0.5048   0.8146   0.8721   0.7159
+Epoch 934  0.5041   0.8149   0.8832   0.7163
+Epoch 935  0.5050   0.8145   0.8838   0.7153
+Epoch 936  0.5050   0.8144   0.8788   0.7162
+Epoch 937  0.5046   0.8146   0.8817   0.7153
+Epoch 938  0.5053   0.8144   0.8724   0.7160
+Epoch 939  0.5049   0.8145   0.8816   0.7159
+Epoch 940  0.5042   0.8148   0.8780   0.7157
+Epoch 941  0.5052   0.8145   0.8783   0.7162
+Epoch 942  0.5046   0.8146   0.8704   0.7167
+Epoch 943  0.5051   0.8145   0.8879   0.7147
+Epoch 944  0.5048   0.8145   0.8766   0.7176
+Epoch 945  0.5043   0.8148   0.8819   0.7162
+Epoch 946  0.5043   0.8149   0.8819   0.7152
+Epoch 947  0.5041   0.8147   0.8850   0.7150
+Epoch 948  0.5042   0.8148   0.8735   0.7171
+Epoch 949  0.5048   0.8144   0.8818   0.7161
+Epoch 950  0.5049   0.8146   0.8783   0.7156
+Epoch 951  0.5039   0.8149   0.8870   0.7150
+Epoch 952  0.5038   0.8150   0.8852   0.7163
+Epoch 953  0.5036   0.8150   0.8783   0.7163
+Epoch 954  0.5037   0.8149   0.8776   0.7157
+Epoch 955  0.5034   0.8151   0.8775   0.7155
+Epoch 956  0.5038   0.8150   0.8855   0.7147
+Epoch 957  0.5042   0.8148   0.8822   0.7154
+Epoch 958  0.5039   0.8149   0.8792   0.7155
+Epoch 959  0.5033   0.8151   0.8832   0.7155
+Epoch 960  0.5033   0.8152   0.8751   0.7157
+Epoch 961  0.5035   0.8151   0.8849   0.7147
+Epoch 962  0.5030   0.8152   0.8797   0.7171
+Epoch 963  0.5030   0.8152   0.8812   0.7146
+Epoch 964  0.5020   0.8156   0.8797   0.7164
+Epoch 965  0.5030   0.8152   0.8766   0.7166
+Epoch 966  0.5027   0.8154   0.8798   0.7164
+Epoch 967  0.5029   0.8153   0.8846   0.7157
+Epoch 968  0.5025   0.8153   0.8767   0.7155
+Epoch 969  0.5024   0.8154   0.8782   0.7169
+Epoch 970  0.5022   0.8155   0.8860   0.7151
+Epoch 971  0.5029   0.8152   0.8805   0.7169
+Epoch 972  0.5021   0.8156   0.8888   0.7158
+Epoch 973  0.5022   0.8155   0.8753   0.7161
+Epoch 974  0.5022   0.8155   0.8870   0.7152
+Epoch 975  0.5024   0.8154   0.8777   0.7157
+Epoch 976  0.5027   0.8153   0.8815   0.7169
+Epoch 977  0.5029   0.8153   0.8802   0.7159
+Epoch 978  0.5029   0.8152   0.8904   0.7150
+Epoch 979  0.5020   0.8154   0.8864   0.7143
+Epoch 980  0.5022   0.8155   0.8747   0.7163
+Epoch 981  0.5024   0.8154   0.8810   0.7163
+Epoch 982  0.5024   0.8154   0.8849   0.7155
+Epoch 983  0.5029   0.8152   0.8783   0.7166
+Epoch 984  0.5018   0.8156   0.8857   0.7147
+Epoch 985  0.5018   0.8155   0.8774   0.7159
+Epoch 986  0.5023   0.8155   0.8876   0.7152
+Epoch 987  0.5018   0.8156   0.8804   0.7160
+Epoch 988  0.5018   0.8155   0.8879   0.7158
+Epoch 989  0.5021   0.8155   0.8851   0.7142
+Epoch 990  0.5014   0.8158   0.8825   0.7155
+Epoch 991  0.5021   0.8155   0.8877   0.7148
+Epoch 992  0.5019   0.8156   0.8751   0.7168
+Epoch 993  0.5016   0.8157   0.8865   0.7164
+Epoch 994  0.5008   0.8159   0.8870   0.7160
+Epoch 995  0.5012   0.8159   0.8771   0.7170
+Epoch 996  0.5011   0.8159   0.8839   0.7146
+Epoch 997  0.5009   0.8159   0.8794   0.7157
+Epoch 998  0.5008   0.8159   0.8832   0.7165
+Epoch 999  0.5011   0.8158   0.8845   0.7168
+Epoch1000  0.5005   0.8160   0.8881   0.7143
+
+Confusion Matrix:
+					 Artifici Agricult SAFazinh SeFSoAze SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas| 6219128  1616650    20051    62601        0   156842   165984   197213    67657   118839
+        Zonas de agricultura e pastagens|  875772 44225995   557698  1434499      567   433888   948154  1616554   723079    34341
+                        SAF de Azinheira|    8791  1280570  4148994  1227779      220    32490    19068    73550     8876     7486
+ Florestas e SAF de Sobreiro e Azinheira|   44626  1945759  1055416 12877825      629   362529  1020164  1646780   188295    15905
+                  SAF de outras especies|    2846   125614    16023   113105     1360     2592    55762    15284    22154      285
+                  Florestas de Eucalipto|  102245   566049    21508   405089        0 12890987  1461235   522961   223177     4240
+     Florestas de Pinheiro Manso e Bravo|  166533  1447320    29212  1006654        9  2006418 14874124  2649705   716811     8721
+                                   Matos|  149808  1842482    11791   790816      177   551595  2327558 13825021   546213    13087
+            Florestas de outras especies|  188320  3293916    21358   618941     1019   571029  1828204  2989817  3782850    38511
+                          Agua + Humidas|  223672   141095    12397    30763        0     6433    14912    31536    22701  1984499
+
+Classification report:
+             precision    recall  f1-score   support
+           0       0.78      0.72      0.75   8624965
+           1       0.78      0.87      0.82  50850547
+           2       0.70      0.61      0.65   6807824
+           3       0.69      0.67      0.68  19157928
+           4       0.34      0.00      0.01    355025
+           5       0.76      0.80      0.78  16197491
+           6       0.65      0.65      0.65  22905507
+           7       0.59      0.69      0.63  20058548
+           8       0.60      0.28      0.39  13333965
+           9       0.89      0.80      0.85   2468008
+
+    accuracy                           0.71 160759808
+   macro avg       0.68      0.61      0.62 160759808
+weighted avg       0.71      0.71      0.71 160759808
+_______________________________________________________________
+Unet with 5 layers
+channels: ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+reshape: 252->68
+batch_size: 52
+normalization: MEAN_STD
+batch_normalization: YES
+transpose_convolution: YES
+ignoreNODATA: YES
+net_starting_channels: 32
+dropout: 0.5
+
+Training results:
+	    Loss Accuracy Val_Loss  Val_Acc
+Epoch  1  1.9000   0.3779   1.6052   0.4966
+Epoch  2  1.4918   0.5291   1.3962   0.5512
+Epoch  3  1.3341   0.5722   1.2977   0.5716
+Epoch  4  1.2443   0.5939   1.2399   0.5830
+Epoch  5  1.1828   0.6073   1.1945   0.5948
+Epoch  6  1.1374   0.6170   1.1288   0.6136
+Epoch  7  1.1034   0.6253   1.1336   0.6096
+Epoch  8  1.0752   0.6320   1.0940   0.6234
+Epoch  9  1.0529   0.6375   1.0645   0.6305
+Epoch 10  1.0345   0.6423   1.0849   0.6223
+Epoch 11  1.0189   0.6466   1.0576   0.6315
+Epoch 12  1.0006   0.6521   1.0418   0.6340
+Epoch 13  0.9868   0.6559   1.0373   0.6371
+Epoch 14  0.9742   0.6606   1.0151   0.6455
+Epoch 15  0.9629   0.6631   1.0089   0.6475
+Epoch 16  0.9510   0.6673   1.0005   0.6501
+Epoch 17  0.9411   0.6702   0.9889   0.6555
+Epoch 18  0.9300   0.6739   0.9816   0.6577
+Epoch 19  0.9213   0.6770   0.9666   0.6623
+Epoch 20  0.9074   0.6817   0.9869   0.6545
+Epoch 21  0.9006   0.6839   0.9697   0.6611
+Epoch 22  0.8909   0.6872   0.9770   0.6597
+Epoch 23  0.8828   0.6896   0.9702   0.6607
+Epoch 24  0.8729   0.6926   0.9794   0.6561
+Epoch 25  0.8655   0.6956   0.9727   0.6580
+Epoch 26  0.8572   0.6987   0.9729   0.6587
+Epoch 27  0.8500   0.7002   0.9808   0.6581
+Epoch 28  0.8408   0.7036   1.0281   0.6404
+Epoch 29  0.8338   0.7065   1.0025   0.6530
+Epoch 30  0.8260   0.7087   0.9922   0.6541
+
+Confusion Matrix:
+					 Artifici Agricult SAFazinh SeFSoAze SAFoutro FLeucali FLpinhei    Matos FLoutras Agua+Hum
+                  Zonas Artificializadas|  399753   156334     2855    11507        0     4460    20666    11962     9625    14752
+        Zonas de agricultura e pastagens|   61024  2921775    35914   185930       14    26321    74059   100330    84056     5930
+                        SAF de Azinheira|    1534   103651   244375   128179        0     4598      306     3951        2      848
+ Florestas e SAF de Sobreiro e Azinheira|    1312   162738    54439   984703        0    29935    47628    60832    25537     1060
+                  SAF de outras especies|     151     4459        0    10095        0       96     3932     1266       38        0
+                  Florestas de Eucalipto|   10216    61684      379    78620        0   642906   193591    78891    82121     1382
+     Florestas de Pinheiro Manso e Bravo|   10597   117020     2989   112490        0    77441   820889   246192   222672     1397
+                                   Matos|    8906   160083      585   138485        0    10990   120304   890491   107430     1980
+            Florestas de outras especies|    9070   262283      917    75648        0    18601    64557   160432   373023     3072
+                          Agua + Humidas|     835    11792     1336     7437        0      570     3313     2780     2523   140820
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.79      0.63      0.70    631914
+
+           1       0.74      0.84      0.78   3495353
+
+           2       0.71      0.50      0.59    487444
+
+           3       0.57      0.72      0.64   1368184
+
+           4       0.00      0.00      0.00     20037
+
+           5       0.79      0.56      0.65   1149790
+
+           6       0.61      0.51      0.55   1611687
+
+           7       0.57      0.62      0.59   1439254
+
+           8       0.41      0.39      0.40    967603
+
+           9       0.82      0.82      0.82    171406
+
+
+    accuracy                           0.65  11342672
+
+   macro avg       0.60      0.56      0.57  11342672
+
+weighted avg       0.66      0.65      0.65  11342672

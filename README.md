@@ -3,7 +3,7 @@ Project IPCA EST LEEC
 
 Diogo Nunes 13679
 
-##Instalation
+##Installation
 Setup a virtual environment
 
 Download GDAL 2.4.1 binary:

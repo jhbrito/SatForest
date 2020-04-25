@@ -1,7 +1,11 @@
 # SatForest
-Project IPCA EST LEEC
+2Ai - EST IPCA
 
-Diogo Nunes 13679
+LEEC Project
+
+Diogo Nunes 13679 
+
+This code is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 
 ##Installation
 Setup a virtual environment

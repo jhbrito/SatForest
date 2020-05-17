@@ -1,12 +1,12 @@
-from __future__ import print_function
-from keras.preprocessing.image import ImageDataGenerator
-import numpy as np 
+# from __future__ import print_function
+# from keras.preprocessing.image import ImageDataGenerator
+# import numpy as np
 import os
-import glob
+# import glob
 import skimage.io as io
 import skimage.transform as trans
 import random as r
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import pickle
 import rasterio as rio
 from raster_classes import *
@@ -14,6 +14,7 @@ from color_dictionary import *
 
 all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+
 
 # Função que determina os parâmetros de treino
 def parameters(ni):
@@ -33,27 +34,31 @@ def parameters(ni):
 
     return use_max, do_batch_normalization, use_transpose_convolution, net_channels, drop, save_header
 
-def moving_average(acc, n = 3) :
-    ret = np.cumsum(acc, dtype = float)
+
+def moving_average(acc, n=3):
+    ret = np.cumsum(acc, dtype=float)
     ret[n:] = ret[n:] - ret[:-n]
     return ret[n - 1:] / n
 
+
 # Função para normalização do valor dos ficheiros
-def normalizeB(imgB, channel, stats, use_max = False):
+def normalizeB(imgB, channel, stats, use_max=False):
     if use_max:
         imgB = imgB / stats['max'][channel]
     else:
         imgB = (imgB - stats['mean'][channel]) / stats['std'][channel]
     return imgB
 
+
 # Função que guarda os valores de normalização
 def updateStatsB(stats, folder, channel):
-    imgB = io.imread(os.path.join(folder, channel + ".tif"), as_gray = True)
+    imgB = io.imread(os.path.join(folder, channel + ".tif"), as_gray=True)
     stats['max'][channel] = max(stats['max'][channel], imgB.max())
     stats['min'][channel] = min(stats['min'][channel], imgB.min())
     stats['mean'][channel].append(np.mean(imgB))
     stats['std'][channel].append(np.std(imgB))
     return stats
+
 
 # Funçaõ que serve de loop para a normalização
 def updateStats(stats, folder):
@@ -62,9 +67,10 @@ def updateStats(stats, folder):
 
     return stats
 
+
 # Funçaõ que efetua a preparação do dataset
-def prepare_dataset(datasetPath, ignoreNODATAtiles = True, keepNODATA = False, cleanTilesFile = 'clean_tiles.txt',
-                    dataStatsFile = 'data_stats.txt'):
+def prepare_dataset(datasetPath, ignoreNODATAtiles=True, keepNODATA=False, cleanTilesFile='clean_tiles.txt',
+                    dataStatsFile='data_stats.txt'):
     if os.path.isfile(cleanTilesFile) and os.path.isfile(dataStatsFile):
         # load tile list
         with open(cleanTilesFile, "rb") as fp:
@@ -94,16 +100,16 @@ def prepare_dataset(datasetPath, ignoreNODATAtiles = True, keepNODATA = False, c
             for tileY in tileYList:
 
                 if ignoreNODATAtiles:
-                    imgCOS_GT = io.imread(os.path.join(datasetPath, tileX.name, tileY.name, "COS.tif"), as_gray = True)
-                    _ , incompleteCOS = classAgregateCOS(imgCOS_GT, keepNODATA = keepNODATA)
+                    imgCOS_GT = io.imread(os.path.join(datasetPath, tileX.name, tileY.name, "COS.tif"), as_gray=True)
+                    _, incompleteCOS = classAgregateCOS(imgCOS_GT)
                     print("image: ", i, "incomplete: ", incompleteCOS)
                     i += 1
                     if not incompleteCOS:
                         paths.append(os.path.join(tileX.name, tileY.name))
-                        stats = updateStats(stats = stats, folder = os.path.join(datasetPath, tileX.name, tileY.name))
+                        stats = updateStats(stats=stats, folder=os.path.join(datasetPath, tileX.name, tileY.name))
                 else:
                     paths.append(os.path.join(tileX.name, tileY.name))
-                    stats = updateStats(stats = stats, folder = os.path.join(datasetPath, tileX.name, tileY.name))
+                    stats = updateStats(stats=stats, folder=os.path.join(datasetPath, tileX.name, tileY.name))
         # save tile list
         with open(cleanTilesFile, "wb") as fp:  # Pickling
             pickle.dump(paths, fp)
@@ -129,20 +135,21 @@ def prepare_dataset(datasetPath, ignoreNODATAtiles = True, keepNODATA = False, c
 
     return trainSet, testSet, stats
 
+
 # Função para agregação da máscara da COS, conforme os parâmetros do presente treino
-def classAgregateCOS(imgCOS, keepNODATA = False):
-    nodataImg = np.zeros(imgCOS.shape, dtype = 'uint8')
+def classAgregateCOS(imgCOS):
+    nodataImg = np.zeros(imgCOS.shape, dtype='uint8')
     nodataImg[imgCOS == 99] = 1
     if nodataImg.sum() > 0:
         incompleteData = True
     else:
         incompleteData = False
 
-    newImgCOS = np.zeros(imgCOS.shape, dtype = 'uint8')
+    newImgCOS = np.zeros(imgCOS.shape, dtype='uint8')
 
     for classe in range(len(class_lookup) - 1):
-        #classeLabel = class_lookup[classe]
-        #newclasse = int(classeLabel[0]) - 1
+        # classeLabel = class_lookup[classe]
+        # newclasse = int(classeLabel[0]) - 1
         '''
         # For more than 5 classes
         if classe <= 12:
@@ -157,33 +164,35 @@ def classAgregateCOS(imgCOS, keepNODATA = False):
 
         newImgCOS[imgCOS == classe] = newclasse
     # Keep NODTA or transform into ocean
-    #newclasse = 9 if keepNODATA else 4
-    #newImgCOS[imgCOS == 99] = newclasse
+    # newclasse = 9 if keepNODATA else 4
+    # newImgCOS[imgCOS == 99] = newclasse
     # --->
-    #newImgCOS[newImgCOS == 4] = 3 # Aggregate humids with water zones
+    # newImgCOS[newImgCOS == 4] = 3 # Aggregate humids with water zones
 
     return newImgCOS, incompleteData
 
-#Função que transforma a máscara da COS de uma matriz 256x256x1 para uma matriz 256x256xnum_classes
-def normalizeCOS(imgCOS, num_class = 5, keepNODATA = False):
-    newImgCOS, incompleteCOS = classAgregateCOS(imgCOS, keepNODATA = keepNODATA)
+
+# Função que transforma a máscara da COS de uma matriz 256x256x1 para uma matriz 256x256xnum_classes
+def normalizeCOS(imgCOS, num_class=5):
+    newImgCOS, incompleteCOS = classAgregateCOS(imgCOS)
     new_mask = np.zeros(newImgCOS.shape + (num_class,))
     for i in range(num_class):
         new_mask[newImgCOS == i, i] = 1.
 
     return new_mask, incompleteCOS
 
-#Função para leitura do ficheiro de imagem e normalização da mesma
-def getImgs(datasetPath, tile, dataStats, use_max = False):
 
+# Função para leitura do ficheiro de imagem e normalização da mesma
+def getImgs(datasetPath, tile, dataStats, use_max=False):
     imgs = list()
     i = 0
     for channel in channels:
-        imgs.append(io.imread(os.path.join(datasetPath, tile, channel + ".tif"), as_gray = True))
+        imgs.append(io.imread(os.path.join(datasetPath, tile, channel + ".tif"), as_gray=True))
         imgs[i] = normalizeB(imgs[i], channel, dataStats, use_max)
         i += 1
 
     return imgs
+
 
 # Função que efetua o recorte da imagem, conforme os parâmetros de treino
 def do_center_crop(img, new_size):
@@ -192,8 +201,9 @@ def do_center_crop(img, new_size):
     img = img[cropy:img.shape[0] - cropy, cropx:img.shape[1] - cropx]
     return img
 
+
 # Função para alteração das imagens de treino
-def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet):
+def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size):
     if 'width_shift_range' in aug_dict:
         input_cropx = r.sample(aug_dict['width_shift_range'], 1)[0]
     else:
@@ -207,7 +217,7 @@ def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet):
     else:
         rotation = 0
     if 'horizontal_flip' in aug_dict and aug_dict['horizontal_flip']:
-        do_horizontal_flip = r.sample([False,True], 1)[0]
+        do_horizontal_flip = r.sample([False, True], 1)[0]
     else:
         do_horizontal_flip = False
     if 'vertical_flip' in aug_dict and aug_dict['vertical_flip']:
@@ -215,11 +225,11 @@ def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet):
     else:
         do_vertical_flip = False
 
-    target_offsety=int((input_size[0]-target_size[0])/2)
-    target_offsetx=int((input_size[1]-target_size[1])/2)
-    if use_unet == 5:
-        imgCOS = imgCOS[target_offsety+input_cropy:target_offsety+input_cropy+target_size[0],
-                 target_offsetx+input_cropx:target_offsetx+input_cropx+target_size[1]]
+    target_offsety = int((input_size[0] - target_size[0]) / 2)
+    target_offsetx = int((input_size[1] - target_size[1]) / 2)
+    if imgCOS.shape[0] != target_size[0] | imgCOS.shape[1] != target_size[1]:  # if use_unet == 5:
+        imgCOS = imgCOS[target_offsety + input_cropy:target_offsety + input_cropy + target_size[0],
+                 target_offsetx + input_cropx:target_offsetx + input_cropx + target_size[1]]
 
     if rotation:
         imgCOS = trans.rotate(imgCOS, rotation)
@@ -230,8 +240,8 @@ def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet):
 
     for i in range(len(imgs)):
         img = imgs[i]
-        if use_unet == 5:
-            img = img[input_cropy:input_cropy+input_size[0], input_cropx:input_cropx+input_size[1]]
+        if img.shape[0] != input_size[0] | img.shape[1] != input_size[1]:  # if use_unet == 5:
+            img = img[input_cropy:input_cropy + input_size[0], input_cropx:input_cropx + input_size[1]]
         if rotation:
             img = trans.rotate(img, rotation)
         if do_horizontal_flip:
@@ -241,16 +251,17 @@ def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet):
         imgs[i] = img
     return imgs, imgCOS
 
+
 # Função para gerar e gerir os dados de treino que são alimentados à rede neuronal
-def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, input_size = (256,256),
-                      target_size = (256,256), num_classes = 5, use_max = False, seed = 1, ignoreNODATA_flag = True,
-                      keepNODATA = False, use_unet = 5):
+def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, input_size=(256, 256),
+                      target_size=(256, 256), num_classes=5, use_max=False, ignoreNODATA_flag=True,
+                      keepNODATA=False):
     if batch_size > 1:
         while 1:
             iTile = 0
             nBatches = int(np.ceil(len(trainSet) / batch_size))
             for batchID in range(nBatches):
-                img_un = np.zeros((256, 256, len(channels)), dtype = np.float)
+                # img_un = np.zeros((256, 256, len(channels)), dtype = np.float)
                 imgs = np.zeros(((batch_size,) + input_size + (len(channels),)))
                 imgsCOS = np.zeros(((batch_size,) + target_size + (num_classes,)))
                 iTileInBatch = 0
@@ -258,32 +269,32 @@ def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, in
                     if iTile < len(trainSet):
                         tile = trainSet[iTile]
                         iTile += 1
-                        imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray = True)
-                        imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes, keepNODATA = keepNODATA)
+                        imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray=True)
+                        imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes)
                         if not incompleteCOS or not ignoreNODATA_flag:
                             img_un = getImgs(datasetPath, tile, dataStats, use_max)
-                            img_un, imgCOS = augmentImages(aug_dict, img_un, input_size, imgCOS, target_size, use_unet)
+                            img_un, imgCOS = augmentImages(aug_dict, img_un, input_size, imgCOS, target_size)
                             imgsCOS[iTileInBatch, :, :, :] = imgCOS
                             for i in range(len(img_un)):
                                 imgs[iTileInBatch, :, :, i] = img_un[i]
                             iTileInBatch += 1
 
                     else:
-                        imgs = imgs[0:iTileInBatch,:,:,:]
-                        imgsCOS = imgsCOS[0:iTileInBatch,:,:,:]
+                        imgs = imgs[0:iTileInBatch, :, :, :]
+                        imgsCOS = imgsCOS[0:iTileInBatch, :, :, :]
                         break
 
                 yield (imgs, imgsCOS)
     else:
         while 1:
             for tile in trainSet:
-                imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray = True)
-                imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes, keepNODATA = keepNODATA)
+                imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray=True)
+                imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes)
                 if incompleteCOS:
                     continue
 
                 imgs = getImgs(datasetPath, tile, dataStats, use_max)
-                imgs, imgCOS = augmentImages(aug_dict, imgs, input_size, imgCOS, target_size, use_unet)
+                imgs, imgCOS = augmentImages(aug_dict, imgs, input_size, imgCOS, target_size)
                 img = np.zeros(input_size + (len(channels),))
                 for i in range(len(imgs)):
                     img[:, :, i] = imgs[i]
@@ -293,8 +304,9 @@ def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, in
 
                 yield (img, imgCOS)
 
+
 # Função para gerar e gerir os dados de teste que são alimentados à rede neuronal
-def testGeneratorCOS(datasetPath, testSet, dataStats, input_size = (256,256), use_max = False):
+def testGeneratorCOS(datasetPath, testSet, dataStats, input_size=(256, 256), use_max=False):
     for tile in testSet:
         imgs = getImgs(datasetPath, tile, dataStats, use_max)
         for i in range(len(channels)):
@@ -307,27 +319,31 @@ def testGeneratorCOS(datasetPath, testSet, dataStats, input_size = (256,256), us
         img = np.array([img])
         yield (img)
 
+
 # Função que transforma a máscar da COS numa máscara de cores, para ser visualmente distinta
 def labelVisualizeCOS(num_class, color_dict, img):
-    img = img[:,:,0] if len(img.shape) == 3 else img
-    img_out = np.zeros(img.shape + (3,), dtype = 'uint8')
+    img = img[:, :, 0] if len(img.shape) == 3 else img
+    img_out = np.zeros(img.shape + (3,), dtype='uint8')
     for i in range(num_class):
         img_out[img == i, :] = color_dict[i]
     img_out[img == 99, :] = Black
     return img_out
 
+
 # Função para gravara os resultados de teste
-def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, keepNODATA = False):
+def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size):
     num_class = results.shape[-1]
     y_gt = np.zeros(((len(testSet),) + target_size))
     y_predict = np.zeros(((len(testSet),) + target_size))
-    testpaths_file = open('C:\\Users\DiogoNunes\Documents\Tesselo\data\\test_set_paths.txt', 'w') # Save test paths
+    if not os.path.exists(resultsPath):
+        os.makedirs(resultsPath)
+    # testpaths_file = open('C:\\Users\DiogoNunes\Documents\Tesselo\data\\test_set_paths.txt', 'w') # Save test paths
     for i, item in enumerate(results):
         filename = testSet[i]
         filename = filename.replace("\\", "_")
 
-        testpaths_file.write(filename)
-        testpaths_file.write('\n')
+        # testpaths_file.write(filename)
+        # testpaths_file.write('\n')
 
         cos_gt = rio.open(os.path.join(datasetPath, testSet[i], "COS.tif"))
         cos_meta = cos_gt.meta.copy()
@@ -339,30 +355,32 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, keepN
 
         cos_gt = cos_gt.read(1)
         cos_gt = do_center_crop(cos_gt, target_size)
-        cos_gt, _ = classAgregateCOS(cos_gt, keepNODATA = keepNODATA)
-        #out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10.tif"), 'w', **cos_meta) # GT10
-        #out_cos_gt.write(cos_gt, 1)
-        #out_cos_gt.close()
+        cos_gt, _ = classAgregateCOS(cos_gt)
+        # out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10.tif"), 'w', **cos_meta) # GT10
+        # out_cos_gt.write(cos_gt, 1)
+        # out_cos_gt.close()
 
-        y_gt[i, ...] = cos_gt # Save for confusion matrix
+        y_gt[i, ...] = cos_gt  # Save for confusion matrix
 
-        cos_gt = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_gt) # SEMI_COLOR_DICT
-        out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10_colour.tif"), 'w', **cos_meta3) # GT10_colour
+        cos_gt = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_gt)  # SEMI_COLOR_DICT
+        out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10_colour.tif"), 'w',
+                              **cos_meta3)  # GT10_colour
         out_cos_gt.write(cos_gt[:, :, 0], 1)
         out_cos_gt.write(cos_gt[:, :, 1], 2)
         out_cos_gt.write(cos_gt[:, :, 2], 3)
         out_cos_gt.close()
 
-        cos_predict = np.argmax(item, axis = -1)
+        cos_predict = np.argmax(item, axis=-1)
         cos_predict = cos_predict.astype(np.uint8)
-        #out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10.tif"), 'w', **cos_meta) # predict10
-        #out_cos_predict.write(cos_predict, 1)
-        #out_cos_predict.close()
+        # out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10.tif"), 'w', **cos_meta) # predict10
+        # out_cos_predict.write(cos_predict, 1)
+        # out_cos_predict.close()
 
-        y_predict[i,...] = cos_predict # Save for confusion matrix
+        y_predict[i, ...] = cos_predict  # Save for confusion matrix
 
-        cos_predict = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_predict) # SEMI_COLOR_DICT
-        out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10_colour.tif"), 'w', **cos_meta3) #predict10_colour
+        cos_predict = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_predict)  # SEMI_COLOR_DICT
+        out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10_colour.tif"), 'w',
+                                   **cos_meta3)  # predict10_colour
         out_cos_predict.write(cos_predict[:, :, 0], 1)
         out_cos_predict.write(cos_predict[:, :, 1], 2)
         out_cos_predict.write(cos_predict[:, :, 2], 3)
@@ -372,5 +390,5 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, keepN
             perc = (i / len(testSet)) * 100
             print('%.2f' % perc, '%')
 
-    testpaths_file.close()
+    # testpaths_file.close()
     return y_gt, y_predict

@@ -254,8 +254,7 @@ def augmentImages(aug_dict, imgs, input_size, imgCOS, target_size):
 
 # Função para gerar e gerir os dados de treino que são alimentados à rede neuronal
 def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, input_size=(256, 256),
-                      target_size=(256, 256), num_classes=5, use_max=False, ignoreNODATA_flag=True,
-                      keepNODATA=False):
+                      target_size=(256, 256), num_classes=5, use_max=False, ignoreNODATA_flag=True):
     if batch_size > 1:
         while 1:
             iTile = 0

@@ -465,7 +465,7 @@ def unet_v4(pretrained_weights = None, input_size = (252, 252, len(channels)), n
     conv4 = BatchNormalization()(conv4) if do_batch_normalization else conv4
     conv4 = Activation('relu')(conv4)
 
-    drop4 = Dropout(0.5)(conv4)
+    drop4 = Dropout(dropout)(conv4)
     pool4 = MaxPooling2D(pool_size = (2, 2))(drop4)
     net_channels *= 2
 
@@ -477,7 +477,7 @@ def unet_v4(pretrained_weights = None, input_size = (252, 252, len(channels)), n
     conv5 = BatchNormalization()(conv5) if do_batch_normalization else conv5
     conv5 = Activation('relu')(conv5)
 
-    drop5 = Dropout(0.5)(conv5)
+    drop5 = Dropout(dropout)(conv5)
     net_channels = int(net_channels / 2)
 
     if use_transpose_convolution:

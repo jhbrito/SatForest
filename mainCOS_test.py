@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import keras
 from sklearn.metrics import classification_report, confusion_matrix
 
-main_path = "C:\\Users\DiogoSilipeSilvaNunes\PycharmProjects\SatForest" # Modificar conforme necessário
+main_path = "C:\\Users\DiogoSilipeSilvaNunes\PycharmProjects\SatForest"  # Modificar conforme necessário
 
 datasetPath = os.path.join(main_path, "data\\tesselo-training-tiles")
 resultsPath = os.path.join(main_path, "data\\results\predict")
@@ -71,13 +71,11 @@ for ni in range(1):
 
     trainGene = trainGeneratorCOS(batch_size_train, datasetPath, trainSet, dataStats, train_augmentation_args,
                                   input_size = input_size, target_size = target_size, num_classes = n_class,
-                                  use_max = use_max, ignoreNODATA_flag = ignoreNODATA_flag, keepNODATA = keepNODATA,
-                                  use_unet = use_unet)
+                                  use_max = use_max, ignoreNODATA_flag = ignoreNODATA_flag)
 
     valGene = trainGeneratorCOS(batch_size_test, datasetPath, testSet, dataStats, val_augmentation_args,
                                 input_size = input_size, target_size = target_size, num_classes = n_class,
-                                use_max = use_max, ignoreNODATA_flag = ignoreNODATA_flag, keepNODATA = keepNODATA,
-                                use_unet = use_unet)
+                                use_max = use_max, ignoreNODATA_flag = ignoreNODATA_flag)
 
     Ntrain = len(trainSet)
     steps_per_epoch = np.ceil(Ntrain/batch_size_train)
@@ -108,7 +106,7 @@ for ni in range(1):
     print('Saving results...')
     y_gt = np.zeros(((len(testSet),) + target_size))
     y_predict = np.zeros(((len(testSet),) + target_size))
-    y_gt, y_predict = saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, keepNODATA = keepNODATA)
+    y_gt, y_predict = saveResultCOS(datasetPath, testSet, results, resultsPath, target_size)
     print('Results saved')
     print('Calculating metrics...')
     y_gt = y_gt.reshape(-1)             #Flatten the matrices

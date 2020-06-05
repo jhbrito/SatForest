@@ -18,7 +18,7 @@ class_names = {
     '2.2.2.00.0': 'Pomares',
     '2.2.3.00.0': 'Olivais',
     '2.3.1.01.1': 'Pastagens permanentes',
-    '2.4.1.00.0': 'Cult temp e/ou past associadas a cult permanente',  # 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
+    '2.4.1.00.0': 'Culturas temporárias e/ou pastagens associadas a culturas permanentes',  # 'Cult temp e/ou past associadas a cult permanente',
     '2.4.2.01.1': 'Sistemas culturais e parcelares complexos',
     '2.4.3.01.1': 'Agricultura com espaços naturais e semi-naturais',
     '2.4.4.00.1': 'SAF de sobreiro',
@@ -68,7 +68,7 @@ class_lookup = {
     16: '2.2.2.00.0',  # '2.2.2.00.0': 'Pomares',
     17: '2.2.3.00.0',  # '2.2.3.00.0': 'Olivais',
     18: '2.3.1.01.1',  # '2.3.1.01.1': 'Pastagens permanentes',
-    19: '2.4.1.00.0',  # '2.4.1.00.0': 'Cult temp e/ou past associadas a cult permanente', # 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
+    19: '2.4.1.00.0',  # '2.4.1.00.0': 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
     20: '2.4.2.01.1',  # '2.4.2.01.1': 'Sistemas culturais e parcelares complexos',
     21: '2.4.3.01.1',  # '2.4.3.01.1': 'Agricultura com espaços naturais e semi-naturais',
     22: '2.4.4.00.1',  # '2.4.4.00.1': 'SAF de sobreiro',
@@ -131,7 +131,7 @@ class_mask = [0,  # '1.1.1.00.0': 'Tecido urbano contínuo',
               1,  # '2.2.2.00.0': 'Pomares',
               1,  # '2.2.3.00.0': 'Olivais',
               1,  # '2.3.1.01.1': 'Pastagens permanentes',
-              1,  # '2.4.1.00.0': 'Cult temp e/ou past associadas a cult permanente', # 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
+              1,  # '2.4.1.00.0': 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
               1,  # '2.4.2.01.1': 'Sistemas culturais e parcelares complexos',
               1,  # '2.4.3.01.1': 'Agricultura com espaços naturais e semi-naturais',
               3,  # '2.4.4.00.1': 'SAF de sobreiro',
@@ -169,6 +169,8 @@ class_aggregation_8_names = ['Zonas Artificializadas',
                              'Outra Vegetação',
                              'Zonas Húmidas e Corpos de Água']
 
+class_aggregation_8_labels = [0, 1, 2, 3, 4, 5, 6, 7]
+
 class_aggregation_8 = [0,  # '1.1.1.00.0': 'Tecido urbano contínuo',
                        0,  # '1.1.2.00.0': 'Tecido urbano descontínuo',
                        0,  # '1.2.1.00.0': 'Indústria, comércio e equipamentos gerais',
@@ -188,7 +190,7 @@ class_aggregation_8 = [0,  # '1.1.1.00.0': 'Tecido urbano contínuo',
                        1,  # '2.2.2.00.0': 'Pomares',
                        1,  # '2.2.3.00.0': 'Olivais',
                        1,  # '2.3.1.01.1': 'Pastagens permanentes',
-                       1,  # '2.4.1.00.0': 'Cult temp e/ou past associadas a cult permanente', # 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
+                       1,  # '2.4.1.00.0': 'Culturas temporárias e/ou pastagens associadas a culturas permanentes'
                        1,  # '2.4.2.01.1': 'Sistemas culturais e parcelares complexos',
                        1,  # '2.4.3.01.1': 'Agricultura com espaços naturais e semi-naturais',
                        2,  # '2.4.4.00.1': 'SAF de sobreiro',

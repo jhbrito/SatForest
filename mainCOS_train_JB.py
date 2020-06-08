@@ -9,12 +9,31 @@ dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 clean_paths_file = "./data/clean_paths.txt"
 data_stats_file = "./data/data_stats.txt"
 models_path = "./models"
+
 results_path = "./results"
+if not os.path.exists(results_path):
+    os.makedirs(results_path)
+
+history_path = results_path + "/history"
+if not os.path.exists(history_path):
+    os.makedirs(history_path)
+
+predict_path = results_path + "/predict"
+if not os.path.exists(predict_path):
+    os.makedirs(predict_path)
+
+confusion_matrix_path = results_path + "/confusion_matrix"
+if not os.path.exists(confusion_matrix_path):
+    os.makedirs(confusion_matrix_path)
+
+classification_report_path = results_path + "/classification_report"
+if not os.path.exists(classification_report_path):
+    os.makedirs(classification_report_path)
 
 trainSize = -1  # -1 for all
 testSize = -1  # -1 for all
 
-epochs = 50
+epochs = 2  # 50
 
 ignoreNODATA_flag = True
 keepNODATA = False
@@ -68,14 +87,14 @@ if True:  # for unet_model_i in range(len(unet_models)):
 
         use_max = False
         level_i = 2  # default 2(5)
-        channels_i = 0  # default 1(64)
+        channels_i = 1  # default 1(64)
         padding_i = 0  # default 0 (same)
         batch_normalization_i = 0  # default 0 (None)
         use_transpose_convolution_i = 0  # default 0 (False)
 
         unet_level, net_channels, padding, batch_normalization, use_transpose_convolution, dropout, batch_size, save_header = experiment_parameters(level_i=level_i, channels_i=channels_i, padding_i=padding_i, batch_normalization_i=batch_normalization_i, use_transpose_convolution_i=use_transpose_convolution_i)
 
-        batch_size = 13
+        batch_size = 2 * 5  # 13
         if padding == 'valid':
             input_size = (input_valid_sizes[level_i], input_valid_sizes[level_i])
             target_size = (output_valid_sizes[level_i], output_valid_sizes[level_i])
@@ -102,10 +121,10 @@ if True:  # for unet_model_i in range(len(unet_models)):
                            "_Datetime" + datetime.now().strftime("%Y%m%d-%H%M%S")
         modelFilePath = os.path.join(models_path, "unetCOS" + filename_options + ".hdf5")
         logdir = "logs/scalars/l" + filename_options
-        history_file_path = os.path.join(results_path, "history/history" + filename_options + ".pickle")
-        results_predict_path = os.path.join(results_path, "predict/predict" + filename_options)
-        confusion_matrix_file_path = os.path.join(results_path, "confusion_matrix/confusion_matrix" + filename_options + ".pickle")
-        classification_report_file_path = os.path.join(results_path, "classification_report/classification_report" + filename_options + ".pickle")
+        history_file_path = os.path.join(history_path, "history" + filename_options + ".pickle")
+        results_predict_path = os.path.join(predict_path, "predict" + filename_options)
+        confusion_matrix_file_path = os.path.join(confusion_matrix_path, "confusion_matrix" + filename_options + ".pickle")
+        classification_report_file_path = os.path.join(classification_report_path, "classification_report" + filename_options + ".pickle")
         resultsFilePath = os.path.join(results_path, "results" + filename_options + ".pickle")
 
         trainGene = trainGeneratorCOS(batch_size_train, dataset_path, trainSet, dataStats, train_augmentation_args,
@@ -170,6 +189,10 @@ if True:  # for unet_model_i in range(len(unet_models)):
                                                  early_stopping_callback, tensorboard_callback],
                                       validation_data=valGene,
                                       validation_steps=validation_steps)
+        if not os.path.exists(results_path):
+            os.makedirs(results_path)
+        if not os.path.exists(results_path):
+            os.makedirs(results_path)
         with open(history_file_path, "wb") as hf:  # Pickling
             pickle.dump(history, hf)
         print('\nRunning Test Set...')

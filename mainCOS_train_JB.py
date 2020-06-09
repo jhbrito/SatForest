@@ -167,10 +167,6 @@ if True:  # for unet_model_i in range(len(unet_models)):
                                                  early_stopping_callback, tensorboard_callback],
                                       validation_data=valGene,
                                       validation_steps=validation_steps)
-        if not os.path.exists(results_path):
-            os.makedirs(results_path)
-        if not os.path.exists(results_path):
-            os.makedirs(results_path)
         with open(history_file_path, "wb") as hf:  # Pickling
             pickle.dump(history, hf)
         print('\nRunning Test Set...')

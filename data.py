@@ -10,7 +10,7 @@ import random as r
 import pickle
 import rasterio as rio
 from raster_classes import class_lookup
-from COS_train_options import class_aggregation, class_aggregation_COLOR_DICT, channels, all_channels
+from COS_train_options import class_aggregation, class_labels, class_aggregation_COLOR_DICT, channels, all_channels
 from color_dictionary import Black
 
 
@@ -361,7 +361,7 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, expor
 
         if export_COS_files:
             cos_gt = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_gt)  # SEMI_COLOR_DICT
-            out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10_colour.tif"), 'w',
+            out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT" + str(len(class_labels)) + "_colour.tif"), 'w',
                                   **cos_meta3)  # GT10_colour
             out_cos_gt.write(cos_gt[:, :, 0], 1)
             out_cos_gt.write(cos_gt[:, :, 1], 2)
@@ -378,7 +378,7 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, expor
 
         if export_COS_files:
             cos_predict = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_predict)  # SEMI_COLOR_DICT
-            out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10_colour.tif"), 'w',
+            out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict" + str(len(class_labels)) + "_colour.tif"), 'w',
                                        **cos_meta3)  # predict10_colour
             out_cos_predict.write(cos_predict[:, :, 0], 1)
             out_cos_predict.write(cos_predict[:, :, 1], 2)

@@ -9,6 +9,12 @@ Agricolas = [255, 255, 0]
 Floresta = [0, 255, 0]
 Humidas = [255, 0, 255]
 Agua = [0, 0, 255]
+SAF = [127, 255, 0]
+FlorestasFolhosas = [0, 192, 0]
+Eucalipto = [0, 128, 0]
+FlorestasResinosas = [0, 64, 0]
+OutraVegetacao = [0, 255, 0]
+
 
 # Color coding for all agriculture and forest classes
 A01 = [255, 255, 160] #'2.1.0.00.0': 'Culturas temporárias de sequeiro e de regadio',

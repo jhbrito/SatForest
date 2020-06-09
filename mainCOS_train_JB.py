@@ -1,16 +1,15 @@
-from model_unet_COS import *
+from model_unet_COS import input_valid_sizes, output_valid_sizes, unetL3, unetL4, unetL5, unetL6, unet
 from data import *
+from COS_train_options import *
 import keras
 from datetime import datetime
 
 from sklearn.metrics import classification_report, confusion_matrix
 
-dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 clean_paths_file = "./data/clean_paths.txt"
 data_stats_file = "./data/data_stats.txt"
 models_path = "./models"
 
-results_path = "./results"
 if not os.path.exists(results_path):
     os.makedirs(results_path)
 
@@ -30,13 +29,6 @@ classification_report_path = results_path + "/classification_report"
 if not os.path.exists(classification_report_path):
     os.makedirs(classification_report_path)
 
-trainSize = -1  # -1 for all
-testSize = -1  # -1 for all
-
-epochs = 2  # 50
-
-ignoreNODATA_flag = True
-keepNODATA = False
 
 trainSet, testSet, dataStats = prepare_dataset(datasetPath=dataset_path, ignoreNODATAtiles=ignoreNODATA_flag,
                                                keepNODATA=keepNODATA, cleanTilesFile=clean_paths_file,
@@ -85,16 +77,6 @@ if True:  # for unet_model_i in range(len(unet_models)):
         # net_channels = 64  # [32 64]
         # batch_size = 3  # [ [0, 5], [8, 3], [9, 4], [22, 8], [16, 6]]
 
-        use_max = False
-        level_i = 2  # default 2(5)
-        channels_i = 1  # default 1(64)
-        padding_i = 0  # default 0 (same)
-        batch_normalization_i = 0  # default 0 (None)
-        use_transpose_convolution_i = 0  # default 0 (False)
-
-        unet_level, net_channels, padding, batch_normalization, use_transpose_convolution, dropout, batch_size, save_header = experiment_parameters(level_i=level_i, channels_i=channels_i, padding_i=padding_i, batch_normalization_i=batch_normalization_i, use_transpose_convolution_i=use_transpose_convolution_i)
-
-        batch_size = 2 * 5  # 13
         if padding == 'valid':
             input_size = (input_valid_sizes[level_i], input_valid_sizes[level_i])
             target_size = (output_valid_sizes[level_i], output_valid_sizes[level_i])
@@ -103,10 +85,6 @@ if True:  # for unet_model_i in range(len(unet_models)):
             target_size = (256, 256)
         batch_size_train = batch_size
         batch_size_test = batch_size_train
-        if not ignoreNODATA_flag and keepNODATA:
-            class_labels = [0, 1, 2, 3, 4, 9]
-        else:
-            class_labels = np.arange(10).tolist()  # <--------------
 
         n_classes = len(class_labels)
         filename_options = "_Classes" + str(n_classes) +\
@@ -179,7 +157,7 @@ if True:  # for unet_model_i in range(len(unet_models)):
                                                                     monitor='val_loss',
                                                                     verbose=1,
                                                                     save_best_only=True)
-        early_stopping_callback = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
+        early_stopping_callback = keras.callbacks.EarlyStopping(monitor='val_loss', patience=patience)
         tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
         r.seed(1)
         history = model.fit_generator(trainGene,
@@ -255,7 +233,7 @@ if True:  # for unet_model_i in range(len(unet_models)):
                 np.savetxt(res_file, line, fmt = '%8d', delimiter = ' ')
                 '''
                 # Semi-final agregation
-                res_file.write('%40s|' % tesselo_class_names[ind])
+                res_file.write('%40s|' % class_aggregation_names[ind])
                 np.savetxt(res_file, line, fmt='%8d', delimiter=' ')
 
                 '''

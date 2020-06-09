@@ -1,6 +1,6 @@
 # from __future__ import print_function
 # from keras.preprocessing.image import ImageDataGenerator
-# import numpy as np
+import numpy as np
 import os
 # import glob
 import skimage.io as io
@@ -9,8 +9,9 @@ import random as r
 # import matplotlib.pyplot as plt
 import pickle
 import rasterio as rio
-from raster_classes import *
-from color_dictionary import *
+from raster_classes import class_lookup
+from COS_train_options import class_aggregation, class_aggregation_COLOR_DICT
+from color_dictionary import Black
 
 all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
@@ -160,7 +161,7 @@ def classAgregateCOS(imgCOS):
             newclasse = classe - 12
         '''
         # Semi-final class agregation
-        newclasse = class_mask[classe]
+        newclasse = class_aggregation[classe]  # newclasse = class_mask[classe]
 
         newImgCOS[imgCOS == classe] = newclasse
     # Keep NODTA or transform into ocean
@@ -330,11 +331,11 @@ def labelVisualizeCOS(num_class, color_dict, img):
 
 
 # Função para gravara os resultados de teste
-def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size):
+def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, export_COS_files=False):
     num_class = results.shape[-1]
     y_gt = np.zeros(((len(testSet),) + target_size))
     y_predict = np.zeros(((len(testSet),) + target_size))
-    if not os.path.exists(resultsPath):
+    if export_COS_files and not os.path.exists(resultsPath):
         os.makedirs(resultsPath)
     # testpaths_file = open('C:\\Users\DiogoNunes\Documents\Tesselo\data\\test_set_paths.txt', 'w') # Save test paths
     for i, item in enumerate(results):
@@ -361,13 +362,14 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size):
 
         y_gt[i, ...] = cos_gt  # Save for confusion matrix
 
-        cos_gt = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_gt)  # SEMI_COLOR_DICT
-        out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10_colour.tif"), 'w',
-                              **cos_meta3)  # GT10_colour
-        out_cos_gt.write(cos_gt[:, :, 0], 1)
-        out_cos_gt.write(cos_gt[:, :, 1], 2)
-        out_cos_gt.write(cos_gt[:, :, 2], 3)
-        out_cos_gt.close()
+        if export_COS_files:
+            cos_gt = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_gt)  # SEMI_COLOR_DICT
+            out_cos_gt = rio.open(os.path.join(resultsPath, filename + "_COS_GT10_colour.tif"), 'w',
+                                  **cos_meta3)  # GT10_colour
+            out_cos_gt.write(cos_gt[:, :, 0], 1)
+            out_cos_gt.write(cos_gt[:, :, 1], 2)
+            out_cos_gt.write(cos_gt[:, :, 2], 3)
+            out_cos_gt.close()
 
         cos_predict = np.argmax(item, axis=-1)
         cos_predict = cos_predict.astype(np.uint8)
@@ -377,13 +379,14 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size):
 
         y_predict[i, ...] = cos_predict  # Save for confusion matrix
 
-        cos_predict = labelVisualizeCOS(num_class, SEMI_COLOR_DICT, cos_predict)  # SEMI_COLOR_DICT
-        out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10_colour.tif"), 'w',
-                                   **cos_meta3)  # predict10_colour
-        out_cos_predict.write(cos_predict[:, :, 0], 1)
-        out_cos_predict.write(cos_predict[:, :, 1], 2)
-        out_cos_predict.write(cos_predict[:, :, 2], 3)
-        out_cos_predict.close()
+        if export_COS_files:
+            cos_predict = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_predict)  # SEMI_COLOR_DICT
+            out_cos_predict = rio.open(os.path.join(resultsPath, filename + "_COS_predict10_colour.tif"), 'w',
+                                       **cos_meta3)  # predict10_colour
+            out_cos_predict.write(cos_predict[:, :, 0], 1)
+            out_cos_predict.write(cos_predict[:, :, 1], 2)
+            out_cos_predict.write(cos_predict[:, :, 2], 3)
+            out_cos_predict.close()
 
         if (i % 50) == 0:
             perc = (i / len(testSet)) * 100

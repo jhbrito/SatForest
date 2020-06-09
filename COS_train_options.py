@@ -32,6 +32,7 @@ class_aggregation = class_aggregation_8
 class_labels = class_aggregation_8_labels
 class_aggregation_names = class_aggregation_8_names
 class_aggregation_COLOR_DICT = np.array([Artificializados, Agricolas, SAF, FlorestasFolhosas, Eucalipto, FlorestasResinosas, OutraVegetacao, Agua])
+export_COS_files = True
 
 # unet_models = [2, 3, 3.5, 4, 4.5]
 unet_levels = (3, 4, 5, 6)  # original unet is 5 levels

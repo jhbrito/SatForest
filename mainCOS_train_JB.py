@@ -177,7 +177,7 @@ if True:  # for unet_model_i in range(len(unet_models)):
         print('Saving results...')
         y_gt = np.zeros(((len(testSet),) + target_size))
         y_predict = np.zeros(((len(testSet),) + target_size))
-        y_gt, y_predict = saveResultCOS(dataset_path, testSet, results, results_predict_path, target_size)
+        y_gt, y_predict = saveResultCOS(dataset_path, testSet, results, results_predict_path, target_size, export_COS_files=export_COS_files)
         print('Results saved')
 
         print('Calculating metrics...')

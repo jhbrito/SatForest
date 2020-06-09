@@ -10,11 +10,8 @@ import random as r
 import pickle
 import rasterio as rio
 from raster_classes import class_lookup
-from COS_train_options import class_aggregation, class_aggregation_COLOR_DICT
+from COS_train_options import class_aggregation, class_aggregation_COLOR_DICT, channels, all_channels
 from color_dictionary import Black
-
-all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
-channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 
 
 # Função que determina os parâmetros de treino

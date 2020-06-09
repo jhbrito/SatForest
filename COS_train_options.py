@@ -2,10 +2,12 @@
 import numpy as np
 from raster_classes import class_aggregation_8, class_aggregation_8_labels, class_aggregation_8_names
 from color_dictionary import Artificializados, Agricolas, SAF, FlorestasFolhosas, Eucalipto, FlorestasResinosas, OutraVegetacao, Agua
-from data import channels
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
+
+all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
+channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 
 use_max = False
 level_i = 2  # default 2(5)

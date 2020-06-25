@@ -3,7 +3,6 @@ from data import *
 from COS_train_options import *
 import keras
 from datetime import datetime
-
 from sklearn.metrics import classification_report, confusion_matrix
 
 clean_paths_file = "./data/clean_paths.txt"

@@ -1,7 +1,10 @@
 # options
 import numpy as np
-from raster_classes import class_aggregation_8, class_aggregation_8_labels, class_aggregation_8_names
-from color_dictionary import Artificializados, Agricolas, SAF, FlorestasFolhosas, Eucalipto, FlorestasResinosas, OutraVegetacao, Agua
+# from raster_classes import class_aggregation_8, class_aggregation_8_labels, class_aggregation_8_names
+# from raster_classes import class_aggregation_5, class_aggregation_5_labels, class_aggregation_5_names
+# from raster_classes import class_aggregation_4, class_aggregation_4_labels, class_aggregation_4_names, class_aggregation_4_COLOR_DICT
+# from raster_classes import class_aggregation_2, class_aggregation_2_labels, class_aggregation_2_names, class_aggregation_2_COLOR_DICT
+from raster_classes import class_aggregation_Eu3, class_aggregation_Eu3_labels, class_aggregation_Eu3_names, class_aggregation_Eu3_COLOR_DICT
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
@@ -19,8 +22,8 @@ use_transpose_convolution_i = 0  # default 0 (False)
 trainSize = -1  # -1 for all
 testSize = -1  # -1 for all
 
-epochs = 2
-patience = 20
+epochs = 100
+patience = 40
 
 ignoreNODATA_flag = True
 keepNODATA = False
@@ -28,18 +31,18 @@ keepNODATA = False
 #     class_labels = [0, 1, 2, 3, 4, 9]
 # else:
 #     class_labels = np.arange(10).tolist()  # <--------------
-class_aggregation = class_aggregation_8
-class_labels = class_aggregation_8_labels
-class_aggregation_names = class_aggregation_8_names
-class_aggregation_COLOR_DICT = np.array([Artificializados, Agricolas, SAF, FlorestasFolhosas, Eucalipto, FlorestasResinosas, OutraVegetacao, Agua])
+class_aggregation = class_aggregation_Eu3
+class_labels = class_aggregation_Eu3_labels
+class_aggregation_names = class_aggregation_Eu3_names
+class_aggregation_COLOR_DICT = class_aggregation_Eu3_COLOR_DICT
+
 export_COS_files = True
 
 # unet_models = [2, 3, 3.5, 4, 4.5]
 unet_levels = (3, 4, 5, 6)  # original unet is 5 levels
 net_channels_options = (32, 64, 128, 256)
 padding_options = ('same', 'valid')
-batch_normalization_options = ('None', 'CBNA', 'CABN', 'CBNADown',
-                               'CABNDown')  # [No BN, BN between convolution and activation, BN after activation, BN between convolution and activation on the downward path, BN after activation on the downward path
+batch_normalization_options = ('None', 'CBNA', 'CABN', 'CBNADown', 'CABNDown')  # [No BN, BN between convolution and activation, BN after activation, BN between convolution and activation on the downward path, BN after activation on the downward path
 use_transpose_convolution_options = [False, True]
 batch_sizes = np.zeros((len(unet_levels),
                         len(net_channels_options),

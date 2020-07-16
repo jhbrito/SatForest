@@ -5,13 +5,17 @@ import numpy as np
 # from class_aggregations import class_aggregation_4, class_aggregation_4_labels, class_aggregation_4_names, class_aggregation_4_COLOR_DICT
 # from class_aggregations import class_aggregation_2, class_aggregation_2_labels, class_aggregation_2_names, class_aggregation_2_COLOR_DICT
 
-from class_aggregations import class_aggregation_Eu2, class_aggregation_Eu2_labels, class_aggregation_Eu2_names, class_aggregation_Eu2_COLOR_DICT
-Eu3
+#from class_aggregations import class_aggregation_Eu2, class_aggregation_Eu2_labels, class_aggregation_Eu2_names, class_aggregation_Eu2_COLOR_DICT
+from class_aggregations import class_aggregation_Eu3, class_aggregation_Eu3_labels, class_aggregation_Eu3_names, class_aggregation_Eu3_COLOR_DICT
 
-EuCOSN3
-EuCOSN2
-EuCOSN1
-# from class_aggregations import class_aggregation_Eu3, class_aggregation_Eu3_labels, class_aggregation_Eu3_names, class_aggregation_Eu3_COLOR_DICT
+#EuCOSN3
+#EuCOSN2
+#EuCOSN1
+
+class_aggregation = class_aggregation_Eu3
+class_labels = class_aggregation_Eu3_labels
+class_aggregation_names = class_aggregation_Eu3_names
+class_aggregation_COLOR_DICT = class_aggregation_Eu3_COLOR_DICT
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
@@ -38,10 +42,6 @@ keepNODATA = False
 #     class_labels = [0, 1, 2, 3, 4, 9]
 # else:
 #     class_labels = np.arange(10).tolist()  # <--------------
-class_aggregation = class_aggregation_Eu2
-class_labels = class_aggregation_Eu2_labels
-class_aggregation_names = class_aggregation_Eu2_names
-class_aggregation_COLOR_DICT = class_aggregation_Eu2_COLOR_DICT
 
 export_COS_files = True
 

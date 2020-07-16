@@ -1,10 +1,17 @@
 # options
 import numpy as np
-# from raster_classes import class_aggregation_8, class_aggregation_8_labels, class_aggregation_8_names
-# from raster_classes import class_aggregation_5, class_aggregation_5_labels, class_aggregation_5_names
-# from raster_classes import class_aggregation_4, class_aggregation_4_labels, class_aggregation_4_names, class_aggregation_4_COLOR_DICT
-# from raster_classes import class_aggregation_2, class_aggregation_2_labels, class_aggregation_2_names, class_aggregation_2_COLOR_DICT
-from raster_classes import class_aggregation_Eu3, class_aggregation_Eu3_labels, class_aggregation_Eu3_names, class_aggregation_Eu3_COLOR_DICT
+# from class_aggregations import class_aggregation_8, class_aggregation_8_labels, class_aggregation_8_names
+# from class_aggregations import class_aggregation_5, class_aggregation_5_labels, class_aggregation_5_names
+# from class_aggregations import class_aggregation_4, class_aggregation_4_labels, class_aggregation_4_names, class_aggregation_4_COLOR_DICT
+# from class_aggregations import class_aggregation_2, class_aggregation_2_labels, class_aggregation_2_names, class_aggregation_2_COLOR_DICT
+
+from class_aggregations import class_aggregation_Eu2, class_aggregation_Eu2_labels, class_aggregation_Eu2_names, class_aggregation_Eu2_COLOR_DICT
+Eu3
+
+EuCOSN3
+EuCOSN2
+EuCOSN1
+# from class_aggregations import class_aggregation_Eu3, class_aggregation_Eu3_labels, class_aggregation_Eu3_names, class_aggregation_Eu3_COLOR_DICT
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
@@ -13,8 +20,8 @@ all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', '
 channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 
 use_max = False
-level_i = 2  # default 2(5)
-channels_i = 1  # default 1(64)
+level_i = 1  # default 2(5)
+channels_i = 2  # default 1(64)
 padding_i = 0  # default 0 (same)
 batch_normalization_i = 0  # default 0 (None)
 use_transpose_convolution_i = 0  # default 0 (False)
@@ -31,10 +38,10 @@ keepNODATA = False
 #     class_labels = [0, 1, 2, 3, 4, 9]
 # else:
 #     class_labels = np.arange(10).tolist()  # <--------------
-class_aggregation = class_aggregation_Eu3
-class_labels = class_aggregation_Eu3_labels
-class_aggregation_names = class_aggregation_Eu3_names
-class_aggregation_COLOR_DICT = class_aggregation_Eu3_COLOR_DICT
+class_aggregation = class_aggregation_Eu2
+class_labels = class_aggregation_Eu2_labels
+class_aggregation_names = class_aggregation_Eu2_names
+class_aggregation_COLOR_DICT = class_aggregation_Eu2_COLOR_DICT
 
 export_COS_files = True
 
@@ -119,4 +126,4 @@ unet_level, net_channels, padding, batch_normalization, use_transpose_convolutio
     use_transpose_convolution_i=use_transpose_convolution_i)
 
 # optionally override batch_size
-batch_size = 4
+batch_size = 2

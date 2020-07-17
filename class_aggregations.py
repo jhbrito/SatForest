@@ -531,7 +531,7 @@ class_aggregation_EuCOSN1 = [1,  # '1.1.1.00.0': 'Tecido urbano contínuo',
                        4]  # '5.2.3.01.1': 'Oceano',
 
 # Aggregation for Eucaliptus detector with 3 classes
-class_aggregation_Eu3Florestas = ['Outros',
+class_aggregation_Eu3Florestas_names = ['Outros',
                                   'Florestas de eucalipto',
                                   'Florestas']
 class_aggregation_Eu3Florestas_labels = range(8)

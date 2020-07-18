@@ -535,7 +535,7 @@ class_aggregation_Eu3Florestas_names = ['Outros',
                                   'Florestas de eucalipto',
                                   'Florestas']
 class_aggregation_Eu3Florestas_labels = range(len(class_aggregation_Eu3Florestas_names))
-class_aggregation_Eu3Florestas_COLOR_DICT = np.array([Black, Eucalipto, FlorestasFolhosas])
+class_aggregation_Eu3Florestas_COLOR_DICT = np.array([Black, Eucalipto, Floresta])
 class_aggregation_Eu3Florestas = [0,  # '1.1.1.00.0': 'Tecido urbano contínuo',
                        0,  # '1.1.2.00.0': 'Tecido urbano descontínuo',
                        0,  # '1.2.1.00.0': 'Indústria, comércio e equipamentos gerais',

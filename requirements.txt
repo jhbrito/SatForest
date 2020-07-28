@@ -1,3 +1,4 @@
+rasterio
 absl-py==0.7.1
 alembic==1.0.8
 astor==0.8.0

@@ -9,7 +9,7 @@ import random as r
 # import matplotlib.pyplot as plt
 import pickle
 import rasterio as rio
-from raster_classes import class_lookup
+from raster_classesV1 import class_lookup
 from COS_train_options import class_aggregation, class_labels, class_aggregation_COLOR_DICT, channels, all_channels
 from color_dictionary import Black
 
@@ -133,6 +133,87 @@ def prepare_dataset(datasetPath, ignoreNODATAtiles=True, keepNODATA=False, clean
 
     return trainSet, testSet, stats
 
+
+# Funçaõ que efetua a preparação do dataset
+def prepare_dataset_V1(datasetPath, cleanTilesFile='clean_paths_V1.txt', dataStatsFile='data_stats_V1.txt'):
+    if os.path.isfile(cleanTilesFile):
+        # load tile list
+        with open(cleanTilesFile, "rb") as fp:
+            print("Loading tile list")
+            paths = pickle.load(fp)
+    else:
+        print('Preparing dataset...')
+        tileXList = os.scandir(datasetPath)
+        paths = []
+        i = 0
+        for tileX in tileXList:
+            tileYList = os.scandir(tileX)
+            for tileY in tileYList:
+
+                imgCOS = io.imread(os.path.join(datasetPath, tileX.name, tileY.name, "COSV1.tif"), as_gray=True)
+                nodataImg = np.zeros(imgCOS.shape, dtype='uint8')
+                nodataImg[imgCOS == 99] = 1
+                if nodataImg.sum() > 0:
+                    incompleteData = True
+                else:
+                    incompleteData = False
+                oceanImg = np.zeros(imgCOS.shape, dtype='uint8')
+                oceanImg[imgCOS == 47] = 1
+                if oceanImg.sum() >= imgCOS.shape[0]*imgCOS.shape[1]:
+                    all_ocean=True
+                else:
+                    all_ocean = False
+                print("image: ", i, "; incomplete: ", incompleteData, "; all ocean:", all_ocean)
+                i += 1
+                if not incompleteData and not all_ocean:
+                    paths.append(os.path.join(tileX.name, tileY.name))
+        # save tile list
+        with open(cleanTilesFile, "wb") as fp:  # Pickling
+            pickle.dump(paths, fp)
+
+    print("Splitting dataset")
+    r.seed(1)
+    total_imgs = len(paths)
+    k = int(total_imgs * 0.8)
+    trainSet = r.sample(paths, k)
+    testSet = []
+    for path in paths:
+        if path not in trainSet:
+            testSet.append(path)
+
+    # compute statistics on training set
+    if os.path.isfile(dataStatsFile):
+        with open(dataStatsFile, "rb") as fp:
+            print("Loading training data statistics")
+            stats = pickle.load(fp)
+    else:
+        print("Computing training data statistics")
+        stats = dict()
+        stats['max'] = dict()
+        stats['min'] = dict()
+        stats['mean'] = dict()
+        stats['std'] = dict()
+        for channel in all_channels:
+            stats['max'][channel] = np.iinfo(np.uint16).min
+            stats['min'][channel] = np.iinfo(np.uint16).max
+            stats['mean'][channel] = []
+            stats['std'][channel] = []
+
+        i=1
+        for path in trainSet:
+            if (i % 100) == 0:
+                print(str(i), "/", len(trainSet))
+            stats = updateStats(stats=stats, folder=os.path.join(datasetPath, path))
+            i=i+1
+        # consolidate statistics
+        for channel in all_channels:
+            stats['mean'][channel] = np.mean(stats['mean'][channel])
+            stats['std'][channel] = np.mean(stats['std'][channel])
+        # save data statistics
+        with open(dataStatsFile, "wb") as fp:  # Pickling
+            pickle.dump(stats, fp)
+
+    return trainSet, testSet, stats
 
 # Função para agregação da máscara da COS, conforme os parâmetros do presente treino
 def classAgregateCOS(imgCOS):
@@ -266,7 +347,7 @@ def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, in
                     if iTile < len(trainSet):
                         tile = trainSet[iTile]
                         iTile += 1
-                        imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray=True)
+                        imgCOS = io.imread(os.path.join(datasetPath, tile, "COSV1.tif"), as_gray=True)
                         imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes)
                         if not incompleteCOS or not ignoreNODATA_flag:
                             img_un = getImgs(datasetPath, tile, dataStats, use_max)
@@ -285,7 +366,7 @@ def trainGeneratorCOS(batch_size, datasetPath, trainSet, dataStats, aug_dict, in
     else:
         while 1:
             for tile in trainSet:
-                imgCOS = io.imread(os.path.join(datasetPath, tile, "COS.tif"), as_gray=True)
+                imgCOS = io.imread(os.path.join(datasetPath, tile, "COSV1.tif"), as_gray=True)
                 imgCOS, incompleteCOS = normalizeCOS(imgCOS, num_classes)
                 if incompleteCOS:
                     continue
@@ -342,7 +423,7 @@ def saveResultCOS(datasetPath, testSet, results, resultsPath, target_size, expor
         # testpaths_file.write(filename)
         # testpaths_file.write('\n')
 
-        cos_gt = rio.open(os.path.join(datasetPath, testSet[i], "COS.tif"))
+        cos_gt = rio.open(os.path.join(datasetPath, testSet[i], "COSV1.tif"))
         cos_meta = cos_gt.meta.copy()
         #### FIX META DATA
         cos_meta['height'] = target_size[0]

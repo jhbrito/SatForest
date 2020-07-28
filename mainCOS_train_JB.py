@@ -5,8 +5,8 @@ import keras
 from datetime import datetime
 from sklearn.metrics import classification_report, confusion_matrix
 
-clean_paths_file = "./data/clean_paths.txt"
-data_stats_file = "./data/data_stats.txt"
+clean_paths_file = "./data/clean_paths_V1.txt"
+data_stats_file = "./data/data_stats_V1.txt"
 models_path = "./models"
 
 if not os.path.exists(results_path):
@@ -29,9 +29,7 @@ if not os.path.exists(classification_report_path):
     os.makedirs(classification_report_path)
 
 
-trainSet, testSet, dataStats = prepare_dataset(datasetPath=dataset_path, ignoreNODATAtiles=ignoreNODATA_flag,
-                                               keepNODATA=keepNODATA, cleanTilesFile=clean_paths_file,
-                                               dataStatsFile=data_stats_file)
+trainSet, testSet, dataStats = prepare_dataset_V1(datasetPath=dataset_path, cleanTilesFile=clean_paths_file, dataStatsFile=data_stats_file)
 if trainSize > 0:
     trainSet = trainSet[0:trainSize]
 if testSize > 0:
@@ -86,7 +84,8 @@ if True:  # for unet_model_i in range(len(unet_models)):
         batch_size_test = batch_size_train
 
         n_classes = len(class_labels)
-        filename_options = "_Classes" + str(n_classes) +\
+        filename_options = "_Classes" + class_aggregation_desc +\
+                           "_NClasses" + str(n_classes) +\
                            "_Level" + str(unet_level) + \
                            "_Featuremaps" + str(net_channels) + \
                            "_Pad" + padding + \
@@ -96,13 +95,13 @@ if True:  # for unet_model_i in range(len(unet_models)):
                            "_Batchsize" + str(batch_size_train) + \
                            "_Epochs" + str(epochs) + \
                            "_Datetime" + datetime.now().strftime("%Y%m%d-%H%M%S")
-        modelFilePath = os.path.join(models_path, "unetCOS" + filename_options + ".hdf5")
-        logdir = "logs/scalars/l" + filename_options
-        history_file_path = os.path.join(history_path, "history" + filename_options + ".pickle")
-        results_predict_path = os.path.join(predict_path, "predict" + filename_options)
-        confusion_matrix_file_path = os.path.join(confusion_matrix_path, "confusion_matrix" + filename_options + ".pickle")
-        classification_report_file_path = os.path.join(classification_report_path, "classification_report" + filename_options + ".pickle")
-        resultsFilePath = os.path.join(results_path, "results" + filename_options + ".pickle")
+        modelFilePath = os.path.join(models_path, "unetCOSV1" + filename_options + ".hdf5")
+        logdir = "logs/scalars/logV1" + filename_options
+        history_file_path = os.path.join(history_path, "historyV1" + filename_options + ".pickle")
+        results_predict_path = os.path.join(predict_path, "predictV1" + filename_options)
+        confusion_matrix_file_path = os.path.join(confusion_matrix_path, "confusion_matrixV1" + filename_options + ".pickle")
+        classification_report_file_path = os.path.join(classification_report_path, "classification_reportV1" + filename_options + ".pickle")
+        resultsFilePath = os.path.join(results_path, "results" + filename_options + ".txt")
 
         trainGene = trainGeneratorCOS(batch_size_train, dataset_path, trainSet, dataStats, train_augmentation_args,
                                       input_size=input_size, target_size=target_size, num_classes=n_classes,

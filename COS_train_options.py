@@ -8,16 +8,19 @@ import numpy as np
 #from class_aggregations import class_aggregation_Eu2, class_aggregation_Eu2_labels, class_aggregation_Eu2_names, class_aggregation_Eu2_COLOR_DICT
 #from class_aggregations import class_aggregation_Eu3FlorestasFolhosas, class_aggregation_Eu3FlorestasFolhosas_labels, class_aggregation_Eu3FlorestasFolhosas_names, class_aggregation_Eu3FlorestasFolhosas_COLOR_DICT
 #from class_aggregations import class_aggregation_Eu3Florestas, class_aggregation_Eu3Florestas_labels, class_aggregation_Eu3Florestas_names, class_aggregation_Eu3Florestas_COLOR_DICT
-from class_aggregations import class_aggregation_Eu8FlorestasFolhosasN5, class_aggregation_Eu8FlorestasFolhosasN5_labels, class_aggregation_Eu8FlorestasFolhosasN5_names, class_aggregation_Eu8FlorestasFolhosasN5_COLOR_DICT
+#from class_aggregations import class_aggregation_Eu8FlorestasFolhosasN5, class_aggregation_Eu8FlorestasFolhosasN5_labels, class_aggregation_Eu8FlorestasFolhosasN5_names, class_aggregation_Eu8FlorestasFolhosasN5_COLOR_DICT
+
+from class_aggregations_Eu import class_aggregation_EuCOSN0, class_aggregation_EuCOSN0_desc, class_aggregation_EuCOSN0_labels, class_aggregation_EuCOSN0_names, class_aggregation_EuCOSN0_COLOR_DICT
 
 #EuCOSN3
 #EuCOSN2
 #EuCOSN1
 
-class_aggregation = class_aggregation_Eu8FlorestasFolhosasN5
-class_labels = class_aggregation_Eu8FlorestasFolhosasN5_labels
-class_aggregation_names = class_aggregation_Eu8FlorestasFolhosasN5_names
-class_aggregation_COLOR_DICT = class_aggregation_Eu8FlorestasFolhosasN5_COLOR_DICT
+class_aggregation = class_aggregation_EuCOSN0
+class_aggregation_desc = class_aggregation_EuCOSN0_desc
+class_labels = class_aggregation_EuCOSN0_labels
+class_aggregation_names = class_aggregation_EuCOSN0_names
+class_aggregation_COLOR_DICT = class_aggregation_EuCOSN0_COLOR_DICT
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
@@ -27,7 +30,7 @@ channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09'
 
 use_max = False
 level_i = 1  # default 2(5)
-channels_i = 2  # default 1(64)
+channels_i = 1  # default 1(64)
 padding_i = 0  # default 0 (same)
 batch_normalization_i = 0  # default 0 (None)
 use_transpose_convolution_i = 0  # default 0 (False)
@@ -128,4 +131,4 @@ unet_level, net_channels, padding, batch_normalization, use_transpose_convolutio
     use_transpose_convolution_i=use_transpose_convolution_i)
 
 # optionally override batch_size
-batch_size = 2
+batch_size = 4

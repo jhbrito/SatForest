@@ -59,7 +59,7 @@ class BatchLossHistoryCallback(keras.callbacks.Callback):
         self.batch_accuracies.append(logs.get('acc'))
 
 
-batch_history_callback = BatchLossHistoryCallback()
+# batch_history_callback = BatchLossHistoryCallback()
 
 if True:  # for unet_model_i in range(len(unet_models)):
     if True:  # for net_channels_i in range(len(net_channels_options)):
@@ -161,8 +161,10 @@ if True:  # for unet_model_i in range(len(unet_models)):
         history = model.fit_generator(trainGene,
                                       steps_per_epoch=steps_per_epoch,
                                       epochs=epochs,
-                                      callbacks=[model_checkpoint_callback, batch_history_callback,
-                                                 early_stopping_callback, tensorboard_callback],
+                                      callbacks=[model_checkpoint_callback,
+                                                 # batch_history_callback,
+                                                 early_stopping_callback,
+                                                 tensorboard_callback],
                                       validation_data=valGene,
                                       validation_steps=validation_steps)
         with open(history_file_path, "wb") as hf:  # Pickling

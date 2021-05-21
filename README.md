@@ -12,7 +12,7 @@ https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 
-##Installation
+## Installation
 Setup a virtual environment
 
 Download GDAL 2.4.1 binary:

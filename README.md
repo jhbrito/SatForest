@@ -1,11 +1,16 @@
 # SatForest
-2Ai - EST IPCA
 
-LEEC Project
+A prototype application for Land Use/Land Cover classification from stallite images </u>
 
-Diogo Nunes 13679 
+Diogo Nunes 13679
 
-This code is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
+José Henrique Brito
+
+LEEC Project - 2Ai - EST IPCA
+
+
+
+The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 
 ##Installation
 Setup a virtual environment

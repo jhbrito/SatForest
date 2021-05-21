@@ -1,7 +1,5 @@
 # SatForest
 
-<div src="https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-8c18-9ea6c58e57b5.mp4" alt="drawing" width="300"/>
-
 A prototype application for Land Use/Land Cover classification from stallite images </u>
 
 Diogo Nunes 13679
@@ -10,7 +8,7 @@ José Henrique Brito
 
 LEEC Project - 2Ai - EST IPCA
 
-
+https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-8c18-9ea6c58e57b5.mp4
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 

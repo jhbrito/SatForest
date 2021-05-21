@@ -1,6 +1,6 @@
 # SatForest
 
-<img src="https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-8c18-9ea6c58e57b5.mp4" alt="drawing" width="300"/>
+<div src="https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-8c18-9ea6c58e57b5.mp4" alt="drawing" width="300"/>
 
 A prototype application for Land Use/Land Cover classification from stallite images </u>
 

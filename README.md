@@ -1,6 +1,6 @@
 # SatForest
 
-A prototype application for Land Use/Land Cover classification from stallite images </u>
+A prototype application for Land Use/Land Cover classification from satellite images
 
 Diogo Nunes 13679
 

@@ -4,8 +4,6 @@ Diogo Nunes
 
 José Henrique Brito
 
-2Ai - EST IPCA
-
 A prototype application for Land Use/Land Cover classification from satellite images
 
 https://user-images.githubusercontent.com/19577316/119209549-192edc80-ba9f-11eb-9324-06748a1d9227.mp4

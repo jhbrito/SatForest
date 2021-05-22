@@ -8,7 +8,7 @@ José Henrique Brito
 
 A prototype application for Land Use/Land Cover classification from satellite images
 
-![videodemo](videodemo/SatForestDemo.mp4)
+videodemo/SatForestDemo.mp4
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 

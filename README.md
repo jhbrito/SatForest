@@ -12,13 +12,11 @@ Data provided by www.tesselo.com
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 
-<img alt="drawing" src="examples/7798_6134_RGB.tif" height="100"/>
-
 |Satellite|Groundtruth|Result|
 |:-------:|:---------:|:----:|
-| ![7798_6134_RGB](examples/7798_6134/RGB.tif) | ![7798_6134_GT](examples/7798_6134/GT.tif) |![7798_6134_P](examples/7798_6134/predict.tif) |
-| ![7799_6163_RGB](examples/7799_6163/RGB.tif) | ![7799_6163_GT](examples/7799_6163/GT.tif) |![7799_6163_P](examples/7799_6163/predict.tif) |
-| ![7804_6168_RGB](examples/7804_6168/RGB.tif) | ![7804_6168_GT](examples/7804_6168/GT.tif) |![7804_6168_P](examples/7798_6134/predict.tif) |
+| ![7798_6134_RGB](examples/7798_6134_RGB.jpg) | ![7798_6134_GT](examples/7798_6134_GT.jpg) |![7798_6134_P](examples/7798_6134_predict.jpg) |
+| ![7799_6163_RGB](examples/7799_6163_RGB.jpg) | ![7799_6163_GT](examples/7799_6163_GT.jpg) |![7799_6163_P](examples/7799_6163_predict.jpg) |
+| ![7804_6168_RGB](examples/7804_6168_RGB.jpg) | ![7804_6168_GT](examples/7804_6168_GT.jpg) |![7804_6168_P](examples/7798_6134_predict.jpg) |
 
 ## Installation
 Setup a virtual environment

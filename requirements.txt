@@ -60,7 +60,6 @@ structlog==19.1.0
 tensorboard==1.13.1
 tensorflow
 tensorflow-estimator==1.13.0
-tensorflow-gpu
 termcolor==1.1.0
 Werkzeug==0.15.4
 WTForms==2.2.1

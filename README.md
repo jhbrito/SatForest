@@ -8,7 +8,7 @@ José Henrique Brito
 
 A prototype application for Land Use/Land Cover classification from satellite images
 
-Data provided by www.tesselo.com
+Satellite data provided by www.tesselo.com
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 

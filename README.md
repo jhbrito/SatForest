@@ -1,14 +1,14 @@
 # SatForest
 
-A prototype application for Land Use/Land Cover classification from satellite images
-
-Diogo Nunes 13679
+Diogo Nunes
 
 José Henrique Brito
 
-LEEC Project - 2Ai - EST IPCA
+2Ai - EST IPCA
 
-https://user-images.githubusercontent.com/19577316/119174309-5627ae80-ba60-11eb-8c18-9ea6c58e57b5.mp4
+A prototype application for Land Use/Land Cover classification from satellite images
+
+![videodemo](videodemo/SatForestDemo.mp4)
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 

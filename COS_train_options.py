@@ -12,19 +12,19 @@ import numpy as np
 
 # from class_aggregations_Eu import class_aggregation_EuCOSN0, class_aggregation_EuCOSN0_desc, class_aggregation_EuCOSN0_labels, class_aggregation_EuCOSN0_names, class_aggregation_EuCOSN0_COLOR_DICT
 
-# from class_aggregations import class_aggregation_COSN1B, class_aggregation_COSN1B_desc, class_aggregation_COSN1B_labels, class_aggregation_COSN1B_names, class_aggregation_COSN1B_COLOR_DICT
+from class_aggregations import class_aggregation_COSN1B, class_aggregation_COSN1B_desc, class_aggregation_COSN1B_labels, class_aggregation_COSN1B_names, class_aggregation_COSN1B_COLOR_DICT
 # from class_aggregations import class_aggregation_COSN2, class_aggregation_COSN2_desc, class_aggregation_COSN2_labels, class_aggregation_COSN2_names, class_aggregation_COSN2_COLOR_DICT
-from class_aggregations import class_aggregation_COSN5, class_aggregation_COSN5_desc, class_aggregation_COSN5_labels, class_aggregation_COSN5_names, class_aggregation_COSN5_COLOR_DICT
+# from class_aggregations import class_aggregation_COSN5, class_aggregation_COSN5_desc, class_aggregation_COSN5_labels, class_aggregation_COSN5_names, class_aggregation_COSN5_COLOR_DICT
 
 #EuCOSN3
 #EuCOSN2
 #EuCOSN1
 
-class_aggregation = class_aggregation_COSN5
-class_aggregation_desc = class_aggregation_COSN5_desc
-class_labels = class_aggregation_COSN5_labels
-class_aggregation_names = class_aggregation_COSN5_names
-class_aggregation_COLOR_DICT = class_aggregation_COSN5_COLOR_DICT
+class_aggregation = class_aggregation_COSN1B
+class_aggregation_desc = class_aggregation_COSN1B_desc
+class_labels = class_aggregation_COSN1B_labels
+class_aggregation_names = class_aggregation_COSN1B_names
+class_aggregation_COLOR_DICT = class_aggregation_COSN1B_COLOR_DICT
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 results_path = "./results"
@@ -33,7 +33,7 @@ all_channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', '
 channels = ['B01', 'B02', 'B03', 'B04', 'B05', 'B06', 'B07', 'B08', 'B8A', 'B09', 'B10', 'B11', 'B12']
 
 use_max = False
-level_i = 1  # default 2(5)
+level_i = 2  # default 2(5)
 channels_i = 1  # default 1(64)
 padding_i = 0  # default 0 (same)
 batch_normalization_i = 0  # default 0 (None)
@@ -42,7 +42,7 @@ use_transpose_convolution_i = 0  # default 0 (False)
 trainSize = -1  # -1 for all
 testSize = -1  # -1 for all
 
-epochs = 100
+epochs = 2
 patience = 40
 
 ignoreNODATA_flag = True

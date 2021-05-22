@@ -42,7 +42,7 @@ use_transpose_convolution_i = 0  # default 0 (False)
 trainSize = -1  # -1 for all
 testSize = -1  # -1 for all
 
-epochs = 2
+epochs = 100
 patience = 40
 
 ignoreNODATA_flag = True

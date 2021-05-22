@@ -12,8 +12,7 @@ Data provided by www.tesselo.com
 
 The neural network model in this work is strongly inspired on zhixuhao's unet repo: https://github.com/zhixuhao/unet
 
-<img src="examples/7798_6134_RGB.tif"/>
-
+<img alt="drawing" src="examples/7798_6134_RGB.tif" height="100"/>
 
 |Satellite|Groundtruth|Result|
 |:-------:|:---------:|:----:|

@@ -16,7 +16,7 @@ The neural network model in this work is strongly inspired on zhixuhao's unet re
 |:-------:|:---------:|:----:|
 | ![7798_6134_RGB](examples/7798_6134_RGB.jpg) | ![7798_6134_GT](examples/7798_6134_GT.jpg) |![7798_6134_P](examples/7798_6134_predict.jpg) |
 | ![7799_6163_RGB](examples/7799_6163_RGB.jpg) | ![7799_6163_GT](examples/7799_6163_GT.jpg) |![7799_6163_P](examples/7799_6163_predict.jpg) |
-| ![7804_6168_RGB](examples/7804_6168_RGB.jpg) | ![7804_6168_GT](examples/7804_6168_GT.jpg) |![7804_6168_P](examples/7798_6134_predict.jpg) |
+| ![7804_6168_RGB](examples/7804_6168_RGB.jpg) | ![7804_6168_GT](examples/7804_6168_GT.jpg) |![7804_6168_P](examples/7804_6168_predict.jpg) |
 
 ## Installation
 Setup a virtual environment

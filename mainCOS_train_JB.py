@@ -9,6 +9,9 @@ clean_paths_file = "./data/clean_paths_V1.txt"
 data_stats_file = "./data/data_stats_V1.txt"
 models_path = "./models"
 
+if not os.path.exists(models_path):
+    os.makedirs(models_path)
+
 if not os.path.exists(results_path):
     os.makedirs(results_path)
 

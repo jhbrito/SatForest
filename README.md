@@ -1,6 +1,6 @@
 # SatForest
 
-https://user-images.githubusercontent.com/19577316/119209549-192edc80-ba9f-11eb-9324-06748a1d9227.mp4
+![App](examples/App.png)
 
 Diogo Nunes
 

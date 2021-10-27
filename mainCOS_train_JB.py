@@ -175,6 +175,49 @@ if True:  # for unet_model_i in range(len(unet_models)):
         print('\nRunning Test Set...')
         testGene = testGeneratorCOS(dataset_path, testSet, dataStats, input_size=input_size, use_max=use_max)
         NTest = len(testSet)
+
+        # reload the best model
+        if unet_level == 3:
+            model = unetL3(pretrained_weights=modelFilePath,
+                           input_size=(input_size[0], input_size[1], len(channels)),
+                           num_class=n_classes,
+                           net_channels=net_channels,
+                           padding=padding,
+                           batch_normalization=batch_normalization,
+                           use_transpose_convolution=use_transpose_convolution,
+                           dropout=dropout)
+        elif unet_level == 4:
+            model = unetL4(pretrained_weights=modelFilePath,
+                           input_size=(input_size[0], input_size[1], len(channels)),
+                           num_class=n_classes,
+                           net_channels=net_channels,
+                           padding=padding,
+                           batch_normalization=batch_normalization,
+                           use_transpose_convolution=use_transpose_convolution,
+                           dropout=dropout)
+        elif unet_level == 5:
+            model = unetL5(pretrained_weights=modelFilePath,
+                           input_size=(input_size[0], input_size[1], len(channels)),
+                           num_class=n_classes,
+                           net_channels=net_channels,
+                           padding=padding,
+                           batch_normalization=batch_normalization,
+                           use_transpose_convolution=use_transpose_convolution,
+                           dropout=dropout)
+        elif unet_level == 6:
+            model = unetL6(pretrained_weights=modelFilePath,
+                           input_size=(input_size[0], input_size[1], len(channels)),
+                           num_class=n_classes,
+                           net_channels=net_channels,
+                           batch_normalization=batch_normalization,
+                           use_transpose_convolution=use_transpose_convolution,
+                           dropout=dropout)
+        else:
+            # default unet model from zhixuhao
+            model = unet(pretrained_weights=modelFilePath,
+                         input_size=(input_size[0], input_size[1], len(channels)),
+                         num_class=n_classes)
+
         results = model.predict_generator(testGene, NTest, verbose=1)
 
         print('Saving results...')

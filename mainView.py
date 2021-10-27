@@ -9,11 +9,19 @@ from PyQt5.QtWidgets import QVBoxLayout
 
 import skimage.io as io
 import numpy as np
+import tensorflow as tf
 from COS_train_options import channels, class_labels, class_aggregation_COLOR_DICT
 from data import classAgregateCOS, labelVisualizeCOS
 from data import getImgs as data_getImgs
 from model_unet_COS import unetL5
 import pickle
+
+print("Tensorflow {}".format(tf.__version__))
+if tf.test.is_gpu_available():
+    print("GPU available: {}".format(tf.test.gpu_device_name()))
+else:
+    print("GPU not available")
+
 
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 models_path = "./models"
@@ -208,7 +216,7 @@ def on_botaoHome_clicked():
     updateVisualization()
 
 
-print("Qt version: " + str(qVersion()))
+print("Qt version: {}".format(qVersion()))
 app = QtWidgets.QApplication(sys.argv)
 window = uic.loadUi("mainViewQt.ui")
 

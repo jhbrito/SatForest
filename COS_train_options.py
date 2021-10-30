@@ -44,8 +44,8 @@ use_transpose_convolution_i = 0  # default 0 (False)
 trainSize = -1  # -1 for all
 testSize = -1  # -1 for all
 
-epochs = 100
-patience = 40
+epochs = 200
+patience = 50
 
 ignoreNODATA_flag = True
 keepNODATA = False
@@ -137,4 +137,4 @@ unet_level, net_channels, padding, batch_normalization, use_transpose_convolutio
     use_transpose_convolution_i=use_transpose_convolution_i)
 
 # optionally override batch_size
-batch_size = 4
+batch_size = 8

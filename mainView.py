@@ -22,11 +22,11 @@ if tf.test.is_gpu_available():
 else:
     print("GPU not available")
 
-
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 models_path = "./models"
 unet_level = 5
-modelFileName="unetCOSV1_ClassesCOSN1B_NClasses4_Level5_Featuremaps64_Padsame_BNNone_TCFalse_Dropout0.5_Batchsize4_Epochs100_Datetime20210522-015747.hdf5"
+# modelFileName = "unetCOSV1_ClassesCOSN1B_NClasses4_Level5_Featuremaps64_Padsame_BNNone_TCFalse_Dropout0.5_Batchsize4_Epochs100_Datetime20210522-015747.hdf5"
+modelFileName = 'unetCOSV1_ClassesCOSN5_NClasses48_Level5_Featuremaps64_Padsame_BNNone_TCFalse_Dropout0.5_Batchsize8_Epochs200_Datetime20211104-175340.hdf5'
 data_stats_file = "./data/data_stats_V1.txt"
 
 with open(data_stats_file, "rb") as fp:

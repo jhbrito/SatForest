@@ -14,13 +14,15 @@ import numpy as np
 
 from class_aggregations import class_aggregation_COSN1B, class_aggregation_COSN1B_desc, class_aggregation_COSN1B_labels, class_aggregation_COSN1B_names, class_aggregation_COSN1B_COLOR_DICT
 # from class_aggregations import class_aggregation_COSN1, class_aggregation_COSN1_desc, class_aggregation_COSN1_labels, class_aggregation_COSN1_names, class_aggregation_COSN1_COLOR_DICT
-
 # from class_aggregations import class_aggregation_COSN2, class_aggregation_COSN2_desc, class_aggregation_COSN2_labels, class_aggregation_COSN2_names, class_aggregation_COSN2_COLOR_DICT
+# from class_aggregations import class_aggregation_COSN3, class_aggregation_COSN3_desc, class_aggregation_COSN3_labels, class_aggregation_COSN3_names, class_aggregation_COSN3_COLOR_DICT
+# from class_aggregations import class_aggregation_COSN4, class_aggregation_COSN4_desc, class_aggregation_COSN4_labels, class_aggregation_COSN4_names, class_aggregation_COSN4_COLOR_DICT
 # from class_aggregations import class_aggregation_COSN5, class_aggregation_COSN5_desc, class_aggregation_COSN5_labels, class_aggregation_COSN5_names, class_aggregation_COSN5_COLOR_DICT
 
 #EuCOSN3
 #EuCOSN2
 #EuCOSN1
+
 
 class_aggregation = class_aggregation_COSN1B
 class_aggregation_desc = class_aggregation_COSN1B_desc

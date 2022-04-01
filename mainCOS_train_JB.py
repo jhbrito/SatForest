@@ -1,7 +1,7 @@
 from model_unet_COS import input_valid_sizes, output_valid_sizes, unetL3, unetL4, unetL5, unetL6, unet
 from data import *
 from COS_train_options import *
-import keras
+import tensorflow.keras
 from datetime import datetime
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -47,7 +47,7 @@ train_augmentation_args = dict(width_shift_range=[0, 1, 2, 3],
 val_augmentation_args = dict()
 
 
-class BatchLossHistoryCallback(keras.callbacks.Callback):
+class BatchLossHistoryCallback(tensorflow.keras.callbacks.Callback):
     def __init__(self):
         super().__init__()
         self.batch_accuracies = []
@@ -154,14 +154,14 @@ if True:  # for unet_model_i in range(len(unet_models)):
             model = unet(input_size=(input_size[0], input_size[1], len(channels)),
                             num_class=n_classes)
 
-        model_checkpoint_callback = keras.callbacks.ModelCheckpoint(modelFilePath,
+        model_checkpoint_callback = tensorflow.keras.callbacks.ModelCheckpoint(modelFilePath,
                                                                     monitor='val_loss',
                                                                     verbose=1,
                                                                     save_best_only=True)
-        early_stopping_callback = keras.callbacks.EarlyStopping(monitor='val_loss', patience=patience)
-        tensorboard_callback = keras.callbacks.TensorBoard(log_dir=logdir)
+        early_stopping_callback = tensorflow.keras.callbacks.EarlyStopping(monitor='val_loss', patience=patience)
+        tensorboard_callback = tensorflow.keras.callbacks.TensorBoard(log_dir=logdir)
         r.seed(1)
-        history = model.fit_generator(trainGene,
+        history = model.fit(trainGene,
                                       steps_per_epoch=steps_per_epoch,
                                       epochs=epochs,
                                       callbacks=[model_checkpoint_callback,
@@ -171,7 +171,7 @@ if True:  # for unet_model_i in range(len(unet_models)):
                                       validation_data=valGene,
                                       validation_steps=validation_steps)
         with open(history_file_path, "wb") as hf:  # Pickling
-            pickle.dump(history, hf)
+            pickle.dump(history.history, hf)
         print('\nRunning Test Set...')
         testGene = testGeneratorCOS(dataset_path, testSet, dataStats, input_size=input_size, use_max=use_max)
         NTest = len(testSet)
@@ -218,7 +218,7 @@ if True:  # for unet_model_i in range(len(unet_models)):
                          input_size=(input_size[0], input_size[1], len(channels)),
                          num_class=n_classes)
 
-        results = model.predict_generator(testGene, NTest, verbose=1)
+        results = model.predict(testGene, NTest, verbose=1)
 
         print('Saving results...')
         y_gt = np.zeros(((len(testSet),) + target_size))
@@ -251,9 +251,9 @@ if True:  # for unet_model_i in range(len(unet_models)):
         epochs_ran = len(history.history['loss'])
         results_matrix = np.zeros((epochs_ran, 1), dtype=np.float)
         results_matrix = np.c_[results_matrix, np.array(history.history['loss']).T]
-        results_matrix = np.c_[results_matrix, np.array(history.history['acc']).T]
+        results_matrix = np.c_[results_matrix, np.array(history.history['accuracy']).T]
         results_matrix = np.c_[results_matrix, np.array(history.history['val_loss']).T]
-        results_matrix = np.c_[results_matrix, np.array(history.history['val_acc']).T]
+        results_matrix = np.c_[results_matrix, np.array(history.history['val_accuracy']).T]
         results_matrix = np.delete(results_matrix, (0), axis=1)
 
         with open(resultsFilePath, 'a') as res_file:

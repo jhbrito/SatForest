@@ -13,7 +13,7 @@ import tensorflow as tf
 from COS_train_options import channels, class_labels, class_aggregation_COLOR_DICT
 from data import classAgregateCOS, labelVisualizeCOS
 from data import getImgs as data_getImgs
-from model_unet_COS import unetL5
+from model_unet_COS import unetL4, unetL5
 import pickle
 
 print("Tensorflow {}".format(tf.__version__))
@@ -27,6 +27,7 @@ dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 models_path = "./models"
 unet_level = 5
 modelFileName="unetCOSV1_ClassesCOSN1B_NClasses4_Level5_Featuremaps64_Padsame_BNNone_TCFalse_Dropout0.5_Batchsize4_Epochs100_Datetime20210522-015747.hdf5"
+# modelFileName = "unetCOSV1_ClassesCOSN2_NClasses14_Level4_Featuremaps64_Padsame_BNNone_TCFalse_Dropout0.5_Batchsize6_Epochs100_Datetime20210311-223616.hdf5"
 data_stats_file = "./data/data_stats_V1.txt"
 
 with open(data_stats_file, "rb") as fp:
@@ -35,7 +36,12 @@ with open(data_stats_file, "rb") as fp:
 
 num_class = len(class_labels)
 modelFilePath = os.path.join(models_path, modelFileName)
-model = unetL5(pretrained_weights=modelFilePath,
+if unet_level == 4:
+    model = unetL4(pretrained_weights=modelFilePath,
+               input_size=(256, 256, len(channels)),
+               num_class=num_class)
+elif unet_level == 5:
+    model = unetL5(pretrained_weights=modelFilePath,
                input_size=(256, 256, len(channels)),
                num_class=num_class)
 
@@ -43,7 +49,7 @@ model = unetL5(pretrained_weights=modelFilePath,
 def img2pixmap(image):
     height, width, channel = image.shape
     bytesPerLine = 3 * width
-    qimage = QImage(image.data, width, height, bytesPerLine, QImage.Format_BGR888)
+    qimage = QImage(image.data, width, height, bytesPerLine, QImage.Format_RGB888)
     pixmap = QPixmap.fromImage(qimage)
     return pixmap
 
@@ -78,11 +84,11 @@ def updateVisualization():
         # B2 = (B2 - np.min(B2)) / np.max(B2)
         # B3 = (B3 - np.min(B3)) / np.max(B3)
         # B4 = (B4 - np.min(B4)) / np.max(B4)
-        BGR = np.zeros((B2.shape[0], B2.shape[1], 3), np.uint8)
-        BGR[:, :, 0] = B2 * 255
-        BGR[:, :, 1] = B3 * 255
-        BGR[:, :, 2] = B4 * 255
-        window.labelFrameB4B3B2.setPixmap(img2pixmap(BGR))
+        RGB = np.zeros((B2.shape[0], B2.shape[1], 3), np.uint8)
+        RGB[:, :, 0] = B4 * 255
+        RGB[:, :, 1] = B3 * 255
+        RGB[:, :, 2] = B2 * 255
+        window.labelFrameB4B3B2.setPixmap(img2pixmap(RGB))
 
         B5=img_un[4]
         B6=img_un[5]
@@ -93,11 +99,11 @@ def updateVisualization():
         B5 = (B5 - np.min(B5)) / np.max(B5)
         B6 = (B6 - np.min(B6)) / np.max(B6)
         B7 = (B7 - np.min(B7)) / np.max(B7)
-        BGR2 = np.zeros((B5.shape[0], B5.shape[1], 3), np.uint8)
-        BGR2[:, :, 0] = B5 * 255
-        BGR2[:, :, 1] = B6 * 255
-        BGR2[:, :, 2] = B7 * 255
-        window.labelFrameB5B6B7.setPixmap(img2pixmap(BGR2))
+        RGB2 = np.zeros((B5.shape[0], B5.shape[1], 3), np.uint8)
+        RGB2[:, :, 0] = B7 * 255
+        RGB2[:, :, 1] = B6 * 255
+        RGB2[:, :, 2] = B5 * 255
+        window.labelFrameB5B6B7.setPixmap(img2pixmap(RGB2))
 
         B8=img_un[7]
         B8=(B8-np.min(B8))/np.max(B8)
@@ -124,26 +130,26 @@ def updateVisualization():
         B1 = (B1 - np.min(B1)) / np.max(B1)
         B9 = (B9 - np.min(B9)) / np.max(B9)
         B10 = (B10 - np.min(B10)) / np.max(B10)
-        BGR3 = np.zeros((B1.shape[0], B1.shape[1], 3), np.uint8)
-        BGR3[:, :, 0] = B1 * 255
-        BGR3[:, :, 1] = B9 * 255
-        BGR3[:, :, 2] = B10 * 255
-        window.labelFrameB1B9B10.setPixmap(img2pixmap(BGR3))
+        RGB3 = np.zeros((B1.shape[0], B1.shape[1], 3), np.uint8)
+        RGB3[:, :, 0] = B10 * 255
+        RGB3[:, :, 1] = B9 * 255
+        RGB3[:, :, 2] = B1 * 255
+        window.labelFrameB1B9B10.setPixmap(img2pixmap(RGB3))
 
         B11 = img_un[11]
         B12 = img_un[12]
         B11 = (B11 - np.min(B11)) / np.max(B11)
         B12 = (B12 - np.min(B12)) / np.max(B12)
-        BGR4 = np.zeros((B1.shape[0], B1.shape[1], 3), np.uint8)
-        BGR4[:, :, 0] = B11 * 255
-        BGR4[:, :, 1] = B12 * 255
-        BGR4[:, :, 2] = np.ones(B1.shape)*0
-        window.labelFrameB11B12.setPixmap(img2pixmap(BGR4))
+        RGB4 = np.zeros((B1.shape[0], B1.shape[1], 3), np.uint8)
+        RGB4[:, :, 0] = B11 * 255
+        RGB4[:, :, 1] = B12 * 255
+        RGB4[:, :, 2] = np.ones(B1.shape)*0
+        window.labelFrameB11B12.setPixmap(img2pixmap(RGB4))
 
         cos_gt = io.imread(os.path.join(tilePath, "COSV1.tif"), as_gray=True)
         cos_gt, _ = classAgregateCOS(cos_gt)
         cos_gt = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_gt)
-        cos_gt = cos_gt[..., ::-1].copy()
+        # cos_gt = cos_gt[..., ::-1].copy()
         window.labelFrameGT.setPixmap(img2pixmap(cos_gt))
 
         imgs = data_getImgs(dataset_path, tile, dataStats)
@@ -156,7 +162,7 @@ def updateVisualization():
         cos_predict = np.argmax(cos_predict[0], axis=-1)
         cos_predict = cos_predict.astype(np.uint8)
         cos_predict = labelVisualizeCOS(num_class, class_aggregation_COLOR_DICT, cos_predict)
-        cos_predict = cos_predict[..., ::-1].copy()
+        # cos_predict = cos_predict[..., ::-1].copy()
         window.labelFramePredict.setPixmap(img2pixmap(cos_predict))
 
     else:

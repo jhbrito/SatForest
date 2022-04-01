@@ -2,9 +2,9 @@
 # import skimage.io as io
 # import skimage.transform as trans
 # import numpy as np
-from keras.models import *
-from keras.layers import *
-from keras.optimizers import *
+from tensorflow.keras.models import *
+from tensorflow.keras.layers import *
+from tensorflow.keras.optimizers import *
 from data import channels
 
 input_valid_sizes = (252, 252, 252)
@@ -380,7 +380,7 @@ def unetL4(pretrained_weights=None,
 
     conv10 = Conv2D(num_class, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
 
-    model = Model(input=inputs, output=conv10)
+    model = Model(inputs=inputs, outputs=conv10)
     model.compile(optimizer=Adam(lr=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
 
     model.summary()
@@ -553,7 +553,7 @@ def unetL5(pretrained_weights=None,
 
     conv10 = Conv2D(num_class, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
 
-    model = Model(input=inputs, output=conv10)
+    model = Model(inputs=inputs, outputs=conv10)
     model.compile(optimizer=Adam(lr=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
 
     model.summary()

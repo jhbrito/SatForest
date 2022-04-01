@@ -22,7 +22,6 @@ if tf.test.is_gpu_available():
 else:
     print("GPU not available")
 
-
 dataset_path = "C:/Tesselo/data/tesselo-training-tiles"
 models_path = "./models"
 unet_level = 5

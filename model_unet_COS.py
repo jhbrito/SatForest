@@ -551,10 +551,22 @@ def unetL5(pretrained_weights=None,
     conv9 = Activation('relu')(conv9)
     conv9 = BatchNormalization()(conv9) if batch_normalization == 'CABN' else conv9
 
-    conv10 = Conv2D(num_class, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
+    output = Conv2D(num_class, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
 
-    model = Model(inputs=inputs, outputs=conv10)
-    model.compile(optimizer=Adam(lr=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
+    # outputN1 = Conv2D(9, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
+    # outputN2 = Conv2D(20, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
+    # outputN3 = Conv2D(30, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
+    # outputN4 = Conv2D(80, 1, activation='softmax', kernel_initializer='he_normal')(conv9)
+
+    model = Model(inputs=inputs, outputs=output)
+    losses = 'categorical_crossentropy'
+    loss_w = None
+
+    # model = Model(inputs=inputs, outputs=[outputN1, outputN2, outputN3, outputN4])
+    # losses = ['categorical_crossentropy', 'categorical_crossentropy', 'categorical_crossentropy']
+    # loss_w = [1.0, 1.0, 1.0, 1.0]
+
+    model.compile(optimizer=Adam(lr=1e-4), loss=losses, loss_weights=loss_w, metrics=['accuracy'])
 
     model.summary()
     if pretrained_weights:

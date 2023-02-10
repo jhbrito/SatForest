@@ -18,7 +18,14 @@ The neural network model in this work is strongly inspired on zhixuhao's unet re
 | ![7799_6163_RGB](examples/7799_6163_RGB.jpg) | ![7799_6163_GT](examples/7799_6163_GT.jpg) |![7799_6163_P](examples/7799_6163_predict.jpg) |
 | ![7804_6168_RGB](examples/7804_6168_RGB.jpg) | ![7804_6168_GT](examples/7804_6168_GT.jpg) |![7804_6168_P](examples/7804_6168_predict.jpg) |
 
-## Installation
+## Installation with Conda
+Create a conda environment and install packages
+
+```conda
+conda env create -n Project_Environment --file environment.yml
+```
+
+## Old Installation
 Setup a virtual environment
 
 Download GDAL 2.4.1 binary:

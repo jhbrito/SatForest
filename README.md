@@ -22,10 +22,10 @@ The neural network model in this work is strongly inspired on zhixuhao's unet re
 Create a conda environment and install packages
 
 ```conda
-conda env create -n Project_Environment --file environment.yml
+conda env create --file environment.yml
 ```
 
-## Old Installation
+## Old Installation with pip
 Setup a virtual environment
 
 Download GDAL 2.4.1 binary:

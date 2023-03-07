@@ -7,7 +7,7 @@ Keras-Preprocessing==1.0.9
 matplotlib==3.1.0
 numpy==1.18.1
 opencv-python==4.2.0.32
-OWSLib==0.20.0
+OWSLib==0.28.1
 Pillow==8.3.2
 PyQt5==5.15.4
 PyQtWebEngine==5.15.4
